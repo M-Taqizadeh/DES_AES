@@ -71,6 +71,10 @@ def XOR_hex_str(str1, str2):
     return out
     
 class state():
+    mix_columns_matrix = ((2, 3, 1, 1),
+                          (1, 2, 3, 1),
+                          (1, 1, 2, 3),
+                          (3, 1, 1, 2))
     def __init__(self, plaintext, key):
         assert is_hex_str(plaintext)
         assert len(plaintext) == 32
@@ -101,11 +105,34 @@ class state():
         state[1] = np.roll(state[1], -1)
         state[2] = np.roll(state[2], -2)
         state[3] = np.roll(state[3], -3)
-    # MARK: FIX MIX_COLUMNS
-    def mix_columns(self):
-        # int_state = np.vectorize(int)(self.state, 16)
-        # int_state = np.matmul(MIX_COLUMN_)
-        pass
 
+    def mix_columns_mul(self, bite, coe):
+        assert coe in (1, 2, 3)
+        if is_hex_str(bite):
+            bite = hex_str_2_bi_str(bite)
+        assert is_binary_str(bite)
+        assert len(bite) == 8
+        if coe == 1:
+            return bi_str_2_hex_str(bite)
+        elif coe == 2:
+            last_bit = bite[0]
+            bite = bite[1:] + '0'
+            bite = hex_str_2_bi_str(bite)
+            if(last_bit):
+                bite = XOR_hex_str(bite, '1b')
+            return bite
+        elif coe == 3:
+            return XOR_binary_str(bite, self.mix_columns_mul(bite, 2))
+        
+    # MARK: TEST MIX_COLUMN
+    def mix_columns(self):
+        new_state = np.array([['00'] * 4] * 4)
+        for row in new_state:
+            for column in new_state:
+                for i in range(4):
+                    partial_new_state = self.mix_columns_mul(self.state[i][column], self.mix_columns_matrix[row][i])
+                    new_state[row][column] = XOR_binary_str(new_state[row][column], partial_new_state)
+        self.state = new_state
+    
     def add_round_key(self, subkey):
         return np.vectorize(XOR_hex_str)(self.state, subkey)
