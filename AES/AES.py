@@ -1,7 +1,6 @@
 import numpy as np
 import math
 S_BOX = [
-
     ['63', '7c', '77', '7b', 'f2', '6b', '6f', 'c5', '30', '01', '67', '2b', 'fe', 'd7', 'ab', '76'],
     ['ca', '82', 'c9', '7d', 'fa', '59', '47', 'f0', 'ad', 'd4', 'a2', 'af', '9c', 'a4', '72', 'c0'],
     ['b7', 'fd', '93', '26', '36', '3f', 'f7', 'cc', '34', 'a5', 'e5', 'f1', '71', 'd8', '31', '15'],
@@ -20,6 +19,7 @@ S_BOX = [
     ['8c', 'a1', '89', '0d', 'bf', 'e6', '42', '68', '41', '99', '2d', '0f', 'b0', '54', 'bb', '16']
 ]
 
+rcon = np.array(['01', '02', '04', '08', '10', '20', '40', '80', '1B', '36'])
 
 def is_binary_str(variable):
     return set(variable).issubset({'0', '1'}) and isinstance(variable, str)
@@ -54,6 +54,22 @@ def XOR_binary_str(str1, str2):
     assert len(out) == len(str1)
     return out
 
+def sub_bytes_element(element):
+        assert is_hex_str(element)
+        assert len(element) == 2
+        return S_BOX[element[0]][element[1]]
+    
+def rot_word(word):
+    assert is_hex_str(word)
+    assert len(word) == 8
+    return word[2:] + word[:2]
+
+def sub_word(word):
+    assert is_hex_str(word)
+    assert len(word) == 8
+    word = [word[2*i:2*i+2] for i in range(4)]
+    return np.vectorize(sub_bytes_element)(word)
+
 def bi_str_2_hex_str(variable, number_of_digits = None):
     if number_of_digits == None:
         number_of_digits = math.ceil(len(variable) / 4)
@@ -84,6 +100,7 @@ class state():
         self.key = key
         self.key_size = len(key)
         self.state = self.plaintext_to_state(plaintext)
+        self.generate_round_keys
 
     def plaintext_to_state(self, plaintext):
         assert is_hex_str(plaintext)
@@ -91,12 +108,22 @@ class state():
         plaintext = [plaintext[2*i:2*i+2] for i in range(16)]
         self.state = np.array(list(plaintext)).reshape((4,4)).transpose()
 
-    
-    def sub_bytes_element(self, element):
-        assert is_hex_str(element)
-        assert len(element) == 2
-        return S_BOX[element[0]][element[1]]
-    
+    def generate_round_keys(self):
+        N = len(self.key) / 2 / 4                   #length of key in 32 bit (4 bytes) words
+        K = [self.key[8*i:8*i+8] for i in range(N)] #initial key broken into 32 bit (4 bytes) words
+        R = len(self.key) / 8 + 7                   #number of rounds required
+        W = np.empty(4 * R)
+        for i in range(4 * R):
+            if i < N:
+                W[i] = K[i]
+            elif (i % N) == 0:
+                W[i] = XOR_hex_str(XOR_hex_str(W[i-N], sub_word(rot_word(W[i-1]))), rcon[i / N])
+            elif N > 6 and i % N == 4:
+                W[i] = XOR_hex_str(W[i - N], sub_word(W[i - 1]))
+            else:
+                W[i] = XOR_hex_str(W[i - N], W[i - 1])
+        self.roudn_keys = np.array([W[i][0,1], W[i][2,3], W[i][4,5], W[i][6,7]] for i in range(4 * R)).reshape((R,4,4)).transpose((0,2,1))
+
     def sub_bytes(self):
         return np.vectorize(self.sub_bytes_element)(self.state)
     
