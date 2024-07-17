@@ -1,3 +1,5220 @@
 import unittest
 import AES
 
+class TestECBGFSbox128e(unittest.TestCase):    
+    def test_0(self):
+        KEY = '00000000000000000000000000000000'
+        PLAINTEXT = 'f34481ec3cc627bacd5dc3fb08f273e6'
+        CIPHERTEXT = '0336763e966d92595a567cc9ce537f5e'
+        self.assertEqual(AES.State(PLAINTEXT, KEY).encrypt(), CIPHERTEXT)
+
+
+    def test_1(self):
+        KEY = '00000000000000000000000000000000'
+        PLAINTEXT = '9798c4640bad75c7c3227db910174e72'
+        CIPHERTEXT = 'a9a1631bf4996954ebc093957b234589'
+        self.assertEqual(AES.State(PLAINTEXT, KEY).encrypt(), CIPHERTEXT)
+
+
+    def test_2(self):
+        KEY = '00000000000000000000000000000000'
+        PLAINTEXT = '96ab5c2ff612d9dfaae8c31f30c42168'
+        CIPHERTEXT = 'ff4f8391a6a40ca5b25d23bedd44a597'
+        self.assertEqual(AES.State(PLAINTEXT, KEY).encrypt(), CIPHERTEXT)
+
+
+    def test_3(self):
+        KEY = '00000000000000000000000000000000'
+        PLAINTEXT = '6a118a874519e64e9963798a503f1d35'
+        CIPHERTEXT = 'dc43be40be0e53712f7e2bf5ca707209'
+        self.assertEqual(AES.State(PLAINTEXT, KEY).encrypt(), CIPHERTEXT)
+
+
+    def test_4(self):
+        KEY = '00000000000000000000000000000000'
+        PLAINTEXT = 'cb9fceec81286ca3e989bd979b0cb284'
+        CIPHERTEXT = '92beedab1895a94faa69b632e5cc47ce'
+        self.assertEqual(AES.State(PLAINTEXT, KEY).encrypt(), CIPHERTEXT)
+
+
+    def test_5(self):
+        KEY = '00000000000000000000000000000000'
+        PLAINTEXT = 'b26aeb1874e47ca8358ff22378f09144'
+        CIPHERTEXT = '459264f4798f6a78bacb89c15ed3d601'
+        self.assertEqual(AES.State(PLAINTEXT, KEY).encrypt(), CIPHERTEXT)
+
+
+    def test_6(self):
+        KEY = '00000000000000000000000000000000'
+        PLAINTEXT = '58c8e00b2631686d54eab84b91f0aca1'
+        CIPHERTEXT = '08a4e2efec8a8e3312ca7460b9040bbf'
+        self.assertEqual(AES.State(PLAINTEXT, KEY).encrypt(), CIPHERTEXT)
+
+class TestECBGFSbox192e(unittest.TestCase):
+    def test_0(self):
+        KEY = '0000000000000000000000000000000000000000000000000000000000000000'
+        PLAINTEXT = '014730f80ac625fe84f026c60bfd547d'
+        CIPHERTEXT = '5c9d844ed46f9885085e5d6a4f94c7d7'
+
+    def test_1(self):
+        KEY = '0000000000000000000000000000000000000000000000000000000000000000'
+        PLAINTEXT = '0b24af36193ce4665f2825d7b4749c98'
+        CIPHERTEXT = 'a9ff75bd7cf6613d3731c77c3b6d0c04'
+
+    def test_2(self):
+        KEY = '0000000000000000000000000000000000000000000000000000000000000000'
+        PLAINTEXT = '761c1fe41a18acf20d241650611d90f1'
+        CIPHERTEXT = '623a52fcea5d443e48d9181ab32c7421'
+
+    def test_3(self):
+        KEY = '0000000000000000000000000000000000000000000000000000000000000000'
+        PLAINTEXT = '8a560769d605868ad80d819bdba03771'
+        CIPHERTEXT = '38f2c7ae10612415d27ca190d27da8b4'
+
+    def test_4(self):
+        KEY = '0000000000000000000000000000000000000000000000000000000000000000'
+        PLAINTEXT = '91fbef2d15a97816060bee1feaa49afe'
+        CIPHERTEXT = '1bc704f1bce135ceb810341b216d7abe'
+
+class TestECBGFSbox256e(unittest.TestCase):
+    def test_0(self):
+        KEY = '0000000000000000000000000000000000000000000000000000000000000000'
+        PLAINTEXT = '014730f80ac625fe84f026c60bfd547d'
+        CIPHERTEXT = '5c9d844ed46f9885085e5d6a4f94c7d7'
+
+    def test_1(self):
+        KEY = '0000000000000000000000000000000000000000000000000000000000000000'
+        PLAINTEXT = '0b24af36193ce4665f2825d7b4749c98'
+        CIPHERTEXT = 'a9ff75bd7cf6613d3731c77c3b6d0c04'
+
+    def test_2(self):
+        KEY = '0000000000000000000000000000000000000000000000000000000000000000'
+        PLAINTEXT = '761c1fe41a18acf20d241650611d90f1'
+        CIPHERTEXT = '623a52fcea5d443e48d9181ab32c7421'
+
+    def test_3(self):
+        KEY = '0000000000000000000000000000000000000000000000000000000000000000'
+        PLAINTEXT = '8a560769d605868ad80d819bdba03771'
+        CIPHERTEXT = '38f2c7ae10612415d27ca190d27da8b4'
+
+    def test_4(self):
+        KEY = '0000000000000000000000000000000000000000000000000000000000000000'
+        PLAINTEXT = '91fbef2d15a97816060bee1feaa49afe'
+        CIPHERTEXT = '1bc704f1bce135ceb810341b216d7abe'
+
+class TestECBKeySbox128e(unittest.TestCase):
+    def test_0(self):
+        KEY = '10a58869d74be5a374cf867cfb473859'
+        PLAINTEXT = '00000000000000000000000000000000'
+        CIPHERTEXT = '6d251e6944b051e04eaa6fb4dbf78465'
+
+    def test_1(self):
+        KEY = 'caea65cdbb75e9169ecd22ebe6e54675'
+        PLAINTEXT = '00000000000000000000000000000000'
+        CIPHERTEXT = '6e29201190152df4ee058139def610bb'
+
+    def test_2(self):
+        KEY = 'a2e2fa9baf7d20822ca9f0542f764a41'
+        PLAINTEXT = '00000000000000000000000000000000'
+        CIPHERTEXT = 'c3b44b95d9d2f25670eee9a0de099fa3'
+
+    def test_3(self):
+        KEY = 'b6364ac4e1de1e285eaf144a2415f7a0'
+        PLAINTEXT = '00000000000000000000000000000000'
+        CIPHERTEXT = '5d9b05578fc944b3cf1ccf0e746cd581'
+
+    def test_4(self):
+        KEY = '64cf9c7abc50b888af65f49d521944b2'
+        PLAINTEXT = '00000000000000000000000000000000'
+        CIPHERTEXT = 'f7efc89d5dba578104016ce5ad659c05'
+
+    def test_5(self):
+        KEY = '47d6742eefcc0465dc96355e851b64d9'
+        PLAINTEXT = '00000000000000000000000000000000'
+        CIPHERTEXT = '0306194f666d183624aa230a8b264ae7'
+
+    def test_6(self):
+        KEY = '3eb39790678c56bee34bbcdeccf6cdb5'
+        PLAINTEXT = '00000000000000000000000000000000'
+        CIPHERTEXT = '858075d536d79ccee571f7d7204b1f67'
+
+    def test_7(self):
+        KEY = '64110a924f0743d500ccadae72c13427'
+        PLAINTEXT = '00000000000000000000000000000000'
+        CIPHERTEXT = '35870c6a57e9e92314bcb8087cde72ce'
+
+    def test_8(self):
+        KEY = '18d8126516f8a12ab1a36d9f04d68e51'
+        PLAINTEXT = '00000000000000000000000000000000'
+        CIPHERTEXT = '6c68e9be5ec41e22c825b7c7affb4363'
+
+    def test_9(self):
+        KEY = 'f530357968578480b398a3c251cd1093'
+        PLAINTEXT = '00000000000000000000000000000000'
+        CIPHERTEXT = 'f5df39990fc688f1b07224cc03e86cea'
+
+    def test_10(self):
+        KEY = 'da84367f325d42d601b4326964802e8e'
+        PLAINTEXT = '00000000000000000000000000000000'
+        CIPHERTEXT = 'bba071bcb470f8f6586e5d3add18bc66'
+
+    def test_11(self):
+        KEY = 'e37b1c6aa2846f6fdb413f238b089f23'
+        PLAINTEXT = '00000000000000000000000000000000'
+        CIPHERTEXT = '43c9f7e62f5d288bb27aa40ef8fe1ea8'
+
+    def test_12(self):
+        KEY = '6c002b682483e0cabcc731c253be5674'
+        PLAINTEXT = '00000000000000000000000000000000'
+        CIPHERTEXT = '3580d19cff44f1014a7c966a69059de5'
+
+    def test_13(self):
+        KEY = '143ae8ed6555aba96110ab58893a8ae1'
+        PLAINTEXT = '00000000000000000000000000000000'
+        CIPHERTEXT = '806da864dd29d48deafbe764f8202aef'
+
+    def test_14(self):
+        KEY = 'b69418a85332240dc82492353956ae0c'
+        PLAINTEXT = '00000000000000000000000000000000'
+        CIPHERTEXT = 'a303d940ded8f0baff6f75414cac5243'
+
+    def test_15(self):
+        KEY = '71b5c08a1993e1362e4d0ce9b22b78d5'
+        PLAINTEXT = '00000000000000000000000000000000'
+        CIPHERTEXT = 'c2dabd117f8a3ecabfbb11d12194d9d0'
+
+    def test_16(self):
+        KEY = 'e234cdca2606b81f29408d5f6da21206'
+        PLAINTEXT = '00000000000000000000000000000000'
+        CIPHERTEXT = 'fff60a4740086b3b9c56195b98d91a7b'
+
+    def test_17(self):
+        KEY = '13237c49074a3da078dc1d828bb78c6f'
+        PLAINTEXT = '00000000000000000000000000000000'
+        CIPHERTEXT = '8146a08e2357f0caa30ca8c94d1a0544'
+
+    def test_18(self):
+        KEY = '3071a2a48fe6cbd04f1a129098e308f8'
+        PLAINTEXT = '00000000000000000000000000000000'
+        CIPHERTEXT = '4b98e06d356deb07ebb824e5713f7be3'
+
+    def test_19(self):
+        KEY = '90f42ec0f68385f2ffc5dfc03a654dce'
+        PLAINTEXT = '00000000000000000000000000000000'
+        CIPHERTEXT = '7a20a53d460fc9ce0423a7a0764c6cf2'
+
+    def test_20(self):
+        KEY = 'febd9a24d8b65c1c787d50a4ed3619a9'
+        PLAINTEXT = '00000000000000000000000000000000'
+        CIPHERTEXT = 'f4a70d8af877f9b02b4c40df57d45b17'
+
+class TestECBKeySbox192e(unittest.TestCase):
+    def test_0(self):
+        KEY = 'e9f065d7c13573587f7875357dfbb16c53489f6a4bd0f7cd'
+        PLAINTEXT = '00000000000000000000000000000000'
+        CIPHERTEXT = '0956259c9cd5cfd0181cca53380cde06'
+
+    def test_1(self):
+        KEY = '15d20f6ebc7e649fd95b76b107e6daba967c8a9484797f29'
+        PLAINTEXT = '00000000000000000000000000000000'
+        CIPHERTEXT = '8e4e18424e591a3d5b6f0876f16f8594'
+
+    def test_2(self):
+        KEY = 'a8a282ee31c03fae4f8e9b8930d5473c2ed695a347e88b7c'
+        PLAINTEXT = '00000000000000000000000000000000'
+        CIPHERTEXT = '93f3270cfc877ef17e106ce938979cb0'
+
+    def test_3(self):
+        KEY = 'cd62376d5ebb414917f0c78f05266433dc9192a1ec943300'
+        PLAINTEXT = '00000000000000000000000000000000'
+        CIPHERTEXT = '7f6c25ff41858561bb62f36492e93c29'
+
+    def test_4(self):
+        KEY = '502a6ab36984af268bf423c7f509205207fc1552af4a91e5'
+        PLAINTEXT = '00000000000000000000000000000000'
+        CIPHERTEXT = '8e06556dcbb00b809a025047cff2a940'
+
+    def test_5(self):
+        KEY = '25a39dbfd8034f71a81f9ceb55026e4037f8f6aa30ab44ce'
+        PLAINTEXT = '00000000000000000000000000000000'
+        CIPHERTEXT = '3608c344868e94555d23a120f8a5502d'
+
+    def test_6(self):
+        KEY = 'e08c15411774ec4a908b64eadc6ac4199c7cd453f3aaef53'
+        PLAINTEXT = '00000000000000000000000000000000'
+        CIPHERTEXT = '77da2021935b840b7f5dcc39132da9e5'
+
+    def test_7(self):
+        KEY = '3b375a1ff7e8d44409696e6326ec9dec86138e2ae010b980'
+        PLAINTEXT = '00000000000000000000000000000000'
+        CIPHERTEXT = '3b7c24f825e3bf9873c9f14d39a0e6f4'
+
+    def test_8(self):
+        KEY = '950bb9f22cc35be6fe79f52c320af93dec5bc9c0c2f9cd53'
+        PLAINTEXT = '00000000000000000000000000000000'
+        CIPHERTEXT = '64ebf95686b353508c90ecd8b6134316'
+
+    def test_9(self):
+        KEY = '7001c487cc3e572cfc92f4d0e697d982e8856fdcc957da40'
+        PLAINTEXT = '00000000000000000000000000000000'
+        CIPHERTEXT = 'ff558c5d27210b7929b73fc708eb4cf1'
+
+    def test_10(self):
+        KEY = 'f029ce61d4e5a405b41ead0a883cc6a737da2cf50a6c92ae'
+        PLAINTEXT = '00000000000000000000000000000000'
+        CIPHERTEXT = 'a2c3b2a818075490a7b4c14380f02702'
+
+    def test_11(self):
+        KEY = '61257134a518a0d57d9d244d45f6498cbc32f2bafc522d79'
+        PLAINTEXT = '00000000000000000000000000000000'
+        CIPHERTEXT = 'cfe4d74002696ccf7d87b14a2f9cafc9'
+
+    def test_12(self):
+        KEY = 'b0ab0a6a818baef2d11fa33eac947284fb7d748cfb75e570'
+        PLAINTEXT = '00000000000000000000000000000000'
+        CIPHERTEXT = 'd2eafd86f63b109b91f5dbb3a3fb7e13'
+
+    def test_13(self):
+        KEY = 'ee053aa011c8b428cdcc3636313c54d6a03cac01c71579d6'
+        PLAINTEXT = '00000000000000000000000000000000'
+        CIPHERTEXT = '9b9fdd1c5975655f539998b306a324af'
+
+    def test_14(self):
+        KEY = 'd2926527e0aa9f37b45e2ec2ade5853ef807576104c7ace3'
+        PLAINTEXT = '00000000000000000000000000000000'
+        CIPHERTEXT = 'dd619e1cf204446112e0af2b9afa8f8c'
+
+    def test_15(self):
+        KEY = '982215f4e173dfa0fcffe5d3da41c4812c7bcc8ed3540f93'
+        PLAINTEXT = '00000000000000000000000000000000'
+        CIPHERTEXT = 'd4f0aae13c8fe9339fbf9e69ed0ad74d'
+
+    def test_16(self):
+        KEY = '98c6b8e01e379fbd14e61af6af891596583565f2a27d59e9'
+        PLAINTEXT = '00000000000000000000000000000000'
+        CIPHERTEXT = '19c80ec4a6deb7e5ed1033dda933498f'
+
+    def test_17(self):
+        KEY = 'b3ad5cea1dddc214ca969ac35f37dae1a9a9d1528f89bb35'
+        PLAINTEXT = '00000000000000000000000000000000'
+        CIPHERTEXT = '3cf5e1d21a17956d1dffad6a7c41c659'
+
+    def test_18(self):
+        KEY = '45899367c3132849763073c435a9288a766c8b9ec2308516'
+        PLAINTEXT = '00000000000000000000000000000000'
+        CIPHERTEXT = '69fd12e8505f8ded2fdcb197a121b362'
+
+    def test_19(self):
+        KEY = 'ec250e04c3903f602647b85a401a1ae7ca2f02f67fa4253e'
+        PLAINTEXT = '00000000000000000000000000000000'
+        CIPHERTEXT = '8aa584e2cc4d17417a97cb9a28ba29c8'
+
+    def test_20(self):
+        KEY = 'd077a03bd8a38973928ccafe4a9d2f455130bd0af5ae46a9'
+        PLAINTEXT = '00000000000000000000000000000000'
+        CIPHERTEXT = 'abc786fb1edb504580c4d882ef29a0c7'
+
+    def test_21(self):
+        KEY = 'd184c36cf0dddfec39e654195006022237871a47c33d3198'
+        PLAINTEXT = '00000000000000000000000000000000'
+        CIPHERTEXT = '2e19fb60a3e1de0166f483c97824a978'
+
+    def test_22(self):
+        KEY = '4c6994ffa9dcdc805b60c2c0095334c42d95a8fc0ca5b080'
+        PLAINTEXT = '00000000000000000000000000000000'
+        CIPHERTEXT = '7656709538dd5fec41e0ce6a0f8e207d'
+
+    def test_23(self):
+        KEY = 'c88f5b00a4ef9a6840e2acaf33f00a3bdc4e25895303fa72'
+        PLAINTEXT = '00000000000000000000000000000000'
+        CIPHERTEXT = 'a67cf333b314d411d3c0ae6e1cfcd8f5'
+
+class TestECBKeySbox256e(unittest.TestCase):
+    def test_0(self):
+        KEY = 'c47b0294dbbbee0fec4757f22ffeee3587ca4730c3d33b691df38bab076bc558'
+        PLAINTEXT = '00000000000000000000000000000000'
+        CIPHERTEXT = '46f2fb342d6f0ab477476fc501242c5f'
+
+    def test_1(self):
+        KEY = '28d46cffa158533194214a91e712fc2b45b518076675affd910edeca5f41ac64'
+        PLAINTEXT = '00000000000000000000000000000000'
+        CIPHERTEXT = '4bf3b0a69aeb6657794f2901b1440ad4'
+
+    def test_2(self):
+        KEY = 'c1cc358b449909a19436cfbb3f852ef8bcb5ed12ac7058325f56e6099aab1a1c'
+        PLAINTEXT = '00000000000000000000000000000000'
+        CIPHERTEXT = '352065272169abf9856843927d0674fd'
+
+    def test_3(self):
+        KEY = '984ca75f4ee8d706f46c2d98c0bf4a45f5b00d791c2dfeb191b5ed8e420fd627'
+        PLAINTEXT = '00000000000000000000000000000000'
+        CIPHERTEXT = '4307456a9e67813b452e15fa8fffe398'
+
+    def test_4(self):
+        KEY = 'b43d08a447ac8609baadae4ff12918b9f68fc1653f1269222f123981ded7a92f'
+        PLAINTEXT = '00000000000000000000000000000000'
+        CIPHERTEXT = '4663446607354989477a5c6f0f007ef4'
+
+    def test_5(self):
+        KEY = '1d85a181b54cde51f0e098095b2962fdc93b51fe9b88602b3f54130bf76a5bd9'
+        PLAINTEXT = '00000000000000000000000000000000'
+        CIPHERTEXT = '531c2c38344578b84d50b3c917bbb6e1'
+
+    def test_6(self):
+        KEY = 'dc0eba1f2232a7879ded34ed8428eeb8769b056bbaf8ad77cb65c3541430b4cf'
+        PLAINTEXT = '00000000000000000000000000000000'
+        CIPHERTEXT = 'fc6aec906323480005c58e7e1ab004ad'
+
+    def test_7(self):
+        KEY = 'f8be9ba615c5a952cabbca24f68f8593039624d524c816acda2c9183bd917cb9'
+        PLAINTEXT = '00000000000000000000000000000000'
+        CIPHERTEXT = 'a3944b95ca0b52043584ef02151926a8'
+
+    def test_8(self):
+        KEY = '797f8b3d176dac5b7e34a2d539c4ef367a16f8635f6264737591c5c07bf57a3e'
+        PLAINTEXT = '00000000000000000000000000000000'
+        CIPHERTEXT = 'a74289fe73a4c123ca189ea1e1b49ad5'
+
+    def test_9(self):
+        KEY = '6838d40caf927749c13f0329d331f448e202c73ef52c5f73a37ca635d4c47707'
+        PLAINTEXT = '00000000000000000000000000000000'
+        CIPHERTEXT = 'b91d4ea4488644b56cf0812fa7fcf5fc'
+
+    def test_10(self):
+        KEY = 'ccd1bc3c659cd3c59bc437484e3c5c724441da8d6e90ce556cd57d0752663bbc'
+        PLAINTEXT = '00000000000000000000000000000000'
+        CIPHERTEXT = '304f81ab61a80c2e743b94d5002a126b'
+
+    def test_11(self):
+        KEY = '13428b5e4c005e0636dd338405d173ab135dec2a25c22c5df0722d69dcc43887'
+        PLAINTEXT = '00000000000000000000000000000000'
+        CIPHERTEXT = '649a71545378c783e368c9ade7114f6c'
+
+    def test_12(self):
+        KEY = '07eb03a08d291d1b07408bf3512ab40c91097ac77461aad4bb859647f74f00ee'
+        PLAINTEXT = '00000000000000000000000000000000'
+        CIPHERTEXT = '47cb030da2ab051dfc6c4bf6910d12bb'
+
+    def test_13(self):
+        KEY = '90143ae20cd78c5d8ebdd6cb9dc1762427a96c78c639bccc41a61424564eafe1'
+        PLAINTEXT = '00000000000000000000000000000000'
+        CIPHERTEXT = '798c7c005dee432b2c8ea5dfa381ecc3'
+
+    def test_14(self):
+        KEY = 'b7a5794d52737475d53d5a377200849be0260a67a2b22ced8bbef12882270d07'
+        PLAINTEXT = '00000000000000000000000000000000'
+        CIPHERTEXT = '637c31dc2591a07636f646b72daabbe7'
+
+    def test_15(self):
+        KEY = 'fca02f3d5011cfc5c1e23165d413a049d4526a991827424d896fe3435e0bf68e'
+        PLAINTEXT = '00000000000000000000000000000000'
+        CIPHERTEXT = '179a49c712154bbffbe6e7a84a18e220'
+
+class TestECBVarKey128e(unittest.TestCase):    
+    def test_0(self):
+        KEY = '80000000000000000000000000000000'
+        PLAINTEXT = '00000000000000000000000000000000'
+        CIPHERTEXT = '0edd33d3c621e546455bd8ba1418bec8'
+
+    def test_1(self):
+        KEY = 'c0000000000000000000000000000000'
+        PLAINTEXT = '00000000000000000000000000000000'
+        CIPHERTEXT = '4bc3f883450c113c64ca42e1112a9e87'
+
+    def test_2(self):
+        KEY = 'e0000000000000000000000000000000'
+        PLAINTEXT = '00000000000000000000000000000000'
+        CIPHERTEXT = '72a1da770f5d7ac4c9ef94d822affd97'
+
+    def test_3(self):
+        KEY = 'f0000000000000000000000000000000'
+        PLAINTEXT = '00000000000000000000000000000000'
+        CIPHERTEXT = '970014d634e2b7650777e8e84d03ccd8'
+
+    def test_4(self):
+        KEY = 'f8000000000000000000000000000000'
+        PLAINTEXT = '00000000000000000000000000000000'
+        CIPHERTEXT = 'f17e79aed0db7e279e955b5f493875a7'
+
+    def test_5(self):
+        KEY = 'fc000000000000000000000000000000'
+        PLAINTEXT = '00000000000000000000000000000000'
+        CIPHERTEXT = '9ed5a75136a940d0963da379db4af26a'
+
+    def test_6(self):
+        KEY = 'fe000000000000000000000000000000'
+        PLAINTEXT = '00000000000000000000000000000000'
+        CIPHERTEXT = 'c4295f83465c7755e8fa364bac6a7ea5'
+
+    def test_7(self):
+        KEY = 'ff000000000000000000000000000000'
+        PLAINTEXT = '00000000000000000000000000000000'
+        CIPHERTEXT = 'b1d758256b28fd850ad4944208cf1155'
+
+    def test_8(self):
+        KEY = 'ff800000000000000000000000000000'
+        PLAINTEXT = '00000000000000000000000000000000'
+        CIPHERTEXT = '42ffb34c743de4d88ca38011c990890b'
+
+    def test_9(self):
+        KEY = 'ffc00000000000000000000000000000'
+        PLAINTEXT = '00000000000000000000000000000000'
+        CIPHERTEXT = '9958f0ecea8b2172c0c1995f9182c0f3'
+
+    def test_10(self):
+        KEY = 'ffe00000000000000000000000000000'
+        PLAINTEXT = '00000000000000000000000000000000'
+        CIPHERTEXT = '956d7798fac20f82a8823f984d06f7f5'
+
+    def test_11(self):
+        KEY = 'fff00000000000000000000000000000'
+        PLAINTEXT = '00000000000000000000000000000000'
+        CIPHERTEXT = 'a01bf44f2d16be928ca44aaf7b9b106b'
+
+    def test_12(self):
+        KEY = 'fff80000000000000000000000000000'
+        PLAINTEXT = '00000000000000000000000000000000'
+        CIPHERTEXT = 'b5f1a33e50d40d103764c76bd4c6b6f8'
+
+    def test_13(self):
+        KEY = 'fffc0000000000000000000000000000'
+        PLAINTEXT = '00000000000000000000000000000000'
+        CIPHERTEXT = '2637050c9fc0d4817e2d69de878aee8d'
+
+    def test_14(self):
+        KEY = 'fffe0000000000000000000000000000'
+        PLAINTEXT = '00000000000000000000000000000000'
+        CIPHERTEXT = '113ecbe4a453269a0dd26069467fb5b5'
+
+    def test_15(self):
+        KEY = 'ffff0000000000000000000000000000'
+        PLAINTEXT = '00000000000000000000000000000000'
+        CIPHERTEXT = '97d0754fe68f11b9e375d070a608c884'
+
+    def test_16(self):
+        KEY = 'ffff8000000000000000000000000000'
+        PLAINTEXT = '00000000000000000000000000000000'
+        CIPHERTEXT = 'c6a0b3e998d05068a5399778405200b4'
+
+    def test_17(self):
+        KEY = 'ffffc000000000000000000000000000'
+        PLAINTEXT = '00000000000000000000000000000000'
+        CIPHERTEXT = 'df556a33438db87bc41b1752c55e5e49'
+
+    def test_18(self):
+        KEY = 'ffffe000000000000000000000000000'
+        PLAINTEXT = '00000000000000000000000000000000'
+        CIPHERTEXT = '90fb128d3a1af6e548521bb962bf1f05'
+
+    def test_19(self):
+        KEY = 'fffff000000000000000000000000000'
+        PLAINTEXT = '00000000000000000000000000000000'
+        CIPHERTEXT = '26298e9c1db517c215fadfb7d2a8d691'
+
+    def test_20(self):
+        KEY = 'fffff800000000000000000000000000'
+        PLAINTEXT = '00000000000000000000000000000000'
+        CIPHERTEXT = 'a6cb761d61f8292d0df393a279ad0380'
+
+    def test_21(self):
+        KEY = 'fffffc00000000000000000000000000'
+        PLAINTEXT = '00000000000000000000000000000000'
+        CIPHERTEXT = '12acd89b13cd5f8726e34d44fd486108'
+
+    def test_22(self):
+        KEY = 'fffffe00000000000000000000000000'
+        PLAINTEXT = '00000000000000000000000000000000'
+        CIPHERTEXT = '95b1703fc57ba09fe0c3580febdd7ed4'
+
+    def test_23(self):
+        KEY = 'ffffff00000000000000000000000000'
+        PLAINTEXT = '00000000000000000000000000000000'
+        CIPHERTEXT = 'de11722d893e9f9121c381becc1da59a'
+
+    def test_24(self):
+        KEY = 'ffffff80000000000000000000000000'
+        PLAINTEXT = '00000000000000000000000000000000'
+        CIPHERTEXT = '6d114ccb27bf391012e8974c546d9bf2'
+
+    def test_25(self):
+        KEY = 'ffffffc0000000000000000000000000'
+        PLAINTEXT = '00000000000000000000000000000000'
+        CIPHERTEXT = '5ce37e17eb4646ecfac29b9cc38d9340'
+
+    def test_26(self):
+        KEY = 'ffffffe0000000000000000000000000'
+        PLAINTEXT = '00000000000000000000000000000000'
+        CIPHERTEXT = '18c1b6e2157122056d0243d8a165cddb'
+
+    def test_27(self):
+        KEY = 'fffffff0000000000000000000000000'
+        PLAINTEXT = '00000000000000000000000000000000'
+        CIPHERTEXT = '99693e6a59d1366c74d823562d7e1431'
+
+    def test_28(self):
+        KEY = 'fffffff8000000000000000000000000'
+        PLAINTEXT = '00000000000000000000000000000000'
+        CIPHERTEXT = '6c7c64dc84a8bba758ed17eb025a57e3'
+
+    def test_29(self):
+        KEY = 'fffffffc000000000000000000000000'
+        PLAINTEXT = '00000000000000000000000000000000'
+        CIPHERTEXT = 'e17bc79f30eaab2fac2cbbe3458d687a'
+
+    def test_30(self):
+        KEY = 'fffffffe000000000000000000000000'
+        PLAINTEXT = '00000000000000000000000000000000'
+        CIPHERTEXT = '1114bc2028009b923f0b01915ce5e7c4'
+
+    def test_31(self):
+        KEY = 'ffffffff000000000000000000000000'
+        PLAINTEXT = '00000000000000000000000000000000'
+        CIPHERTEXT = '9c28524a16a1e1c1452971caa8d13476'
+
+    def test_32(self):
+        KEY = 'ffffffff800000000000000000000000'
+        PLAINTEXT = '00000000000000000000000000000000'
+        CIPHERTEXT = 'ed62e16363638360fdd6ad62112794f0'
+
+    def test_33(self):
+        KEY = 'ffffffffc00000000000000000000000'
+        PLAINTEXT = '00000000000000000000000000000000'
+        CIPHERTEXT = '5a8688f0b2a2c16224c161658ffd4044'
+
+    def test_34(self):
+        KEY = 'ffffffffe00000000000000000000000'
+        PLAINTEXT = '00000000000000000000000000000000'
+        CIPHERTEXT = '23f710842b9bb9c32f26648c786807ca'
+
+    def test_35(self):
+        KEY = 'fffffffff00000000000000000000000'
+        PLAINTEXT = '00000000000000000000000000000000'
+        CIPHERTEXT = '44a98bf11e163f632c47ec6a49683a89'
+
+    def test_36(self):
+        KEY = 'fffffffff80000000000000000000000'
+        PLAINTEXT = '00000000000000000000000000000000'
+        CIPHERTEXT = '0f18aff94274696d9b61848bd50ac5e5'
+
+    def test_37(self):
+        KEY = 'fffffffffc0000000000000000000000'
+        PLAINTEXT = '00000000000000000000000000000000'
+        CIPHERTEXT = '82408571c3e2424540207f833b6dda69'
+
+    def test_38(self):
+        KEY = 'fffffffffe0000000000000000000000'
+        PLAINTEXT = '00000000000000000000000000000000'
+        CIPHERTEXT = '303ff996947f0c7d1f43c8f3027b9b75'
+
+    def test_39(self):
+        KEY = 'ffffffffff0000000000000000000000'
+        PLAINTEXT = '00000000000000000000000000000000'
+        CIPHERTEXT = '7df4daf4ad29a3615a9b6ece5c99518a'
+
+    def test_40(self):
+        KEY = 'ffffffffff8000000000000000000000'
+        PLAINTEXT = '00000000000000000000000000000000'
+        CIPHERTEXT = 'c72954a48d0774db0b4971c526260415'
+
+    def test_41(self):
+        KEY = 'ffffffffffc000000000000000000000'
+        PLAINTEXT = '00000000000000000000000000000000'
+        CIPHERTEXT = '1df9b76112dc6531e07d2cfda04411f0'
+
+    def test_42(self):
+        KEY = 'ffffffffffe000000000000000000000'
+        PLAINTEXT = '00000000000000000000000000000000'
+        CIPHERTEXT = '8e4d8e699119e1fc87545a647fb1d34f'
+
+    def test_43(self):
+        KEY = 'fffffffffff000000000000000000000'
+        PLAINTEXT = '00000000000000000000000000000000'
+        CIPHERTEXT = 'e6c4807ae11f36f091c57d9fb68548d1'
+
+    def test_44(self):
+        KEY = 'fffffffffff800000000000000000000'
+        PLAINTEXT = '00000000000000000000000000000000'
+        CIPHERTEXT = '8ebf73aad49c82007f77a5c1ccec6ab4'
+
+    def test_45(self):
+        KEY = 'fffffffffffc00000000000000000000'
+        PLAINTEXT = '00000000000000000000000000000000'
+        CIPHERTEXT = '4fb288cc2040049001d2c7585ad123fc'
+
+    def test_46(self):
+        KEY = 'fffffffffffe00000000000000000000'
+        PLAINTEXT = '00000000000000000000000000000000'
+        CIPHERTEXT = '04497110efb9dceb13e2b13fb4465564'
+
+    def test_47(self):
+        KEY = 'ffffffffffff00000000000000000000'
+        PLAINTEXT = '00000000000000000000000000000000'
+        CIPHERTEXT = '75550e6cb5a88e49634c9ab69eda0430'
+
+    def test_48(self):
+        KEY = 'ffffffffffff80000000000000000000'
+        PLAINTEXT = '00000000000000000000000000000000'
+        CIPHERTEXT = 'b6768473ce9843ea66a81405dd50b345'
+
+    def test_49(self):
+        KEY = 'ffffffffffffc0000000000000000000'
+        PLAINTEXT = '00000000000000000000000000000000'
+        CIPHERTEXT = 'cb2f430383f9084e03a653571e065de6'
+
+    def test_50(self):
+        KEY = 'ffffffffffffe0000000000000000000'
+        PLAINTEXT = '00000000000000000000000000000000'
+        CIPHERTEXT = 'ff4e66c07bae3e79fb7d210847a3b0ba'
+
+    def test_51(self):
+        KEY = 'fffffffffffff0000000000000000000'
+        PLAINTEXT = '00000000000000000000000000000000'
+        CIPHERTEXT = '7b90785125505fad59b13c186dd66ce3'
+
+    def test_52(self):
+        KEY = 'fffffffffffff8000000000000000000'
+        PLAINTEXT = '00000000000000000000000000000000'
+        CIPHERTEXT = '8b527a6aebdaec9eaef8eda2cb7783e5'
+
+    def test_53(self):
+        KEY = 'fffffffffffffc000000000000000000'
+        PLAINTEXT = '00000000000000000000000000000000'
+        CIPHERTEXT = '43fdaf53ebbc9880c228617d6a9b548b'
+
+    def test_54(self):
+        KEY = 'fffffffffffffe000000000000000000'
+        PLAINTEXT = '00000000000000000000000000000000'
+        CIPHERTEXT = '53786104b9744b98f052c46f1c850d0b'
+
+    def test_55(self):
+        KEY = 'ffffffffffffff000000000000000000'
+        PLAINTEXT = '00000000000000000000000000000000'
+        CIPHERTEXT = 'b5ab3013dd1e61df06cbaf34ca2aee78'
+
+    def test_56(self):
+        KEY = 'ffffffffffffff800000000000000000'
+        PLAINTEXT = '00000000000000000000000000000000'
+        CIPHERTEXT = '7470469be9723030fdcc73a8cd4fbb10'
+
+    def test_57(self):
+        KEY = 'ffffffffffffffc00000000000000000'
+        PLAINTEXT = '00000000000000000000000000000000'
+        CIPHERTEXT = 'a35a63f5343ebe9ef8167bcb48ad122e'
+
+    def test_58(self):
+        KEY = 'ffffffffffffffe00000000000000000'
+        PLAINTEXT = '00000000000000000000000000000000'
+        CIPHERTEXT = 'fd8687f0757a210e9fdf181204c30863'
+
+    def test_59(self):
+        KEY = 'fffffffffffffff00000000000000000'
+        PLAINTEXT = '00000000000000000000000000000000'
+        CIPHERTEXT = '7a181e84bd5457d26a88fbae96018fb0'
+
+    def test_60(self):
+        KEY = 'fffffffffffffff80000000000000000'
+        PLAINTEXT = '00000000000000000000000000000000'
+        CIPHERTEXT = '653317b9362b6f9b9e1a580e68d494b5'
+
+    def test_61(self):
+        KEY = 'fffffffffffffffc0000000000000000'
+        PLAINTEXT = '00000000000000000000000000000000'
+        CIPHERTEXT = '995c9dc0b689f03c45867b5faa5c18d1'
+
+    def test_62(self):
+        KEY = 'fffffffffffffffe0000000000000000'
+        PLAINTEXT = '00000000000000000000000000000000'
+        CIPHERTEXT = '77a4d96d56dda398b9aabecfc75729fd'
+
+    def test_63(self):
+        KEY = 'ffffffffffffffff0000000000000000'
+        PLAINTEXT = '00000000000000000000000000000000'
+        CIPHERTEXT = '84be19e053635f09f2665e7bae85b42d'
+
+    def test_64(self):
+        KEY = 'ffffffffffffffff8000000000000000'
+        PLAINTEXT = '00000000000000000000000000000000'
+        CIPHERTEXT = '32cd652842926aea4aa6137bb2be2b5e'
+
+    def test_65(self):
+        KEY = 'ffffffffffffffffc000000000000000'
+        PLAINTEXT = '00000000000000000000000000000000'
+        CIPHERTEXT = '493d4a4f38ebb337d10aa84e9171a554'
+
+    def test_66(self):
+        KEY = 'ffffffffffffffffe000000000000000'
+        PLAINTEXT = '00000000000000000000000000000000'
+        CIPHERTEXT = 'd9bff7ff454b0ec5a4a2a69566e2cb84'
+
+    def test_67(self):
+        KEY = 'fffffffffffffffff000000000000000'
+        PLAINTEXT = '00000000000000000000000000000000'
+        CIPHERTEXT = '3535d565ace3f31eb249ba2cc6765d7a'
+
+    def test_68(self):
+        KEY = 'fffffffffffffffff800000000000000'
+        PLAINTEXT = '00000000000000000000000000000000'
+        CIPHERTEXT = 'f60e91fc3269eecf3231c6e9945697c6'
+
+    def test_69(self):
+        KEY = 'fffffffffffffffffc00000000000000'
+        PLAINTEXT = '00000000000000000000000000000000'
+        CIPHERTEXT = 'ab69cfadf51f8e604d9cc37182f6635a'
+
+    def test_70(self):
+        KEY = 'fffffffffffffffffe00000000000000'
+        PLAINTEXT = '00000000000000000000000000000000'
+        CIPHERTEXT = '7866373f24a0b6ed56e0d96fcdafb877'
+
+    def test_71(self):
+        KEY = 'ffffffffffffffffff00000000000000'
+        PLAINTEXT = '00000000000000000000000000000000'
+        CIPHERTEXT = '1ea448c2aac954f5d812e9d78494446a'
+
+    def test_72(self):
+        KEY = 'ffffffffffffffffff80000000000000'
+        PLAINTEXT = '00000000000000000000000000000000'
+        CIPHERTEXT = 'acc5599dd8ac02239a0fef4a36dd1668'
+
+    def test_73(self):
+        KEY = 'ffffffffffffffffffc0000000000000'
+        PLAINTEXT = '00000000000000000000000000000000'
+        CIPHERTEXT = 'd8764468bb103828cf7e1473ce895073'
+
+    def test_74(self):
+        KEY = 'ffffffffffffffffffe0000000000000'
+        PLAINTEXT = '00000000000000000000000000000000'
+        CIPHERTEXT = '1b0d02893683b9f180458e4aa6b73982'
+
+    def test_75(self):
+        KEY = 'fffffffffffffffffff0000000000000'
+        PLAINTEXT = '00000000000000000000000000000000'
+        CIPHERTEXT = '96d9b017d302df410a937dcdb8bb6e43'
+
+    def test_76(self):
+        KEY = 'fffffffffffffffffff8000000000000'
+        PLAINTEXT = '00000000000000000000000000000000'
+        CIPHERTEXT = 'ef1623cc44313cff440b1594a7e21cc6'
+
+    def test_77(self):
+        KEY = 'fffffffffffffffffffc000000000000'
+        PLAINTEXT = '00000000000000000000000000000000'
+        CIPHERTEXT = '284ca2fa35807b8b0ae4d19e11d7dbd7'
+
+    def test_78(self):
+        KEY = 'fffffffffffffffffffe000000000000'
+        PLAINTEXT = '00000000000000000000000000000000'
+        CIPHERTEXT = 'f2e976875755f9401d54f36e2a23a594'
+
+    def test_79(self):
+        KEY = 'ffffffffffffffffffff000000000000'
+        PLAINTEXT = '00000000000000000000000000000000'
+        CIPHERTEXT = 'ec198a18e10e532403b7e20887c8dd80'
+
+    def test_80(self):
+        KEY = 'ffffffffffffffffffff800000000000'
+        PLAINTEXT = '00000000000000000000000000000000'
+        CIPHERTEXT = '545d50ebd919e4a6949d96ad47e46a80'
+
+    def test_81(self):
+        KEY = 'ffffffffffffffffffffc00000000000'
+        PLAINTEXT = '00000000000000000000000000000000'
+        CIPHERTEXT = 'dbdfb527060e0a71009c7bb0c68f1d44'
+
+    def test_82(self):
+        KEY = 'ffffffffffffffffffffe00000000000'
+        PLAINTEXT = '00000000000000000000000000000000'
+        CIPHERTEXT = '9cfa1322ea33da2173a024f2ff0d896d'
+
+    def test_83(self):
+        KEY = 'fffffffffffffffffffff00000000000'
+        PLAINTEXT = '00000000000000000000000000000000'
+        CIPHERTEXT = '8785b1a75b0f3bd958dcd0e29318c521'
+
+    def test_84(self):
+        KEY = 'fffffffffffffffffffff80000000000'
+        PLAINTEXT = '00000000000000000000000000000000'
+        CIPHERTEXT = '38f67b9e98e4a97b6df030a9fcdd0104'
+
+    def test_85(self):
+        KEY = 'fffffffffffffffffffffc0000000000'
+        PLAINTEXT = '00000000000000000000000000000000'
+        CIPHERTEXT = '192afffb2c880e82b05926d0fc6c448b'
+
+    def test_86(self):
+        KEY = 'fffffffffffffffffffffe0000000000'
+        PLAINTEXT = '00000000000000000000000000000000'
+        CIPHERTEXT = '6a7980ce7b105cf530952d74daaf798c'
+
+    def test_87(self):
+        KEY = 'ffffffffffffffffffffff0000000000'
+        PLAINTEXT = '00000000000000000000000000000000'
+        CIPHERTEXT = 'ea3695e1351b9d6858bd958cf513ef6c'
+
+    def test_88(self):
+        KEY = 'ffffffffffffffffffffff8000000000'
+        PLAINTEXT = '00000000000000000000000000000000'
+        CIPHERTEXT = '6da0490ba0ba0343b935681d2cce5ba1'
+
+    def test_89(self):
+        KEY = 'ffffffffffffffffffffffc000000000'
+        PLAINTEXT = '00000000000000000000000000000000'
+        CIPHERTEXT = 'f0ea23af08534011c60009ab29ada2f1'
+
+    def test_90(self):
+        KEY = 'ffffffffffffffffffffffe000000000'
+        PLAINTEXT = '00000000000000000000000000000000'
+        CIPHERTEXT = 'ff13806cf19cc38721554d7c0fcdcd4b'
+
+    def test_91(self):
+        KEY = 'fffffffffffffffffffffff000000000'
+        PLAINTEXT = '00000000000000000000000000000000'
+        CIPHERTEXT = '6838af1f4f69bae9d85dd188dcdf0688'
+
+    def test_92(self):
+        KEY = 'fffffffffffffffffffffff800000000'
+        PLAINTEXT = '00000000000000000000000000000000'
+        CIPHERTEXT = '36cf44c92d550bfb1ed28ef583ddf5d7'
+
+    def test_93(self):
+        KEY = 'fffffffffffffffffffffffc00000000'
+        PLAINTEXT = '00000000000000000000000000000000'
+        CIPHERTEXT = 'd06e3195b5376f109d5c4ec6c5d62ced'
+
+    def test_94(self):
+        KEY = 'fffffffffffffffffffffffe00000000'
+        PLAINTEXT = '00000000000000000000000000000000'
+        CIPHERTEXT = 'c440de014d3d610707279b13242a5c36'
+
+    def test_95(self):
+        KEY = 'ffffffffffffffffffffffff00000000'
+        PLAINTEXT = '00000000000000000000000000000000'
+        CIPHERTEXT = 'f0c5c6ffa5e0bd3a94c88f6b6f7c16b9'
+
+    def test_96(self):
+        KEY = 'ffffffffffffffffffffffff80000000'
+        PLAINTEXT = '00000000000000000000000000000000'
+        CIPHERTEXT = '3e40c3901cd7effc22bffc35dee0b4d9'
+
+    def test_97(self):
+        KEY = 'ffffffffffffffffffffffffc0000000'
+        PLAINTEXT = '00000000000000000000000000000000'
+        CIPHERTEXT = 'b63305c72bedfab97382c406d0c49bc6'
+
+    def test_98(self):
+        KEY = 'ffffffffffffffffffffffffe0000000'
+        PLAINTEXT = '00000000000000000000000000000000'
+        CIPHERTEXT = '36bbaab22a6bd4925a99a2b408d2dbae'
+
+    def test_99(self):
+        KEY = 'fffffffffffffffffffffffff0000000'
+        PLAINTEXT = '00000000000000000000000000000000'
+        CIPHERTEXT = '307c5b8fcd0533ab98bc51e27a6ce461'
+
+    def test_100(self):
+        KEY = 'fffffffffffffffffffffffff8000000'
+        PLAINTEXT = '00000000000000000000000000000000'
+        CIPHERTEXT = '829c04ff4c07513c0b3ef05c03e337b5'
+
+    def test_101(self):
+        KEY = 'fffffffffffffffffffffffffc000000'
+        PLAINTEXT = '00000000000000000000000000000000'
+        CIPHERTEXT = 'f17af0e895dda5eb98efc68066e84c54'
+
+    def test_102(self):
+        KEY = 'fffffffffffffffffffffffffe000000'
+        PLAINTEXT = '00000000000000000000000000000000'
+        CIPHERTEXT = '277167f3812afff1ffacb4a934379fc3'
+
+    def test_103(self):
+        KEY = 'ffffffffffffffffffffffffff000000'
+        PLAINTEXT = '00000000000000000000000000000000'
+        CIPHERTEXT = '2cb1dc3a9c72972e425ae2ef3eb597cd'
+
+    def test_104(self):
+        KEY = 'ffffffffffffffffffffffffff800000'
+        PLAINTEXT = '00000000000000000000000000000000'
+        CIPHERTEXT = '36aeaa3a213e968d4b5b679d3a2c97fe'
+
+    def test_105(self):
+        KEY = 'ffffffffffffffffffffffffffc00000'
+        PLAINTEXT = '00000000000000000000000000000000'
+        CIPHERTEXT = '9241daca4fdd034a82372db50e1a0f3f'
+
+    def test_106(self):
+        KEY = 'ffffffffffffffffffffffffffe00000'
+        PLAINTEXT = '00000000000000000000000000000000'
+        CIPHERTEXT = 'c14574d9cd00cf2b5a7f77e53cd57885'
+
+    def test_107(self):
+        KEY = 'fffffffffffffffffffffffffff00000'
+        PLAINTEXT = '00000000000000000000000000000000'
+        CIPHERTEXT = '793de39236570aba83ab9b737cb521c9'
+
+    def test_108(self):
+        KEY = 'fffffffffffffffffffffffffff80000'
+        PLAINTEXT = '00000000000000000000000000000000'
+        CIPHERTEXT = '16591c0f27d60e29b85a96c33861a7ef'
+
+    def test_109(self):
+        KEY = 'fffffffffffffffffffffffffffc0000'
+        PLAINTEXT = '00000000000000000000000000000000'
+        CIPHERTEXT = '44fb5c4d4f5cb79be5c174a3b1c97348'
+
+    def test_110(self):
+        KEY = 'fffffffffffffffffffffffffffe0000'
+        PLAINTEXT = '00000000000000000000000000000000'
+        CIPHERTEXT = '674d2b61633d162be59dde04222f4740'
+
+    def test_111(self):
+        KEY = 'ffffffffffffffffffffffffffff0000'
+        PLAINTEXT = '00000000000000000000000000000000'
+        CIPHERTEXT = 'b4750ff263a65e1f9e924ccfd98f3e37'
+
+    def test_112(self):
+        KEY = 'ffffffffffffffffffffffffffff8000'
+        PLAINTEXT = '00000000000000000000000000000000'
+        CIPHERTEXT = '62d0662d6eaeddedebae7f7ea3a4f6b6'
+
+    def test_113(self):
+        KEY = 'ffffffffffffffffffffffffffffc000'
+        PLAINTEXT = '00000000000000000000000000000000'
+        CIPHERTEXT = '70c46bb30692be657f7eaa93ebad9897'
+
+    def test_114(self):
+        KEY = 'ffffffffffffffffffffffffffffe000'
+        PLAINTEXT = '00000000000000000000000000000000'
+        CIPHERTEXT = '323994cfb9da285a5d9642e1759b224a'
+
+    def test_115(self):
+        KEY = 'fffffffffffffffffffffffffffff000'
+        PLAINTEXT = '00000000000000000000000000000000'
+        CIPHERTEXT = '1dbf57877b7b17385c85d0b54851e371'
+
+    def test_116(self):
+        KEY = 'fffffffffffffffffffffffffffff800'
+        PLAINTEXT = '00000000000000000000000000000000'
+        CIPHERTEXT = 'dfa5c097cdc1532ac071d57b1d28d1bd'
+
+    def test_117(self):
+        KEY = 'fffffffffffffffffffffffffffffc00'
+        PLAINTEXT = '00000000000000000000000000000000'
+        CIPHERTEXT = '3a0c53fa37311fc10bd2a9981f513174'
+
+    def test_118(self):
+        KEY = 'fffffffffffffffffffffffffffffe00'
+        PLAINTEXT = '00000000000000000000000000000000'
+        CIPHERTEXT = 'ba4f970c0a25c41814bdae2e506be3b4'
+
+    def test_119(self):
+        KEY = 'ffffffffffffffffffffffffffffff00'
+        PLAINTEXT = '00000000000000000000000000000000'
+        CIPHERTEXT = '2dce3acb727cd13ccd76d425ea56e4f6'
+
+    def test_120(self):
+        KEY = 'ffffffffffffffffffffffffffffff80'
+        PLAINTEXT = '00000000000000000000000000000000'
+        CIPHERTEXT = '5160474d504b9b3eefb68d35f245f4b3'
+
+    def test_121(self):
+        KEY = 'ffffffffffffffffffffffffffffffc0'
+        PLAINTEXT = '00000000000000000000000000000000'
+        CIPHERTEXT = '41a8a947766635dec37553d9a6c0cbb7'
+
+    def test_122(self):
+        KEY = 'ffffffffffffffffffffffffffffffe0'
+        PLAINTEXT = '00000000000000000000000000000000'
+        CIPHERTEXT = '25d6cfe6881f2bf497dd14cd4ddf445b'
+
+    def test_123(self):
+        KEY = 'fffffffffffffffffffffffffffffff0'
+        PLAINTEXT = '00000000000000000000000000000000'
+        CIPHERTEXT = '41c78c135ed9e98c096640647265da1e'
+
+    def test_124(self):
+        KEY = 'fffffffffffffffffffffffffffffff8'
+        PLAINTEXT = '00000000000000000000000000000000'
+        CIPHERTEXT = '5a4d404d8917e353e92a21072c3b2305'
+
+    def test_125(self):
+        KEY = 'fffffffffffffffffffffffffffffffc'
+        PLAINTEXT = '00000000000000000000000000000000'
+        CIPHERTEXT = '02bc96846b3fdc71643f384cd3cc3eaf'
+
+    def test_126(self):
+        KEY = 'fffffffffffffffffffffffffffffffe'
+        PLAINTEXT = '00000000000000000000000000000000'
+        CIPHERTEXT = '9ba4a9143f4e5d4048521c4f8877d88e'
+
+    def test_127(self):
+        KEY = 'ffffffffffffffffffffffffffffffff'
+        PLAINTEXT = '00000000000000000000000000000000'
+        CIPHERTEXT = 'a1f6258c877d5fcd8964484538bfc92c'
+
+class TestECBVarKey192e(unittest.TestCase):
+    def test_0(self):
+        KEY = '800000000000000000000000000000000000000000000000'
+        PLAINTEXT = '00000000000000000000000000000000'
+        CIPHERTEXT = 'de885dc87f5a92594082d02cc1e1b42c'
+
+    def test_1(self):
+        KEY = 'c00000000000000000000000000000000000000000000000'
+        PLAINTEXT = '00000000000000000000000000000000'
+        CIPHERTEXT = '132b074e80f2a597bf5febd8ea5da55e'
+
+    def test_2(self):
+        KEY = 'e00000000000000000000000000000000000000000000000'
+        PLAINTEXT = '00000000000000000000000000000000'
+        CIPHERTEXT = '6eccedf8de592c22fb81347b79f2db1f'
+
+    def test_3(self):
+        KEY = 'f00000000000000000000000000000000000000000000000'
+        PLAINTEXT = '00000000000000000000000000000000'
+        CIPHERTEXT = '180b09f267c45145db2f826c2582d35c'
+
+    def test_4(self):
+        KEY = 'f80000000000000000000000000000000000000000000000'
+        PLAINTEXT = '00000000000000000000000000000000'
+        CIPHERTEXT = 'edd807ef7652d7eb0e13c8b5e15b3bc0'
+
+    def test_5(self):
+        KEY = 'fc0000000000000000000000000000000000000000000000'
+        PLAINTEXT = '00000000000000000000000000000000'
+        CIPHERTEXT = '9978bcf8dd8fd72241223ad24b31b8a4'
+
+    def test_6(self):
+        KEY = 'fe0000000000000000000000000000000000000000000000'
+        PLAINTEXT = '00000000000000000000000000000000'
+        CIPHERTEXT = '5310f654343e8f27e12c83a48d24ff81'
+
+    def test_7(self):
+        KEY = 'ff0000000000000000000000000000000000000000000000'
+        PLAINTEXT = '00000000000000000000000000000000'
+        CIPHERTEXT = '833f71258d53036b02952c76c744f5a1'
+
+    def test_8(self):
+        KEY = 'ff8000000000000000000000000000000000000000000000'
+        PLAINTEXT = '00000000000000000000000000000000'
+        CIPHERTEXT = 'eba83ff200cff9318a92f8691a06b09f'
+
+    def test_9(self):
+        KEY = 'ffc000000000000000000000000000000000000000000000'
+        PLAINTEXT = '00000000000000000000000000000000'
+        CIPHERTEXT = 'ff620ccbe9f3292abdf2176b09f04eba'
+
+    def test_10(self):
+        KEY = 'ffe000000000000000000000000000000000000000000000'
+        PLAINTEXT = '00000000000000000000000000000000'
+        CIPHERTEXT = '7ababc4b3f516c9aafb35f4140b548f9'
+
+    def test_11(self):
+        KEY = 'fff000000000000000000000000000000000000000000000'
+        PLAINTEXT = '00000000000000000000000000000000'
+        CIPHERTEXT = 'aa187824d9c4582b0916493ecbde8c57'
+
+    def test_12(self):
+        KEY = 'fff800000000000000000000000000000000000000000000'
+        PLAINTEXT = '00000000000000000000000000000000'
+        CIPHERTEXT = '1c0ad553177fd5ea1092c9d626a29dc4'
+
+    def test_13(self):
+        KEY = 'fffc00000000000000000000000000000000000000000000'
+        PLAINTEXT = '00000000000000000000000000000000'
+        CIPHERTEXT = 'a5dc46c37261194124ecaebd680408ec'
+
+    def test_14(self):
+        KEY = 'fffe00000000000000000000000000000000000000000000'
+        PLAINTEXT = '00000000000000000000000000000000'
+        CIPHERTEXT = 'e4f2f2ae23e9b10bacfa58601531ba54'
+
+    def test_15(self):
+        KEY = 'ffff00000000000000000000000000000000000000000000'
+        PLAINTEXT = '00000000000000000000000000000000'
+        CIPHERTEXT = 'b7d67cf1a1e91e8ff3a57a172c7bf412'
+
+    def test_16(self):
+        KEY = 'ffff80000000000000000000000000000000000000000000'
+        PLAINTEXT = '00000000000000000000000000000000'
+        CIPHERTEXT = '26706be06967884e847d137128ce47b3'
+
+    def test_17(self):
+        KEY = 'ffffc0000000000000000000000000000000000000000000'
+        PLAINTEXT = '00000000000000000000000000000000'
+        CIPHERTEXT = 'b2f8b409b0585909aad3a7b5a219072a'
+
+    def test_18(self):
+        KEY = 'ffffe0000000000000000000000000000000000000000000'
+        PLAINTEXT = '00000000000000000000000000000000'
+        CIPHERTEXT = '5e4b7bff0290c78344c54a23b722cd20'
+
+    def test_19(self):
+        KEY = 'fffff0000000000000000000000000000000000000000000'
+        PLAINTEXT = '00000000000000000000000000000000'
+        CIPHERTEXT = '07093657552d4414227ce161e9ebf7dd'
+
+    def test_20(self):
+        KEY = 'fffff8000000000000000000000000000000000000000000'
+        PLAINTEXT = '00000000000000000000000000000000'
+        CIPHERTEXT = 'e1af1e7d8bc225ed4dffb771ecbb9e67'
+
+    def test_21(self):
+        KEY = 'fffffc000000000000000000000000000000000000000000'
+        PLAINTEXT = '00000000000000000000000000000000'
+        CIPHERTEXT = 'ef6555253635d8432156cfd9c11b145a'
+
+    def test_22(self):
+        KEY = 'fffffe000000000000000000000000000000000000000000'
+        PLAINTEXT = '00000000000000000000000000000000'
+        CIPHERTEXT = 'fb4035074a5d4260c90cbd6da6c3fceb'
+
+    def test_23(self):
+        KEY = 'ffffff000000000000000000000000000000000000000000'
+        PLAINTEXT = '00000000000000000000000000000000'
+        CIPHERTEXT = '446ee416f9ad1c103eb0cc96751c88e1'
+
+    def test_24(self):
+        KEY = 'ffffff800000000000000000000000000000000000000000'
+        PLAINTEXT = '00000000000000000000000000000000'
+        CIPHERTEXT = '198ae2a4637ac0a7890a8fd1485445c9'
+
+    def test_25(self):
+        KEY = 'ffffffc00000000000000000000000000000000000000000'
+        PLAINTEXT = '00000000000000000000000000000000'
+        CIPHERTEXT = '562012ec8faded0825fb2fa70ab30cbd'
+
+    def test_26(self):
+        KEY = 'ffffffe00000000000000000000000000000000000000000'
+        PLAINTEXT = '00000000000000000000000000000000'
+        CIPHERTEXT = 'cc8a64b46b5d88bf7f247d4dbaf38f05'
+
+    def test_27(self):
+        KEY = 'fffffff00000000000000000000000000000000000000000'
+        PLAINTEXT = '00000000000000000000000000000000'
+        CIPHERTEXT = 'a168253762e2cc81b42d1e5001762699'
+
+    def test_28(self):
+        KEY = 'fffffff80000000000000000000000000000000000000000'
+        PLAINTEXT = '00000000000000000000000000000000'
+        CIPHERTEXT = '1b41f83b38ce5032c6cd7af98cf62061'
+
+    def test_29(self):
+        KEY = 'fffffffc0000000000000000000000000000000000000000'
+        PLAINTEXT = '00000000000000000000000000000000'
+        CIPHERTEXT = '61a89990cd1411750d5fb0dc988447d4'
+
+    def test_30(self):
+        KEY = 'fffffffe0000000000000000000000000000000000000000'
+        PLAINTEXT = '00000000000000000000000000000000'
+        CIPHERTEXT = 'b5accc8ed629edf8c68a539183b1ea82'
+
+    def test_31(self):
+        KEY = 'ffffffff0000000000000000000000000000000000000000'
+        PLAINTEXT = '00000000000000000000000000000000'
+        CIPHERTEXT = 'b16fa71f846b81a13f361c43a851f290'
+
+    def test_32(self):
+        KEY = 'ffffffff8000000000000000000000000000000000000000'
+        PLAINTEXT = '00000000000000000000000000000000'
+        CIPHERTEXT = '4fad6efdff5975aee7692234bcd54488'
+
+    def test_33(self):
+        KEY = 'ffffffffc000000000000000000000000000000000000000'
+        PLAINTEXT = '00000000000000000000000000000000'
+        CIPHERTEXT = 'ebfdb05a783d03082dfe5fdd80a00b17'
+
+    def test_34(self):
+        KEY = 'ffffffffe000000000000000000000000000000000000000'
+        PLAINTEXT = '00000000000000000000000000000000'
+        CIPHERTEXT = 'eb81b584766997af6ba5529d3bdd8609'
+
+    def test_35(self):
+        KEY = 'fffffffff000000000000000000000000000000000000000'
+        PLAINTEXT = '00000000000000000000000000000000'
+        CIPHERTEXT = '0cf4ff4f49c8a0ca060c443499e29313'
+
+    def test_36(self):
+        KEY = 'fffffffff800000000000000000000000000000000000000'
+        PLAINTEXT = '00000000000000000000000000000000'
+        CIPHERTEXT = 'cc4ba8a8e029f8b26d8afff9df133bb6'
+
+    def test_37(self):
+        KEY = 'fffffffffc00000000000000000000000000000000000000'
+        PLAINTEXT = '00000000000000000000000000000000'
+        CIPHERTEXT = 'fefebf64360f38e4e63558f0ffc550c3'
+
+    def test_38(self):
+        KEY = 'fffffffffe00000000000000000000000000000000000000'
+        PLAINTEXT = '00000000000000000000000000000000'
+        CIPHERTEXT = '12ad98cbf725137d6a8108c2bed99322'
+
+    def test_39(self):
+        KEY = 'ffffffffff00000000000000000000000000000000000000'
+        PLAINTEXT = '00000000000000000000000000000000'
+        CIPHERTEXT = '6afaa996226198b3e2610413ce1b3f78'
+
+    def test_40(self):
+        KEY = 'ffffffffff80000000000000000000000000000000000000'
+        PLAINTEXT = '00000000000000000000000000000000'
+        CIPHERTEXT = '2a8ce6747a7e39367828e290848502d9'
+
+    def test_41(self):
+        KEY = 'ffffffffffc0000000000000000000000000000000000000'
+        PLAINTEXT = '00000000000000000000000000000000'
+        CIPHERTEXT = '223736e8b8f89ca1e37b6deab40facf1'
+
+    def test_42(self):
+        KEY = 'ffffffffffe0000000000000000000000000000000000000'
+        PLAINTEXT = '00000000000000000000000000000000'
+        CIPHERTEXT = 'c0f797e50418b95fa6013333917a9480'
+
+    def test_43(self):
+        KEY = 'fffffffffff0000000000000000000000000000000000000'
+        PLAINTEXT = '00000000000000000000000000000000'
+        CIPHERTEXT = 'a758de37c2ece2a02c73c01fedc9a132'
+
+    def test_44(self):
+        KEY = 'fffffffffff8000000000000000000000000000000000000'
+        PLAINTEXT = '00000000000000000000000000000000'
+        CIPHERTEXT = '3a9b87ae77bae706803966c66c73adbd'
+
+    def test_45(self):
+        KEY = 'fffffffffffc000000000000000000000000000000000000'
+        PLAINTEXT = '00000000000000000000000000000000'
+        CIPHERTEXT = 'd365ab8df8ffd782e358121a4a4fc541'
+
+    def test_46(self):
+        KEY = 'fffffffffffe000000000000000000000000000000000000'
+        PLAINTEXT = '00000000000000000000000000000000'
+        CIPHERTEXT = 'c8dcd9e6f75e6c36c8daee0466f0ed74'
+
+    def test_47(self):
+        KEY = 'ffffffffffff000000000000000000000000000000000000'
+        PLAINTEXT = '00000000000000000000000000000000'
+        CIPHERTEXT = 'c79a637beb1c0304f14014c037e736dd'
+
+    def test_48(self):
+        KEY = 'ffffffffffff800000000000000000000000000000000000'
+        PLAINTEXT = '00000000000000000000000000000000'
+        CIPHERTEXT = '105f0a25e84ac930d996281a5f954dd9'
+
+    def test_49(self):
+        KEY = 'ffffffffffffc00000000000000000000000000000000000'
+        PLAINTEXT = '00000000000000000000000000000000'
+        CIPHERTEXT = '42e4074b2927973e8d17ffa92f7fe615'
+
+    def test_50(self):
+        KEY = 'ffffffffffffe00000000000000000000000000000000000'
+        PLAINTEXT = '00000000000000000000000000000000'
+        CIPHERTEXT = '4fe2a9d2c1824449c69e3e0398f12963'
+
+    def test_51(self):
+        KEY = 'fffffffffffff00000000000000000000000000000000000'
+        PLAINTEXT = '00000000000000000000000000000000'
+        CIPHERTEXT = 'b7f29c1e1f62847a15253b28a1e9d712'
+
+    def test_52(self):
+        KEY = 'fffffffffffff80000000000000000000000000000000000'
+        PLAINTEXT = '00000000000000000000000000000000'
+        CIPHERTEXT = '36ed5d29b903f31e8983ef8b0a2bf990'
+
+    def test_53(self):
+        KEY = 'fffffffffffffc0000000000000000000000000000000000'
+        PLAINTEXT = '00000000000000000000000000000000'
+        CIPHERTEXT = '27b8070270810f9d023f9dd7ff3b4aa2'
+
+    def test_54(self):
+        KEY = 'fffffffffffffe0000000000000000000000000000000000'
+        PLAINTEXT = '00000000000000000000000000000000'
+        CIPHERTEXT = '94d46e155c1228f61d1a0db4815ecc4b'
+
+    def test_55(self):
+        KEY = 'ffffffffffffff0000000000000000000000000000000000'
+        PLAINTEXT = '00000000000000000000000000000000'
+        CIPHERTEXT = 'ca6108d1d98071428eeceef1714b96dd'
+
+    def test_56(self):
+        KEY = 'ffffffffffffff8000000000000000000000000000000000'
+        PLAINTEXT = '00000000000000000000000000000000'
+        CIPHERTEXT = 'dc5b25b71b6296cf73dd2cdcac2f70b1'
+
+    def test_57(self):
+        KEY = 'ffffffffffffffc000000000000000000000000000000000'
+        PLAINTEXT = '00000000000000000000000000000000'
+        CIPHERTEXT = '44aba95e8a06a2d9d3530d2677878c80'
+
+    def test_58(self):
+        KEY = 'ffffffffffffffe000000000000000000000000000000000'
+        PLAINTEXT = '00000000000000000000000000000000'
+        CIPHERTEXT = 'a570d20e89b467e8f5176061b81dd396'
+
+    def test_59(self):
+        KEY = 'fffffffffffffff000000000000000000000000000000000'
+        PLAINTEXT = '00000000000000000000000000000000'
+        CIPHERTEXT = '758f4467a5d8f1e7307dc30b34e404f4'
+
+    def test_60(self):
+        KEY = 'fffffffffffffff800000000000000000000000000000000'
+        PLAINTEXT = '00000000000000000000000000000000'
+        CIPHERTEXT = 'bcea28e9071b5a2302970ff352451bc5'
+
+    def test_61(self):
+        KEY = 'fffffffffffffffc00000000000000000000000000000000'
+        PLAINTEXT = '00000000000000000000000000000000'
+        CIPHERTEXT = '7523c00bc177d331ad312e09c9015c1c'
+
+    def test_62(self):
+        KEY = 'fffffffffffffffe00000000000000000000000000000000'
+        PLAINTEXT = '00000000000000000000000000000000'
+        CIPHERTEXT = 'ccac61e3183747b3f5836da21a1bc4f4'
+
+    def test_63(self):
+        KEY = 'ffffffffffffffff00000000000000000000000000000000'
+        PLAINTEXT = '00000000000000000000000000000000'
+        CIPHERTEXT = '707b075791878880b44189d3522b8c30'
+
+    def test_64(self):
+        KEY = 'ffffffffffffffff80000000000000000000000000000000'
+        PLAINTEXT = '00000000000000000000000000000000'
+        CIPHERTEXT = '7132d0c0e4a07593cf12ebb12be7688c'
+
+    def test_65(self):
+        KEY = 'ffffffffffffffffc0000000000000000000000000000000'
+        PLAINTEXT = '00000000000000000000000000000000'
+        CIPHERTEXT = 'effbac1644deb0c784275fe56e19ead3'
+
+    def test_66(self):
+        KEY = 'ffffffffffffffffe0000000000000000000000000000000'
+        PLAINTEXT = '00000000000000000000000000000000'
+        CIPHERTEXT = 'a005063f30f4228b374e2459738f26bb'
+
+    def test_67(self):
+        KEY = 'fffffffffffffffff0000000000000000000000000000000'
+        PLAINTEXT = '00000000000000000000000000000000'
+        CIPHERTEXT = '29975b5f48bb68fcbbc7cea93b452ed7'
+
+    def test_68(self):
+        KEY = 'fffffffffffffffff8000000000000000000000000000000'
+        PLAINTEXT = '00000000000000000000000000000000'
+        CIPHERTEXT = 'cf3f2576e2afedc74bb1ca7eeec1c0e7'
+
+    def test_69(self):
+        KEY = 'fffffffffffffffffc000000000000000000000000000000'
+        PLAINTEXT = '00000000000000000000000000000000'
+        CIPHERTEXT = '07c403f5f966e0e3d9f296d6226dca28'
+
+    def test_70(self):
+        KEY = 'fffffffffffffffffe000000000000000000000000000000'
+        PLAINTEXT = '00000000000000000000000000000000'
+        CIPHERTEXT = 'c8c20908249ab4a34d6dd0a31327ff1a'
+
+    def test_71(self):
+        KEY = 'ffffffffffffffffff000000000000000000000000000000'
+        PLAINTEXT = '00000000000000000000000000000000'
+        CIPHERTEXT = 'c0541329ecb6159ab23b7fc5e6a21bca'
+
+    def test_72(self):
+        KEY = 'ffffffffffffffffff800000000000000000000000000000'
+        PLAINTEXT = '00000000000000000000000000000000'
+        CIPHERTEXT = '7aa1acf1a2ed9ba72bc6deb31d88b863'
+
+    def test_73(self):
+        KEY = 'ffffffffffffffffffc00000000000000000000000000000'
+        PLAINTEXT = '00000000000000000000000000000000'
+        CIPHERTEXT = '808bd8eddabb6f3bf0d5a8a27be1fe8a'
+
+    def test_74(self):
+        KEY = 'ffffffffffffffffffe00000000000000000000000000000'
+        PLAINTEXT = '00000000000000000000000000000000'
+        CIPHERTEXT = '273c7d7685e14ec66bbb96b8f05b6ddd'
+
+    def test_75(self):
+        KEY = 'fffffffffffffffffff00000000000000000000000000000'
+        PLAINTEXT = '00000000000000000000000000000000'
+        CIPHERTEXT = '32752eefc8c2a93f91b6e73eb07cca6e'
+
+    def test_76(self):
+        KEY = 'fffffffffffffffffff80000000000000000000000000000'
+        PLAINTEXT = '00000000000000000000000000000000'
+        CIPHERTEXT = 'd893e7d62f6ce502c64f75e281f9c000'
+
+    def test_77(self):
+        KEY = 'fffffffffffffffffffc0000000000000000000000000000'
+        PLAINTEXT = '00000000000000000000000000000000'
+        CIPHERTEXT = '8dfd999be5d0cfa35732c0ddc88ff5a5'
+
+    def test_78(self):
+        KEY = 'fffffffffffffffffffe0000000000000000000000000000'
+        PLAINTEXT = '00000000000000000000000000000000'
+        CIPHERTEXT = '02647c76a300c3173b841487eb2bae9f'
+
+    def test_79(self):
+        KEY = 'ffffffffffffffffffff0000000000000000000000000000'
+        PLAINTEXT = '00000000000000000000000000000000'
+        CIPHERTEXT = '172df8b02f04b53adab028b4e01acd87'
+
+    def test_80(self):
+        KEY = 'ffffffffffffffffffff8000000000000000000000000000'
+        PLAINTEXT = '00000000000000000000000000000000'
+        CIPHERTEXT = '054b3bf4998aeb05afd87ec536533a36'
+
+    def test_81(self):
+        KEY = 'ffffffffffffffffffffc000000000000000000000000000'
+        PLAINTEXT = '00000000000000000000000000000000'
+        CIPHERTEXT = '3783f7bf44c97f065258a666cae03020'
+
+    def test_82(self):
+        KEY = 'ffffffffffffffffffffe000000000000000000000000000'
+        PLAINTEXT = '00000000000000000000000000000000'
+        CIPHERTEXT = 'aad4c8a63f80954104de7b92cede1be1'
+
+    def test_83(self):
+        KEY = 'fffffffffffffffffffff000000000000000000000000000'
+        PLAINTEXT = '00000000000000000000000000000000'
+        CIPHERTEXT = 'cbfe61810fd5467ccdacb75800f3ac07'
+
+    def test_84(self):
+        KEY = 'fffffffffffffffffffff800000000000000000000000000'
+        PLAINTEXT = '00000000000000000000000000000000'
+        CIPHERTEXT = '830d8a2590f7d8e1b55a737f4af45f34'
+
+    def test_85(self):
+        KEY = 'fffffffffffffffffffffc00000000000000000000000000'
+        PLAINTEXT = '00000000000000000000000000000000'
+        CIPHERTEXT = 'fffcd4683f858058e74314671d43fa2c'
+
+    def test_86(self):
+        KEY = 'fffffffffffffffffffffe00000000000000000000000000'
+        PLAINTEXT = '00000000000000000000000000000000'
+        CIPHERTEXT = '523d0babbb82f46ebc9e70b1cd41ddd0'
+
+    def test_87(self):
+        KEY = 'ffffffffffffffffffffff00000000000000000000000000'
+        PLAINTEXT = '00000000000000000000000000000000'
+        CIPHERTEXT = '344aab37080d7486f7d542a309e53eed'
+
+    def test_88(self):
+        KEY = 'ffffffffffffffffffffff80000000000000000000000000'
+        PLAINTEXT = '00000000000000000000000000000000'
+        CIPHERTEXT = '56c5609d0906b23ab9caca816f5dbebd'
+
+    def test_89(self):
+        KEY = 'ffffffffffffffffffffffc0000000000000000000000000'
+        PLAINTEXT = '00000000000000000000000000000000'
+        CIPHERTEXT = '7026026eedd91adc6d831cdf9894bdc6'
+
+    def test_90(self):
+        KEY = 'ffffffffffffffffffffffe0000000000000000000000000'
+        PLAINTEXT = '00000000000000000000000000000000'
+        CIPHERTEXT = '88330baa4f2b618fc9d9b021bf503d5a'
+
+    def test_91(self):
+        KEY = 'fffffffffffffffffffffff0000000000000000000000000'
+        PLAINTEXT = '00000000000000000000000000000000'
+        CIPHERTEXT = 'fc9e0ea22480b0bac935c8a8ebefcdcf'
+
+    def test_92(self):
+        KEY = 'fffffffffffffffffffffff8000000000000000000000000'
+        PLAINTEXT = '00000000000000000000000000000000'
+        CIPHERTEXT = '29ca779f398fb04f867da7e8a44756cb'
+
+    def test_93(self):
+        KEY = 'fffffffffffffffffffffffc000000000000000000000000'
+        PLAINTEXT = '00000000000000000000000000000000'
+        CIPHERTEXT = '51f89c42985786bfc43c6df8ada36832'
+
+    def test_94(self):
+        KEY = 'fffffffffffffffffffffffe000000000000000000000000'
+        PLAINTEXT = '00000000000000000000000000000000'
+        CIPHERTEXT = '6ac1de5fb8f21d874e91c53b560c50e3'
+
+    def test_95(self):
+        KEY = 'ffffffffffffffffffffffff000000000000000000000000'
+        PLAINTEXT = '00000000000000000000000000000000'
+        CIPHERTEXT = '03aa9058490eda306001a8a9f48d0ca7'
+
+    def test_96(self):
+        KEY = 'ffffffffffffffffffffffff800000000000000000000000'
+        PLAINTEXT = '00000000000000000000000000000000'
+        CIPHERTEXT = 'e34ec71d6128d4871865d617c30b37e3'
+
+    def test_97(self):
+        KEY = 'ffffffffffffffffffffffffc00000000000000000000000'
+        PLAINTEXT = '00000000000000000000000000000000'
+        CIPHERTEXT = '14be1c535b17cabd0c4d93529d69bf47'
+
+    def test_98(self):
+        KEY = 'ffffffffffffffffffffffffe00000000000000000000000'
+        PLAINTEXT = '00000000000000000000000000000000'
+        CIPHERTEXT = 'c9ef67756507beec9dd3862883478044'
+
+    def test_99(self):
+        KEY = 'fffffffffffffffffffffffff00000000000000000000000'
+        PLAINTEXT = '00000000000000000000000000000000'
+        CIPHERTEXT = '40e231fa5a5948ce2134e92fc0664d4b'
+
+    def test_100(self):
+        KEY = 'fffffffffffffffffffffffff80000000000000000000000'
+        PLAINTEXT = '00000000000000000000000000000000'
+        CIPHERTEXT = '03194b8e5dda5530d0c678c0b48f5d92'
+
+    def test_101(self):
+        KEY = 'fffffffffffffffffffffffffc0000000000000000000000'
+        PLAINTEXT = '00000000000000000000000000000000'
+        CIPHERTEXT = '90bd086f237cc4fd99f4d76bde6b4826'
+
+    def test_102(self):
+        KEY = 'fffffffffffffffffffffffffe0000000000000000000000'
+        PLAINTEXT = '00000000000000000000000000000000'
+        CIPHERTEXT = '19259761ca17130d6ed86d57cd7951ee'
+
+    def test_103(self):
+        KEY = 'ffffffffffffffffffffffffff0000000000000000000000'
+        PLAINTEXT = '00000000000000000000000000000000'
+        CIPHERTEXT = 'd7cbb3f34b9b450f24b0e8518e54da6d'
+
+    def test_104(self):
+        KEY = 'ffffffffffffffffffffffffff8000000000000000000000'
+        PLAINTEXT = '00000000000000000000000000000000'
+        CIPHERTEXT = '725b9caebe9f7f417f4068d0d2ee20b3'
+
+    def test_105(self):
+        KEY = 'ffffffffffffffffffffffffffc000000000000000000000'
+        PLAINTEXT = '00000000000000000000000000000000'
+        CIPHERTEXT = '9d924b934a90ce1fd39b8a9794f82672'
+
+    def test_106(self):
+        KEY = 'ffffffffffffffffffffffffffe000000000000000000000'
+        PLAINTEXT = '00000000000000000000000000000000'
+        CIPHERTEXT = 'c50562bf094526a91c5bc63c0c224995'
+
+    def test_107(self):
+        KEY = 'fffffffffffffffffffffffffff000000000000000000000'
+        PLAINTEXT = '00000000000000000000000000000000'
+        CIPHERTEXT = 'd2f11805046743bd74f57188d9188df7'
+
+    def test_108(self):
+        KEY = 'fffffffffffffffffffffffffff800000000000000000000'
+        PLAINTEXT = '00000000000000000000000000000000'
+        CIPHERTEXT = '8dd274bd0f1b58ae345d9e7233f9b8f3'
+
+    def test_109(self):
+        KEY = 'fffffffffffffffffffffffffffc00000000000000000000'
+        PLAINTEXT = '00000000000000000000000000000000'
+        CIPHERTEXT = '9d6bdc8f4ce5feb0f3bed2e4b9a9bb0b'
+
+    def test_110(self):
+        KEY = 'fffffffffffffffffffffffffffe00000000000000000000'
+        PLAINTEXT = '00000000000000000000000000000000'
+        CIPHERTEXT = 'fd5548bcf3f42565f7efa94562528d46'
+
+    def test_111(self):
+        KEY = 'ffffffffffffffffffffffffffff00000000000000000000'
+        PLAINTEXT = '00000000000000000000000000000000'
+        CIPHERTEXT = 'd2ccaebd3a4c3e80b063748131ba4a71'
+
+    def test_112(self):
+        KEY = 'ffffffffffffffffffffffffffff80000000000000000000'
+        PLAINTEXT = '00000000000000000000000000000000'
+        CIPHERTEXT = 'e03cb23d9e11c9d93f117e9c0a91b576'
+
+    def test_113(self):
+        KEY = 'ffffffffffffffffffffffffffffc0000000000000000000'
+        PLAINTEXT = '00000000000000000000000000000000'
+        CIPHERTEXT = '78f933a2081ac1db84f69d10f4523fe0'
+
+    def test_114(self):
+        KEY = 'ffffffffffffffffffffffffffffe0000000000000000000'
+        PLAINTEXT = '00000000000000000000000000000000'
+        CIPHERTEXT = '4061f7412ed320de0edc8851c2e2436f'
+
+    def test_115(self):
+        KEY = 'fffffffffffffffffffffffffffff0000000000000000000'
+        PLAINTEXT = '00000000000000000000000000000000'
+        CIPHERTEXT = '9064ba1cd04ce6bab98474330814b4d4'
+
+    def test_116(self):
+        KEY = 'fffffffffffffffffffffffffffff8000000000000000000'
+        PLAINTEXT = '00000000000000000000000000000000'
+        CIPHERTEXT = '48391bffb9cfff80ac238c886ef0a461'
+
+    def test_117(self):
+        KEY = 'fffffffffffffffffffffffffffffc000000000000000000'
+        PLAINTEXT = '00000000000000000000000000000000'
+        CIPHERTEXT = 'b8d2a67df5a999fdbf93edd0343296c9'
+
+    def test_118(self):
+        KEY = 'fffffffffffffffffffffffffffffe000000000000000000'
+        PLAINTEXT = '00000000000000000000000000000000'
+        CIPHERTEXT = 'aaca7367396b69a221bd632bea386eec'
+
+    def test_119(self):
+        KEY = 'ffffffffffffffffffffffffffffff000000000000000000'
+        PLAINTEXT = '00000000000000000000000000000000'
+        CIPHERTEXT = 'a80fd5020dfe65f5f16293ec92c6fd89'
+
+    def test_120(self):
+        KEY = 'ffffffffffffffffffffffffffffff800000000000000000'
+        PLAINTEXT = '00000000000000000000000000000000'
+        CIPHERTEXT = '2162995b8217a67f1abc342e146406f8'
+
+    def test_121(self):
+        KEY = 'ffffffffffffffffffffffffffffffc00000000000000000'
+        PLAINTEXT = '00000000000000000000000000000000'
+        CIPHERTEXT = 'c6a6164b7a60bae4e986ffac28dfadd9'
+
+    def test_122(self):
+        KEY = 'ffffffffffffffffffffffffffffffe00000000000000000'
+        PLAINTEXT = '00000000000000000000000000000000'
+        CIPHERTEXT = '64e0d7f900e3d9c83e4b8f96717b2146'
+
+    def test_123(self):
+        KEY = 'fffffffffffffffffffffffffffffff00000000000000000'
+        PLAINTEXT = '00000000000000000000000000000000'
+        CIPHERTEXT = '1ad2561de8c1232f5d8dbab4739b6cbb'
+
+    def test_124(self):
+        KEY = 'fffffffffffffffffffffffffffffff80000000000000000'
+        PLAINTEXT = '00000000000000000000000000000000'
+        CIPHERTEXT = '279689e9a557f58b1c3bf40c97a90964'
+
+    def test_125(self):
+        KEY = 'fffffffffffffffffffffffffffffffc0000000000000000'
+        PLAINTEXT = '00000000000000000000000000000000'
+        CIPHERTEXT = 'c4637e4a5e6377f9cc5a8638045de029'
+
+    def test_126(self):
+        KEY = 'fffffffffffffffffffffffffffffffe0000000000000000'
+        PLAINTEXT = '00000000000000000000000000000000'
+        CIPHERTEXT = '492e607e5aea4688594b45f3aee3df90'
+
+    def test_127(self):
+        KEY = 'ffffffffffffffffffffffffffffffff0000000000000000'
+        PLAINTEXT = '00000000000000000000000000000000'
+        CIPHERTEXT = 'e8c4e4381feec74054954c05b777a00a'
+
+    def test_128(self):
+        KEY = 'ffffffffffffffffffffffffffffffff8000000000000000'
+        PLAINTEXT = '00000000000000000000000000000000'
+        CIPHERTEXT = '91549514605f38246c9b724ad839f01d'
+
+    def test_129(self):
+        KEY = 'ffffffffffffffffffffffffffffffffc000000000000000'
+        PLAINTEXT = '00000000000000000000000000000000'
+        CIPHERTEXT = '74b24e3b6fefe40a4f9ef7ac6e44d76a'
+
+    def test_130(self):
+        KEY = 'ffffffffffffffffffffffffffffffffe000000000000000'
+        PLAINTEXT = '00000000000000000000000000000000'
+        CIPHERTEXT = '2437a683dc5d4b52abb4a123a8df86c6'
+
+    def test_131(self):
+        KEY = 'fffffffffffffffffffffffffffffffff000000000000000'
+        PLAINTEXT = '00000000000000000000000000000000'
+        CIPHERTEXT = 'bb2852c891c5947d2ed44032c421b85f'
+
+    def test_132(self):
+        KEY = 'fffffffffffffffffffffffffffffffff800000000000000'
+        PLAINTEXT = '00000000000000000000000000000000'
+        CIPHERTEXT = '1b9f5fbd5e8a4264c0a85b80409afa5e'
+
+    def test_133(self):
+        KEY = 'fffffffffffffffffffffffffffffffffc00000000000000'
+        PLAINTEXT = '00000000000000000000000000000000'
+        CIPHERTEXT = '30dab809f85a917fe924733f424ac589'
+
+    def test_134(self):
+        KEY = 'fffffffffffffffffffffffffffffffffe00000000000000'
+        PLAINTEXT = '00000000000000000000000000000000'
+        CIPHERTEXT = 'eaef5c1f8d605192646695ceadc65f32'
+
+    def test_135(self):
+        KEY = 'ffffffffffffffffffffffffffffffffff00000000000000'
+        PLAINTEXT = '00000000000000000000000000000000'
+        CIPHERTEXT = 'b8aa90040b4c15a12316b78e0f9586fc'
+
+    def test_136(self):
+        KEY = 'ffffffffffffffffffffffffffffffffff80000000000000'
+        PLAINTEXT = '00000000000000000000000000000000'
+        CIPHERTEXT = '97fac8297ceaabc87d454350601e0673'
+
+    def test_137(self):
+        KEY = 'ffffffffffffffffffffffffffffffffffc0000000000000'
+        PLAINTEXT = '00000000000000000000000000000000'
+        CIPHERTEXT = '9b47ef567ac28dfe488492f157e2b2e0'
+
+    def test_138(self):
+        KEY = 'ffffffffffffffffffffffffffffffffffe0000000000000'
+        PLAINTEXT = '00000000000000000000000000000000'
+        CIPHERTEXT = '1b8426027ddb962b5c5ba7eb8bc9ab63'
+
+    def test_139(self):
+        KEY = 'fffffffffffffffffffffffffffffffffff0000000000000'
+        PLAINTEXT = '00000000000000000000000000000000'
+        CIPHERTEXT = 'e917fc77e71992a12dbe4c18068bec82'
+
+    def test_140(self):
+        KEY = 'fffffffffffffffffffffffffffffffffff8000000000000'
+        PLAINTEXT = '00000000000000000000000000000000'
+        CIPHERTEXT = 'dceebbc98840f8ae6daf76573b7e56f4'
+
+    def test_141(self):
+        KEY = 'fffffffffffffffffffffffffffffffffffc000000000000'
+        PLAINTEXT = '00000000000000000000000000000000'
+        CIPHERTEXT = '4e11a9f74205125b61e0aee047eca20d'
+
+    def test_142(self):
+        KEY = 'fffffffffffffffffffffffffffffffffffe000000000000'
+        PLAINTEXT = '00000000000000000000000000000000'
+        CIPHERTEXT = 'f60467f55a1f17eab88e800120cbc284'
+
+    def test_143(self):
+        KEY = 'ffffffffffffffffffffffffffffffffffff000000000000'
+        PLAINTEXT = '00000000000000000000000000000000'
+        CIPHERTEXT = 'd436649f600b449ee276530f0cd83c11'
+
+    def test_144(self):
+        KEY = 'ffffffffffffffffffffffffffffffffffff800000000000'
+        PLAINTEXT = '00000000000000000000000000000000'
+        CIPHERTEXT = '3bc0e3656a9e3ac7cd378a737f53b637'
+
+    def test_145(self):
+        KEY = 'ffffffffffffffffffffffffffffffffffffc00000000000'
+        PLAINTEXT = '00000000000000000000000000000000'
+        CIPHERTEXT = '6bacae63d33b928aa8380f8d54d88c17'
+
+    def test_146(self):
+        KEY = 'ffffffffffffffffffffffffffffffffffffe00000000000'
+        PLAINTEXT = '00000000000000000000000000000000'
+        CIPHERTEXT = '8935ffbc75ae6251bf8e859f085adcb9'
+
+    def test_147(self):
+        KEY = 'fffffffffffffffffffffffffffffffffffff00000000000'
+        PLAINTEXT = '00000000000000000000000000000000'
+        CIPHERTEXT = '93dc4970fe35f67747cb0562c06d875a'
+
+    def test_148(self):
+        KEY = 'fffffffffffffffffffffffffffffffffffff80000000000'
+        PLAINTEXT = '00000000000000000000000000000000'
+        CIPHERTEXT = '14f9df858975851797ba604fb0d16cc7'
+
+    def test_149(self):
+        KEY = 'fffffffffffffffffffffffffffffffffffffc0000000000'
+        PLAINTEXT = '00000000000000000000000000000000'
+        CIPHERTEXT = '02ea0c98dca10b38c21b3b14e8d1b71f'
+
+    def test_150(self):
+        KEY = 'fffffffffffffffffffffffffffffffffffffe0000000000'
+        PLAINTEXT = '00000000000000000000000000000000'
+        CIPHERTEXT = '8f091b1b5b0749b2adc803e63dda9b72'
+
+    def test_151(self):
+        KEY = 'ffffffffffffffffffffffffffffffffffffff0000000000'
+        PLAINTEXT = '00000000000000000000000000000000'
+        CIPHERTEXT = '05b389e3322c6da08384345a4137fd08'
+
+    def test_152(self):
+        KEY = 'ffffffffffffffffffffffffffffffffffffff8000000000'
+        PLAINTEXT = '00000000000000000000000000000000'
+        CIPHERTEXT = '381308c438f35b399f10ad71b05027d8'
+
+    def test_153(self):
+        KEY = 'ffffffffffffffffffffffffffffffffffffffc000000000'
+        PLAINTEXT = '00000000000000000000000000000000'
+        CIPHERTEXT = '68c230fcfa9279c3409fc423e2acbe04'
+
+    def test_154(self):
+        KEY = 'ffffffffffffffffffffffffffffffffffffffe000000000'
+        PLAINTEXT = '00000000000000000000000000000000'
+        CIPHERTEXT = '1c84a475acb011f3f59f4f46b76274c0'
+
+    def test_155(self):
+        KEY = 'fffffffffffffffffffffffffffffffffffffff000000000'
+        PLAINTEXT = '00000000000000000000000000000000'
+        CIPHERTEXT = '45119b68cb3f8399ee60066b5611a4d7'
+
+    def test_156(self):
+        KEY = 'fffffffffffffffffffffffffffffffffffffff800000000'
+        PLAINTEXT = '00000000000000000000000000000000'
+        CIPHERTEXT = '9423762f527a4060ffca312dcca22a16'
+
+    def test_157(self):
+        KEY = 'fffffffffffffffffffffffffffffffffffffffc00000000'
+        PLAINTEXT = '00000000000000000000000000000000'
+        CIPHERTEXT = 'f361a2745a33f056a5ac6ace2f08e344'
+
+    def test_158(self):
+        KEY = 'fffffffffffffffffffffffffffffffffffffffe00000000'
+        PLAINTEXT = '00000000000000000000000000000000'
+        CIPHERTEXT = '5ef145766eca849f5d011536a6557fdb'
+
+    def test_159(self):
+        KEY = 'ffffffffffffffffffffffffffffffffffffffff00000000'
+        PLAINTEXT = '00000000000000000000000000000000'
+        CIPHERTEXT = 'c9af27b2c89c9b4cf4a0c4106ac80318'
+
+    def test_160(self):
+        KEY = 'ffffffffffffffffffffffffffffffffffffffff80000000'
+        PLAINTEXT = '00000000000000000000000000000000'
+        CIPHERTEXT = 'fb9c4f16c621f4eab7e9ac1d7551dd57'
+
+    def test_161(self):
+        KEY = 'ffffffffffffffffffffffffffffffffffffffffc0000000'
+        PLAINTEXT = '00000000000000000000000000000000'
+        CIPHERTEXT = '138e06fba466fa70854d8c2e524cffb2'
+
+    def test_162(self):
+        KEY = 'ffffffffffffffffffffffffffffffffffffffffe0000000'
+        PLAINTEXT = '00000000000000000000000000000000'
+        CIPHERTEXT = 'fb4bc78b225070773f04c40466d4e90c'
+
+    def test_163(self):
+        KEY = 'fffffffffffffffffffffffffffffffffffffffff0000000'
+        PLAINTEXT = '00000000000000000000000000000000'
+        CIPHERTEXT = '8b2cbff1ed0150feda8a4799be94551f'
+
+    def test_164(self):
+        KEY = 'fffffffffffffffffffffffffffffffffffffffff8000000'
+        PLAINTEXT = '00000000000000000000000000000000'
+        CIPHERTEXT = '08b30d7b3f27962709a36bcadfb974bd'
+
+    def test_165(self):
+        KEY = 'fffffffffffffffffffffffffffffffffffffffffc000000'
+        PLAINTEXT = '00000000000000000000000000000000'
+        CIPHERTEXT = 'fdf6d32e044d77adcf37fb97ac213326'
+
+    def test_166(self):
+        KEY = 'fffffffffffffffffffffffffffffffffffffffffe000000'
+        PLAINTEXT = '00000000000000000000000000000000'
+        CIPHERTEXT = '93cb284ecdcfd781a8afe32077949e88'
+
+    def test_167(self):
+        KEY = 'ffffffffffffffffffffffffffffffffffffffffff000000'
+        PLAINTEXT = '00000000000000000000000000000000'
+        CIPHERTEXT = '7b017bb02ec87b2b94c96e40a26fc71a'
+
+    def test_168(self):
+        KEY = 'ffffffffffffffffffffffffffffffffffffffffff800000'
+        PLAINTEXT = '00000000000000000000000000000000'
+        CIPHERTEXT = 'c5c038b6990664ab08a3aaa5df9f3266'
+
+    def test_169(self):
+        KEY = 'ffffffffffffffffffffffffffffffffffffffffffc00000'
+        PLAINTEXT = '00000000000000000000000000000000'
+        CIPHERTEXT = '4b7020be37fab6259b2a27f4ec551576'
+
+    def test_170(self):
+        KEY = 'ffffffffffffffffffffffffffffffffffffffffffe00000'
+        PLAINTEXT = '00000000000000000000000000000000'
+        CIPHERTEXT = '60136703374f64e860b48ce31f930716'
+
+    def test_171(self):
+        KEY = 'fffffffffffffffffffffffffffffffffffffffffff00000'
+        PLAINTEXT = '00000000000000000000000000000000'
+        CIPHERTEXT = '8d63a269b14d506ccc401ab8a9f1b591'
+
+    def test_172(self):
+        KEY = 'fffffffffffffffffffffffffffffffffffffffffff80000'
+        PLAINTEXT = '00000000000000000000000000000000'
+        CIPHERTEXT = 'd317f81dc6aa454aee4bd4a5a5cff4bd'
+
+    def test_173(self):
+        KEY = 'fffffffffffffffffffffffffffffffffffffffffffc0000'
+        PLAINTEXT = '00000000000000000000000000000000'
+        CIPHERTEXT = 'dddececd5354f04d530d76ed884246eb'
+
+    def test_174(self):
+        KEY = 'fffffffffffffffffffffffffffffffffffffffffffe0000'
+        PLAINTEXT = '00000000000000000000000000000000'
+        CIPHERTEXT = '41c5205cc8fd8eda9a3cffd2518f365a'
+
+    def test_175(self):
+        KEY = 'ffffffffffffffffffffffffffffffffffffffffffff0000'
+        PLAINTEXT = '00000000000000000000000000000000'
+        CIPHERTEXT = 'cf42fb474293d96eca9db1b37b1ba676'
+
+    def test_176(self):
+        KEY = 'ffffffffffffffffffffffffffffffffffffffffffff8000'
+        PLAINTEXT = '00000000000000000000000000000000'
+        CIPHERTEXT = 'a231692607169b4ecdead5cd3b10db3e'
+
+    def test_177(self):
+        KEY = 'ffffffffffffffffffffffffffffffffffffffffffffc000'
+        PLAINTEXT = '00000000000000000000000000000000'
+        CIPHERTEXT = 'ace4b91c9c669e77e7acacd19859ed49'
+
+    def test_178(self):
+        KEY = 'ffffffffffffffffffffffffffffffffffffffffffffe000'
+        PLAINTEXT = '00000000000000000000000000000000'
+        CIPHERTEXT = '75db7cfd4a7b2b62ab78a48f3ddaf4af'
+
+    def test_179(self):
+        KEY = 'fffffffffffffffffffffffffffffffffffffffffffff000'
+        PLAINTEXT = '00000000000000000000000000000000'
+        CIPHERTEXT = 'c1faba2d46e259cf480d7c38e4572a58'
+
+    def test_180(self):
+        KEY = 'fffffffffffffffffffffffffffffffffffffffffffff800'
+        PLAINTEXT = '00000000000000000000000000000000'
+        CIPHERTEXT = '241c45bc6ae16dee6eb7bea128701582'
+
+    def test_181(self):
+        KEY = 'fffffffffffffffffffffffffffffffffffffffffffffc00'
+        PLAINTEXT = '00000000000000000000000000000000'
+        CIPHERTEXT = '8fd03057cf1364420c2b78069a3e2502'
+
+    def test_182(self):
+        KEY = 'fffffffffffffffffffffffffffffffffffffffffffffe00'
+        PLAINTEXT = '00000000000000000000000000000000'
+        CIPHERTEXT = 'ddb505e6cc1384cbaec1df90b80beb20'
+
+    def test_183(self):
+        KEY = 'ffffffffffffffffffffffffffffffffffffffffffffff00'
+        PLAINTEXT = '00000000000000000000000000000000'
+        CIPHERTEXT = '5674a3bed27bf4bd3622f9f5fe208306'
+
+    def test_184(self):
+        KEY = 'ffffffffffffffffffffffffffffffffffffffffffffff80'
+        PLAINTEXT = '00000000000000000000000000000000'
+        CIPHERTEXT = 'b687f26a89cfbfbb8e5eeac54055315e'
+
+    def test_185(self):
+        KEY = 'ffffffffffffffffffffffffffffffffffffffffffffffc0'
+        PLAINTEXT = '00000000000000000000000000000000'
+        CIPHERTEXT = '0547dd32d3b29ab6a4caeb606c5b6f78'
+
+    def test_186(self):
+        KEY = 'ffffffffffffffffffffffffffffffffffffffffffffffe0'
+        PLAINTEXT = '00000000000000000000000000000000'
+        CIPHERTEXT = '186861f8bc5386d31fb77f720c3226e6'
+
+    def test_187(self):
+        KEY = 'fffffffffffffffffffffffffffffffffffffffffffffff0'
+        PLAINTEXT = '00000000000000000000000000000000'
+        CIPHERTEXT = 'eacf1e6c4224efb38900b185ab1dfd42'
+
+    def test_188(self):
+        KEY = 'fffffffffffffffffffffffffffffffffffffffffffffff8'
+        PLAINTEXT = '00000000000000000000000000000000'
+        CIPHERTEXT = 'd241aab05a42d319de81d874f5c7b90d'
+
+    def test_189(self):
+        KEY = 'fffffffffffffffffffffffffffffffffffffffffffffffc'
+        PLAINTEXT = '00000000000000000000000000000000'
+        CIPHERTEXT = '5eb9bc759e2ad8d2140a6c762ae9e1ab'
+
+    def test_190(self):
+        KEY = 'fffffffffffffffffffffffffffffffffffffffffffffffe'
+        PLAINTEXT = '00000000000000000000000000000000'
+        CIPHERTEXT = '018596e15e78e2c064159defce5f3085'
+
+    def test_191(self):
+        KEY = 'ffffffffffffffffffffffffffffffffffffffffffffffff'
+        PLAINTEXT = '00000000000000000000000000000000'
+        CIPHERTEXT = 'dd8a493514231cbf56eccee4c40889fb'
+
+class TestECBVarKey256e(unittest.TestCase):
+    def test_0(self):
+        KEY = '8000000000000000000000000000000000000000000000000000000000000000'
+        PLAINTEXT = '00000000000000000000000000000000'
+        CIPHERTEXT = 'e35a6dcb19b201a01ebcfa8aa22b5759'
+
+    def test_1(self):
+        KEY = 'c000000000000000000000000000000000000000000000000000000000000000'
+        PLAINTEXT = '00000000000000000000000000000000'
+        CIPHERTEXT = 'b29169cdcf2d83e838125a12ee6aa400'
+
+    def test_2(self):
+        KEY = 'e000000000000000000000000000000000000000000000000000000000000000'
+        PLAINTEXT = '00000000000000000000000000000000'
+        CIPHERTEXT = 'd8f3a72fc3cdf74dfaf6c3e6b97b2fa6'
+
+    def test_3(self):
+        KEY = 'f000000000000000000000000000000000000000000000000000000000000000'
+        PLAINTEXT = '00000000000000000000000000000000'
+        CIPHERTEXT = '1c777679d50037c79491a94da76a9a35'
+
+    def test_4(self):
+        KEY = 'f800000000000000000000000000000000000000000000000000000000000000'
+        PLAINTEXT = '00000000000000000000000000000000'
+        CIPHERTEXT = '9cf4893ecafa0a0247a898e040691559'
+
+    def test_5(self):
+        KEY = 'fc00000000000000000000000000000000000000000000000000000000000000'
+        PLAINTEXT = '00000000000000000000000000000000'
+        CIPHERTEXT = '8fbb413703735326310a269bd3aa94b2'
+
+    def test_6(self):
+        KEY = 'fe00000000000000000000000000000000000000000000000000000000000000'
+        PLAINTEXT = '00000000000000000000000000000000'
+        CIPHERTEXT = '60e32246bed2b0e859e55c1cc6b26502'
+
+    def test_7(self):
+        KEY = 'ff00000000000000000000000000000000000000000000000000000000000000'
+        PLAINTEXT = '00000000000000000000000000000000'
+        CIPHERTEXT = 'ec52a212f80a09df6317021bc2a9819e'
+
+    def test_8(self):
+        KEY = 'ff80000000000000000000000000000000000000000000000000000000000000'
+        PLAINTEXT = '00000000000000000000000000000000'
+        CIPHERTEXT = 'f23e5b600eb70dbccf6c0b1d9a68182c'
+
+    def test_9(self):
+        KEY = 'ffc0000000000000000000000000000000000000000000000000000000000000'
+        PLAINTEXT = '00000000000000000000000000000000'
+        CIPHERTEXT = 'a3f599d63a82a968c33fe26590745970'
+
+    def test_10(self):
+        KEY = 'ffe0000000000000000000000000000000000000000000000000000000000000'
+        PLAINTEXT = '00000000000000000000000000000000'
+        CIPHERTEXT = 'd1ccb9b1337002cbac42c520b5d67722'
+
+    def test_11(self):
+        KEY = 'fff0000000000000000000000000000000000000000000000000000000000000'
+        PLAINTEXT = '00000000000000000000000000000000'
+        CIPHERTEXT = 'cc111f6c37cf40a1159d00fb59fb0488'
+
+    def test_12(self):
+        KEY = 'fff8000000000000000000000000000000000000000000000000000000000000'
+        PLAINTEXT = '00000000000000000000000000000000'
+        CIPHERTEXT = 'dc43b51ab609052372989a26e9cdd714'
+
+    def test_13(self):
+        KEY = 'fffc000000000000000000000000000000000000000000000000000000000000'
+        PLAINTEXT = '00000000000000000000000000000000'
+        CIPHERTEXT = '4dcede8da9e2578f39703d4433dc6459'
+
+    def test_14(self):
+        KEY = 'fffe000000000000000000000000000000000000000000000000000000000000'
+        PLAINTEXT = '00000000000000000000000000000000'
+        CIPHERTEXT = '1a4c1c263bbccfafc11782894685e3a8'
+
+    def test_15(self):
+        KEY = 'ffff000000000000000000000000000000000000000000000000000000000000'
+        PLAINTEXT = '00000000000000000000000000000000'
+        CIPHERTEXT = '937ad84880db50613423d6d527a2823d'
+
+    def test_16(self):
+        KEY = 'ffff800000000000000000000000000000000000000000000000000000000000'
+        PLAINTEXT = '00000000000000000000000000000000'
+        CIPHERTEXT = '610b71dfc688e150d8152c5b35ebc14d'
+
+    def test_17(self):
+        KEY = 'ffffc00000000000000000000000000000000000000000000000000000000000'
+        PLAINTEXT = '00000000000000000000000000000000'
+        CIPHERTEXT = '27ef2495dabf323885aab39c80f18d8b'
+
+    def test_18(self):
+        KEY = 'ffffe00000000000000000000000000000000000000000000000000000000000'
+        PLAINTEXT = '00000000000000000000000000000000'
+        CIPHERTEXT = '633cafea395bc03adae3a1e2068e4b4e'
+
+    def test_19(self):
+        KEY = 'fffff00000000000000000000000000000000000000000000000000000000000'
+        PLAINTEXT = '00000000000000000000000000000000'
+        CIPHERTEXT = '6e1b482b53761cf631819b749a6f3724'
+
+    def test_20(self):
+        KEY = 'fffff80000000000000000000000000000000000000000000000000000000000'
+        PLAINTEXT = '00000000000000000000000000000000'
+        CIPHERTEXT = '976e6f851ab52c771998dbb2d71c75a9'
+
+    def test_21(self):
+        KEY = 'fffffc0000000000000000000000000000000000000000000000000000000000'
+        PLAINTEXT = '00000000000000000000000000000000'
+        CIPHERTEXT = '85f2ba84f8c307cf525e124c3e22e6cc'
+
+    def test_22(self):
+        KEY = 'fffffe0000000000000000000000000000000000000000000000000000000000'
+        PLAINTEXT = '00000000000000000000000000000000'
+        CIPHERTEXT = '6bcca98bf6a835fa64955f72de4115fe'
+
+    def test_23(self):
+        KEY = 'ffffff0000000000000000000000000000000000000000000000000000000000'
+        PLAINTEXT = '00000000000000000000000000000000'
+        CIPHERTEXT = '2c75e2d36eebd65411f14fd0eb1d2a06'
+
+    def test_24(self):
+        KEY = 'ffffff8000000000000000000000000000000000000000000000000000000000'
+        PLAINTEXT = '00000000000000000000000000000000'
+        CIPHERTEXT = 'bd49295006250ffca5100b6007a0eade'
+
+    def test_25(self):
+        KEY = 'ffffffc000000000000000000000000000000000000000000000000000000000'
+        PLAINTEXT = '00000000000000000000000000000000'
+        CIPHERTEXT = 'a190527d0ef7c70f459cd3940df316ec'
+
+    def test_26(self):
+        KEY = 'ffffffe000000000000000000000000000000000000000000000000000000000'
+        PLAINTEXT = '00000000000000000000000000000000'
+        CIPHERTEXT = 'bbd1097a62433f79449fa97d4ee80dbf'
+
+    def test_27(self):
+        KEY = 'fffffff000000000000000000000000000000000000000000000000000000000'
+        PLAINTEXT = '00000000000000000000000000000000'
+        CIPHERTEXT = '07058e408f5b99b0e0f061a1761b5b3b'
+
+    def test_28(self):
+        KEY = 'fffffff800000000000000000000000000000000000000000000000000000000'
+        PLAINTEXT = '00000000000000000000000000000000'
+        CIPHERTEXT = '5fd1f13fa0f31e37fabde328f894eac2'
+
+    def test_29(self):
+        KEY = 'fffffffc00000000000000000000000000000000000000000000000000000000'
+        PLAINTEXT = '00000000000000000000000000000000'
+        CIPHERTEXT = 'fc4af7c948df26e2ef3e01c1ee5b8f6f'
+
+    def test_30(self):
+        KEY = 'fffffffe00000000000000000000000000000000000000000000000000000000'
+        PLAINTEXT = '00000000000000000000000000000000'
+        CIPHERTEXT = '829fd7208fb92d44a074a677ee9861ac'
+
+    def test_31(self):
+        KEY = 'ffffffff00000000000000000000000000000000000000000000000000000000'
+        PLAINTEXT = '00000000000000000000000000000000'
+        CIPHERTEXT = 'ad9fc613a703251b54c64a0e76431711'
+
+    def test_32(self):
+        KEY = 'ffffffff80000000000000000000000000000000000000000000000000000000'
+        PLAINTEXT = '00000000000000000000000000000000'
+        CIPHERTEXT = '33ac9eccc4cc75e2711618f80b1548e8'
+
+    def test_33(self):
+        KEY = 'ffffffffc0000000000000000000000000000000000000000000000000000000'
+        PLAINTEXT = '00000000000000000000000000000000'
+        CIPHERTEXT = '2025c74b8ad8f4cda17ee2049c4c902d'
+
+    def test_34(self):
+        KEY = 'ffffffffe0000000000000000000000000000000000000000000000000000000'
+        PLAINTEXT = '00000000000000000000000000000000'
+        CIPHERTEXT = 'f85ca05fe528f1ce9b790166e8d551e7'
+
+    def test_35(self):
+        KEY = 'fffffffff0000000000000000000000000000000000000000000000000000000'
+        PLAINTEXT = '00000000000000000000000000000000'
+        CIPHERTEXT = '6f6238d8966048d4967154e0dad5a6c9'
+
+    def test_36(self):
+        KEY = 'fffffffff8000000000000000000000000000000000000000000000000000000'
+        PLAINTEXT = '00000000000000000000000000000000'
+        CIPHERTEXT = 'f2b21b4e7640a9b3346de8b82fb41e49'
+
+    def test_37(self):
+        KEY = 'fffffffffc000000000000000000000000000000000000000000000000000000'
+        PLAINTEXT = '00000000000000000000000000000000'
+        CIPHERTEXT = 'f836f251ad1d11d49dc344628b1884e1'
+
+    def test_38(self):
+        KEY = 'fffffffffe000000000000000000000000000000000000000000000000000000'
+        PLAINTEXT = '00000000000000000000000000000000'
+        CIPHERTEXT = '077e9470ae7abea5a9769d49182628c3'
+
+    def test_39(self):
+        KEY = 'ffffffffff000000000000000000000000000000000000000000000000000000'
+        PLAINTEXT = '00000000000000000000000000000000'
+        CIPHERTEXT = 'e0dcc2d27fc9865633f85223cf0d611f'
+
+    def test_40(self):
+        KEY = 'ffffffffff800000000000000000000000000000000000000000000000000000'
+        PLAINTEXT = '00000000000000000000000000000000'
+        CIPHERTEXT = 'be66cfea2fecd6bf0ec7b4352c99bcaa'
+
+    def test_41(self):
+        KEY = 'ffffffffffc00000000000000000000000000000000000000000000000000000'
+        PLAINTEXT = '00000000000000000000000000000000'
+        CIPHERTEXT = 'df31144f87a2ef523facdcf21a427804'
+
+    def test_42(self):
+        KEY = 'ffffffffffe00000000000000000000000000000000000000000000000000000'
+        PLAINTEXT = '00000000000000000000000000000000'
+        CIPHERTEXT = 'b5bb0f5629fb6aae5e1839a3c3625d63'
+
+    def test_43(self):
+        KEY = 'fffffffffff00000000000000000000000000000000000000000000000000000'
+        PLAINTEXT = '00000000000000000000000000000000'
+        CIPHERTEXT = '3c9db3335306fe1ec612bdbfae6b6028'
+
+    def test_44(self):
+        KEY = 'fffffffffff80000000000000000000000000000000000000000000000000000'
+        PLAINTEXT = '00000000000000000000000000000000'
+        CIPHERTEXT = '3dd5c34634a79d3cfcc8339760e6f5f4'
+
+    def test_45(self):
+        KEY = 'fffffffffffc0000000000000000000000000000000000000000000000000000'
+        PLAINTEXT = '00000000000000000000000000000000'
+        CIPHERTEXT = '82bda118a3ed7af314fa2ccc5c07b761'
+
+    def test_46(self):
+        KEY = 'fffffffffffe0000000000000000000000000000000000000000000000000000'
+        PLAINTEXT = '00000000000000000000000000000000'
+        CIPHERTEXT = '2937a64f7d4f46fe6fea3b349ec78e38'
+
+    def test_47(self):
+        KEY = 'ffffffffffff0000000000000000000000000000000000000000000000000000'
+        PLAINTEXT = '00000000000000000000000000000000'
+        CIPHERTEXT = '225f068c28476605735ad671bb8f39f3'
+
+    def test_48(self):
+        KEY = 'ffffffffffff8000000000000000000000000000000000000000000000000000'
+        PLAINTEXT = '00000000000000000000000000000000'
+        CIPHERTEXT = 'ae682c5ecd71898e08942ac9aa89875c'
+
+    def test_49(self):
+        KEY = 'ffffffffffffc000000000000000000000000000000000000000000000000000'
+        PLAINTEXT = '00000000000000000000000000000000'
+        CIPHERTEXT = '5e031cb9d676c3022d7f26227e85c38f'
+
+    def test_50(self):
+        KEY = 'ffffffffffffe000000000000000000000000000000000000000000000000000'
+        PLAINTEXT = '00000000000000000000000000000000'
+        CIPHERTEXT = 'a78463fb064db5d52bb64bfef64f2dda'
+
+    def test_51(self):
+        KEY = 'fffffffffffff000000000000000000000000000000000000000000000000000'
+        PLAINTEXT = '00000000000000000000000000000000'
+        CIPHERTEXT = '8aa9b75e784593876c53a00eae5af52b'
+
+    def test_52(self):
+        KEY = 'fffffffffffff800000000000000000000000000000000000000000000000000'
+        PLAINTEXT = '00000000000000000000000000000000'
+        CIPHERTEXT = '3f84566df23da48af692722fe980573a'
+
+    def test_53(self):
+        KEY = 'fffffffffffffc00000000000000000000000000000000000000000000000000'
+        PLAINTEXT = '00000000000000000000000000000000'
+        CIPHERTEXT = '31690b5ed41c7eb42a1e83270a7ff0e6'
+
+    def test_54(self):
+        KEY = 'fffffffffffffe00000000000000000000000000000000000000000000000000'
+        PLAINTEXT = '00000000000000000000000000000000'
+        CIPHERTEXT = '77dd7702646d55f08365e477d3590eda'
+
+    def test_55(self):
+        KEY = 'ffffffffffffff00000000000000000000000000000000000000000000000000'
+        PLAINTEXT = '00000000000000000000000000000000'
+        CIPHERTEXT = '4c022ac62b3cb78d739cc67b3e20bb7e'
+
+    def test_56(self):
+        KEY = 'ffffffffffffff80000000000000000000000000000000000000000000000000'
+        PLAINTEXT = '00000000000000000000000000000000'
+        CIPHERTEXT = '092fa137ce18b5dfe7906f550bb13370'
+
+    def test_57(self):
+        KEY = 'ffffffffffffffc0000000000000000000000000000000000000000000000000'
+        PLAINTEXT = '00000000000000000000000000000000'
+        CIPHERTEXT = '3e0cdadf2e68353c0027672c97144dd3'
+
+    def test_58(self):
+        KEY = 'ffffffffffffffe0000000000000000000000000000000000000000000000000'
+        PLAINTEXT = '00000000000000000000000000000000'
+        CIPHERTEXT = 'd8c4b200b383fc1f2b2ea677618a1d27'
+
+    def test_59(self):
+        KEY = 'fffffffffffffff0000000000000000000000000000000000000000000000000'
+        PLAINTEXT = '00000000000000000000000000000000'
+        CIPHERTEXT = '11825f99b0e9bb3477c1c0713b015aac'
+
+    def test_60(self):
+        KEY = 'fffffffffffffff8000000000000000000000000000000000000000000000000'
+        PLAINTEXT = '00000000000000000000000000000000'
+        CIPHERTEXT = 'f8b9fffb5c187f7ddc7ab10f4fb77576'
+
+    def test_61(self):
+        KEY = 'fffffffffffffffc000000000000000000000000000000000000000000000000'
+        PLAINTEXT = '00000000000000000000000000000000'
+        CIPHERTEXT = 'ffb4e87a32b37d6f2c8328d3b5377802'
+
+    def test_62(self):
+        KEY = 'fffffffffffffffe000000000000000000000000000000000000000000000000'
+        PLAINTEXT = '00000000000000000000000000000000'
+        CIPHERTEXT = 'd276c13a5d220f4da9224e74896391ce'
+
+    def test_63(self):
+        KEY = 'ffffffffffffffff000000000000000000000000000000000000000000000000'
+        PLAINTEXT = '00000000000000000000000000000000'
+        CIPHERTEXT = '94efe7a0e2e031e2536da01df799c927'
+
+    def test_64(self):
+        KEY = 'ffffffffffffffff800000000000000000000000000000000000000000000000'
+        PLAINTEXT = '00000000000000000000000000000000'
+        CIPHERTEXT = '8f8fd822680a85974e53a5a8eb9d38de'
+
+    def test_65(self):
+        KEY = 'ffffffffffffffffc00000000000000000000000000000000000000000000000'
+        PLAINTEXT = '00000000000000000000000000000000'
+        CIPHERTEXT = 'e0f0a91b2e45f8cc37b7805a3042588d'
+
+    def test_66(self):
+        KEY = 'ffffffffffffffffe00000000000000000000000000000000000000000000000'
+        PLAINTEXT = '00000000000000000000000000000000'
+        CIPHERTEXT = '597a6252255e46d6364dbeeda31e279c'
+
+    def test_67(self):
+        KEY = 'fffffffffffffffff00000000000000000000000000000000000000000000000'
+        PLAINTEXT = '00000000000000000000000000000000'
+        CIPHERTEXT = 'f51a0f694442b8f05571797fec7ee8bf'
+
+    def test_68(self):
+        KEY = 'fffffffffffffffff80000000000000000000000000000000000000000000000'
+        PLAINTEXT = '00000000000000000000000000000000'
+        CIPHERTEXT = '9ff071b165b5198a93dddeebc54d09b5'
+
+    def test_69(self):
+        KEY = 'fffffffffffffffffc0000000000000000000000000000000000000000000000'
+        PLAINTEXT = '00000000000000000000000000000000'
+        CIPHERTEXT = 'c20a19fd5758b0c4bc1a5df89cf73877'
+
+    def test_70(self):
+        KEY = 'fffffffffffffffffe0000000000000000000000000000000000000000000000'
+        PLAINTEXT = '00000000000000000000000000000000'
+        CIPHERTEXT = '97120166307119ca2280e9315668e96f'
+
+    def test_71(self):
+        KEY = 'ffffffffffffffffff0000000000000000000000000000000000000000000000'
+        PLAINTEXT = '00000000000000000000000000000000'
+        CIPHERTEXT = '4b3b9f1e099c2a09dc091e90e4f18f0a'
+
+    def test_72(self):
+        KEY = 'ffffffffffffffffff8000000000000000000000000000000000000000000000'
+        PLAINTEXT = '00000000000000000000000000000000'
+        CIPHERTEXT = 'eb040b891d4b37f6851f7ec219cd3f6d'
+
+    def test_73(self):
+        KEY = 'ffffffffffffffffffc000000000000000000000000000000000000000000000'
+        PLAINTEXT = '00000000000000000000000000000000'
+        CIPHERTEXT = '9f0fdec08b7fd79aa39535bea42db92a'
+
+    def test_74(self):
+        KEY = 'ffffffffffffffffffe000000000000000000000000000000000000000000000'
+        PLAINTEXT = '00000000000000000000000000000000'
+        CIPHERTEXT = '2e70f168fc74bf911df240bcd2cef236'
+
+    def test_75(self):
+        KEY = 'fffffffffffffffffff000000000000000000000000000000000000000000000'
+        PLAINTEXT = '00000000000000000000000000000000'
+        CIPHERTEXT = '462ccd7f5fd1108dbc152f3cacad328b'
+
+    def test_76(self):
+        KEY = 'fffffffffffffffffff800000000000000000000000000000000000000000000'
+        PLAINTEXT = '00000000000000000000000000000000'
+        CIPHERTEXT = 'a4af534a7d0b643a01868785d86dfb95'
+
+    def test_77(self):
+        KEY = 'fffffffffffffffffffc00000000000000000000000000000000000000000000'
+        PLAINTEXT = '00000000000000000000000000000000'
+        CIPHERTEXT = 'ab980296197e1a5022326c31da4bf6f3'
+
+    def test_78(self):
+        KEY = 'fffffffffffffffffffe00000000000000000000000000000000000000000000'
+        PLAINTEXT = '00000000000000000000000000000000'
+        CIPHERTEXT = 'f97d57b3333b6281b07d486db2d4e20c'
+
+    def test_79(self):
+        KEY = 'ffffffffffffffffffff00000000000000000000000000000000000000000000'
+        PLAINTEXT = '00000000000000000000000000000000'
+        CIPHERTEXT = 'f33fa36720231afe4c759ade6bd62eb6'
+
+    def test_80(self):
+        KEY = 'ffffffffffffffffffff80000000000000000000000000000000000000000000'
+        PLAINTEXT = '00000000000000000000000000000000'
+        CIPHERTEXT = 'fdcfac0c02ca538343c68117e0a15938'
+
+    def test_81(self):
+        KEY = 'ffffffffffffffffffffc0000000000000000000000000000000000000000000'
+        PLAINTEXT = '00000000000000000000000000000000'
+        CIPHERTEXT = 'ad4916f5ee5772be764fc027b8a6e539'
+
+    def test_82(self):
+        KEY = 'ffffffffffffffffffffe0000000000000000000000000000000000000000000'
+        PLAINTEXT = '00000000000000000000000000000000'
+        CIPHERTEXT = '2e16873e1678610d7e14c02d002ea845'
+
+    def test_83(self):
+        KEY = 'fffffffffffffffffffff0000000000000000000000000000000000000000000'
+        PLAINTEXT = '00000000000000000000000000000000'
+        CIPHERTEXT = '4e6e627c1acc51340053a8236d579576'
+
+    def test_84(self):
+        KEY = 'fffffffffffffffffffff8000000000000000000000000000000000000000000'
+        PLAINTEXT = '00000000000000000000000000000000'
+        CIPHERTEXT = 'ab0c8410aeeead92feec1eb430d652cb'
+
+    def test_85(self):
+        KEY = 'fffffffffffffffffffffc000000000000000000000000000000000000000000'
+        PLAINTEXT = '00000000000000000000000000000000'
+        CIPHERTEXT = 'e86f7e23e835e114977f60e1a592202e'
+
+    def test_86(self):
+        KEY = 'fffffffffffffffffffffe000000000000000000000000000000000000000000'
+        PLAINTEXT = '00000000000000000000000000000000'
+        CIPHERTEXT = 'e68ad5055a367041fade09d9a70a794b'
+
+    def test_87(self):
+        KEY = 'ffffffffffffffffffffff000000000000000000000000000000000000000000'
+        PLAINTEXT = '00000000000000000000000000000000'
+        CIPHERTEXT = '0791823a3c666bb6162825e78606a7fe'
+
+    def test_88(self):
+        KEY = 'ffffffffffffffffffffff800000000000000000000000000000000000000000'
+        PLAINTEXT = '00000000000000000000000000000000'
+        CIPHERTEXT = 'dcca366a9bf47b7b868b77e25c18a364'
+
+    def test_89(self):
+        KEY = 'ffffffffffffffffffffffc00000000000000000000000000000000000000000'
+        PLAINTEXT = '00000000000000000000000000000000'
+        CIPHERTEXT = '684c9efc237e4a442965f84bce20247a'
+
+    def test_90(self):
+        KEY = 'ffffffffffffffffffffffe00000000000000000000000000000000000000000'
+        PLAINTEXT = '00000000000000000000000000000000'
+        CIPHERTEXT = 'a858411ffbe63fdb9c8aa1bfaed67b52'
+
+    def test_91(self):
+        KEY = 'fffffffffffffffffffffff00000000000000000000000000000000000000000'
+        PLAINTEXT = '00000000000000000000000000000000'
+        CIPHERTEXT = '04bc3da2179c3015498b0e03910db5b8'
+
+    def test_92(self):
+        KEY = 'fffffffffffffffffffffff80000000000000000000000000000000000000000'
+        PLAINTEXT = '00000000000000000000000000000000'
+        CIPHERTEXT = '40071eeab3f935dbc25d00841460260f'
+
+    def test_93(self):
+        KEY = 'fffffffffffffffffffffffc0000000000000000000000000000000000000000'
+        PLAINTEXT = '00000000000000000000000000000000'
+        CIPHERTEXT = '0ebd7c30ed2016e08ba806ddb008bcc8'
+
+    def test_94(self):
+        KEY = 'fffffffffffffffffffffffe0000000000000000000000000000000000000000'
+        PLAINTEXT = '00000000000000000000000000000000'
+        CIPHERTEXT = '15c6becf0f4cec7129cbd22d1a79b1b8'
+
+    def test_95(self):
+        KEY = 'ffffffffffffffffffffffff0000000000000000000000000000000000000000'
+        PLAINTEXT = '00000000000000000000000000000000'
+        CIPHERTEXT = '0aeede5b91f721700e9e62edbf60b781'
+
+    def test_96(self):
+        KEY = 'ffffffffffffffffffffffff8000000000000000000000000000000000000000'
+        PLAINTEXT = '00000000000000000000000000000000'
+        CIPHERTEXT = '266581af0dcfbed1585e0a242c64b8df'
+
+    def test_97(self):
+        KEY = 'ffffffffffffffffffffffffc000000000000000000000000000000000000000'
+        PLAINTEXT = '00000000000000000000000000000000'
+        CIPHERTEXT = '6693dc911662ae473216ba22189a511a'
+
+    def test_98(self):
+        KEY = 'ffffffffffffffffffffffffe000000000000000000000000000000000000000'
+        PLAINTEXT = '00000000000000000000000000000000'
+        CIPHERTEXT = '7606fa36d86473e6fb3a1bb0e2c0adf5'
+
+    def test_99(self):
+        KEY = 'fffffffffffffffffffffffff000000000000000000000000000000000000000'
+        PLAINTEXT = '00000000000000000000000000000000'
+        CIPHERTEXT = '112078e9e11fbb78e26ffb8899e96b9a'
+
+    def test_100(self):
+        KEY = 'fffffffffffffffffffffffff800000000000000000000000000000000000000'
+        PLAINTEXT = '00000000000000000000000000000000'
+        CIPHERTEXT = '40b264e921e9e4a82694589ef3798262'
+
+    def test_101(self):
+        KEY = 'fffffffffffffffffffffffffc00000000000000000000000000000000000000'
+        PLAINTEXT = '00000000000000000000000000000000'
+        CIPHERTEXT = '8d4595cb4fa7026715f55bd68e2882f9'
+
+    def test_102(self):
+        KEY = 'fffffffffffffffffffffffffe00000000000000000000000000000000000000'
+        PLAINTEXT = '00000000000000000000000000000000'
+        CIPHERTEXT = 'b588a302bdbc09197df1edae68926ed9'
+
+    def test_103(self):
+        KEY = 'ffffffffffffffffffffffffff00000000000000000000000000000000000000'
+        PLAINTEXT = '00000000000000000000000000000000'
+        CIPHERTEXT = '33f7502390b8a4a221cfecd0666624ba'
+
+    def test_104(self):
+        KEY = 'ffffffffffffffffffffffffff80000000000000000000000000000000000000'
+        PLAINTEXT = '00000000000000000000000000000000'
+        CIPHERTEXT = '3d20253adbce3be2373767c4d822c566'
+
+    def test_105(self):
+        KEY = 'ffffffffffffffffffffffffffc0000000000000000000000000000000000000'
+        PLAINTEXT = '00000000000000000000000000000000'
+        CIPHERTEXT = 'a42734a3929bf84cf0116c9856a3c18c'
+
+    def test_106(self):
+        KEY = 'ffffffffffffffffffffffffffe0000000000000000000000000000000000000'
+        PLAINTEXT = '00000000000000000000000000000000'
+        CIPHERTEXT = 'e3abc4939457422bb957da3c56938c6d'
+
+    def test_107(self):
+        KEY = 'fffffffffffffffffffffffffff0000000000000000000000000000000000000'
+        PLAINTEXT = '00000000000000000000000000000000'
+        CIPHERTEXT = '972bdd2e7c525130fadc8f76fc6f4b3f'
+
+    def test_108(self):
+        KEY = 'fffffffffffffffffffffffffff8000000000000000000000000000000000000'
+        PLAINTEXT = '00000000000000000000000000000000'
+        CIPHERTEXT = '84a83d7b94c699cbcb8a7d9b61f64093'
+
+    def test_109(self):
+        KEY = 'fffffffffffffffffffffffffffc000000000000000000000000000000000000'
+        PLAINTEXT = '00000000000000000000000000000000'
+        CIPHERTEXT = 'ce61d63514aded03d43e6ebfc3a9001f'
+
+    def test_110(self):
+        KEY = 'fffffffffffffffffffffffffffe000000000000000000000000000000000000'
+        PLAINTEXT = '00000000000000000000000000000000'
+        CIPHERTEXT = '6c839dd58eeae6b8a36af48ed63d2dc9'
+
+    def test_111(self):
+        KEY = 'ffffffffffffffffffffffffffff000000000000000000000000000000000000'
+        PLAINTEXT = '00000000000000000000000000000000'
+        CIPHERTEXT = 'cd5ece55b8da3bf622c4100df5de46f9'
+
+    def test_112(self):
+        KEY = 'ffffffffffffffffffffffffffff800000000000000000000000000000000000'
+        PLAINTEXT = '00000000000000000000000000000000'
+        CIPHERTEXT = '3b6f46f40e0ac5fc0a9c1105f800f48d'
+
+    def test_113(self):
+        KEY = 'ffffffffffffffffffffffffffffc00000000000000000000000000000000000'
+        PLAINTEXT = '00000000000000000000000000000000'
+        CIPHERTEXT = 'ba26d47da3aeb028de4fb5b3a854a24b'
+
+    def test_114(self):
+        KEY = 'ffffffffffffffffffffffffffffe00000000000000000000000000000000000'
+        PLAINTEXT = '00000000000000000000000000000000'
+        CIPHERTEXT = '87f53bf620d3677268445212904389d5'
+
+    def test_115(self):
+        KEY = 'fffffffffffffffffffffffffffff00000000000000000000000000000000000'
+        PLAINTEXT = '00000000000000000000000000000000'
+        CIPHERTEXT = '10617d28b5e0f4605492b182a5d7f9f6'
+
+    def test_116(self):
+        KEY = 'fffffffffffffffffffffffffffff80000000000000000000000000000000000'
+        PLAINTEXT = '00000000000000000000000000000000'
+        CIPHERTEXT = '9aaec4fabbf6fae2a71feff02e372b39'
+
+    def test_117(self):
+        KEY = 'fffffffffffffffffffffffffffffc0000000000000000000000000000000000'
+        PLAINTEXT = '00000000000000000000000000000000'
+        CIPHERTEXT = '3a90c62d88b5c42809abf782488ed130'
+
+    def test_118(self):
+        KEY = 'fffffffffffffffffffffffffffffe0000000000000000000000000000000000'
+        PLAINTEXT = '00000000000000000000000000000000'
+        CIPHERTEXT = 'f1f1c5a40899e15772857ccb65c7a09a'
+
+    def test_119(self):
+        KEY = 'ffffffffffffffffffffffffffffff0000000000000000000000000000000000'
+        PLAINTEXT = '00000000000000000000000000000000'
+        CIPHERTEXT = '190843d29b25a3897c692ce1dd81ee52'
+
+    def test_120(self):
+        KEY = 'ffffffffffffffffffffffffffffff8000000000000000000000000000000000'
+        PLAINTEXT = '00000000000000000000000000000000'
+        CIPHERTEXT = 'a866bc65b6941d86e8420a7ffb0964db'
+
+    def test_121(self):
+        KEY = 'ffffffffffffffffffffffffffffffc000000000000000000000000000000000'
+        PLAINTEXT = '00000000000000000000000000000000'
+        CIPHERTEXT = '8193c6ff85225ced4255e92f6e078a14'
+
+    def test_122(self):
+        KEY = 'ffffffffffffffffffffffffffffffe000000000000000000000000000000000'
+        PLAINTEXT = '00000000000000000000000000000000'
+        CIPHERTEXT = '9661cb2424d7d4a380d547f9e7ec1cb9'
+
+    def test_123(self):
+        KEY = 'fffffffffffffffffffffffffffffff000000000000000000000000000000000'
+        PLAINTEXT = '00000000000000000000000000000000'
+        CIPHERTEXT = '86f93d9ec08453a071e2e2877877a9c8'
+
+    def test_124(self):
+        KEY = 'fffffffffffffffffffffffffffffff800000000000000000000000000000000'
+        PLAINTEXT = '00000000000000000000000000000000'
+        CIPHERTEXT = '27eefa80ce6a4a9d598e3fec365434d2'
+
+    def test_125(self):
+        KEY = 'fffffffffffffffffffffffffffffffc00000000000000000000000000000000'
+        PLAINTEXT = '00000000000000000000000000000000'
+        CIPHERTEXT = 'd62068444578e3ab39ce7ec95dd045dc'
+
+    def test_126(self):
+        KEY = 'fffffffffffffffffffffffffffffffe00000000000000000000000000000000'
+        PLAINTEXT = '00000000000000000000000000000000'
+        CIPHERTEXT = 'b5f71d4dd9a71fe5d8bc8ba7e6ea3048'
+
+    def test_127(self):
+        KEY = 'ffffffffffffffffffffffffffffffff00000000000000000000000000000000'
+        PLAINTEXT = '00000000000000000000000000000000'
+        CIPHERTEXT = '6825a347ac479d4f9d95c5cb8d3fd7e9'
+
+    def test_128(self):
+        KEY = 'ffffffffffffffffffffffffffffffff80000000000000000000000000000000'
+        PLAINTEXT = '00000000000000000000000000000000'
+        CIPHERTEXT = 'e3714e94a5778955cc0346358e94783a'
+
+    def test_129(self):
+        KEY = 'ffffffffffffffffffffffffffffffffc0000000000000000000000000000000'
+        PLAINTEXT = '00000000000000000000000000000000'
+        CIPHERTEXT = 'd836b44bb29e0c7d89fa4b2d4b677d2a'
+
+    def test_130(self):
+        KEY = 'ffffffffffffffffffffffffffffffffe0000000000000000000000000000000'
+        PLAINTEXT = '00000000000000000000000000000000'
+        CIPHERTEXT = '5d454b75021d76d4b84f873a8f877b92'
+
+    def test_131(self):
+        KEY = 'fffffffffffffffffffffffffffffffff0000000000000000000000000000000'
+        PLAINTEXT = '00000000000000000000000000000000'
+        CIPHERTEXT = 'c3498f7eced2095314fc28115885b33f'
+
+    def test_132(self):
+        KEY = 'fffffffffffffffffffffffffffffffff8000000000000000000000000000000'
+        PLAINTEXT = '00000000000000000000000000000000'
+        CIPHERTEXT = '6e668856539ad8e405bd123fe6c88530'
+
+    def test_133(self):
+        KEY = 'fffffffffffffffffffffffffffffffffc000000000000000000000000000000'
+        PLAINTEXT = '00000000000000000000000000000000'
+        CIPHERTEXT = '8680db7f3a87b8605543cfdbe6754076'
+
+    def test_134(self):
+        KEY = 'fffffffffffffffffffffffffffffffffe000000000000000000000000000000'
+        PLAINTEXT = '00000000000000000000000000000000'
+        CIPHERTEXT = '6c5d03b13069c3658b3179be91b0800c'
+
+    def test_135(self):
+        KEY = 'ffffffffffffffffffffffffffffffffff000000000000000000000000000000'
+        PLAINTEXT = '00000000000000000000000000000000'
+        CIPHERTEXT = 'ef1b384ac4d93eda00c92add0995ea5f'
+
+    def test_136(self):
+        KEY = 'ffffffffffffffffffffffffffffffffff800000000000000000000000000000'
+        PLAINTEXT = '00000000000000000000000000000000'
+        CIPHERTEXT = 'bf8115805471741bd5ad20a03944790f'
+
+    def test_137(self):
+        KEY = 'ffffffffffffffffffffffffffffffffffc00000000000000000000000000000'
+        PLAINTEXT = '00000000000000000000000000000000'
+        CIPHERTEXT = 'c64c24b6894b038b3c0d09b1df068b0b'
+
+    def test_138(self):
+        KEY = 'ffffffffffffffffffffffffffffffffffe00000000000000000000000000000'
+        PLAINTEXT = '00000000000000000000000000000000'
+        CIPHERTEXT = '3967a10cffe27d0178545fbf6a40544b'
+
+    def test_139(self):
+        KEY = 'fffffffffffffffffffffffffffffffffff00000000000000000000000000000'
+        PLAINTEXT = '00000000000000000000000000000000'
+        CIPHERTEXT = '7c85e9c95de1a9ec5a5363a8a053472d'
+
+    def test_140(self):
+        KEY = 'fffffffffffffffffffffffffffffffffff80000000000000000000000000000'
+        PLAINTEXT = '00000000000000000000000000000000'
+        CIPHERTEXT = 'a9eec03c8abec7ba68315c2c8c2316e0'
+
+    def test_141(self):
+        KEY = 'fffffffffffffffffffffffffffffffffffc0000000000000000000000000000'
+        PLAINTEXT = '00000000000000000000000000000000'
+        CIPHERTEXT = 'cac8e414c2f388227ae14986fc983524'
+
+    def test_142(self):
+        KEY = 'fffffffffffffffffffffffffffffffffffe0000000000000000000000000000'
+        PLAINTEXT = '00000000000000000000000000000000'
+        CIPHERTEXT = '5d942b7f4622ce056c3ce3ce5f1dd9d6'
+
+    def test_143(self):
+        KEY = 'ffffffffffffffffffffffffffffffffffff0000000000000000000000000000'
+        PLAINTEXT = '00000000000000000000000000000000'
+        CIPHERTEXT = 'd240d648ce21a3020282c3f1b528a0b6'
+
+    def test_144(self):
+        KEY = 'ffffffffffffffffffffffffffffffffffff8000000000000000000000000000'
+        PLAINTEXT = '00000000000000000000000000000000'
+        CIPHERTEXT = '45d089c36d5c5a4efc689e3b0de10dd5'
+
+    def test_145(self):
+        KEY = 'ffffffffffffffffffffffffffffffffffffc000000000000000000000000000'
+        PLAINTEXT = '00000000000000000000000000000000'
+        CIPHERTEXT = 'b4da5df4becb5462e03a0ed00d295629'
+
+    def test_146(self):
+        KEY = 'ffffffffffffffffffffffffffffffffffffe000000000000000000000000000'
+        PLAINTEXT = '00000000000000000000000000000000'
+        CIPHERTEXT = 'dcf4e129136c1a4b7a0f38935cc34b2b'
+
+    def test_147(self):
+        KEY = 'fffffffffffffffffffffffffffffffffffff000000000000000000000000000'
+        PLAINTEXT = '00000000000000000000000000000000'
+        CIPHERTEXT = 'd9a4c7618b0ce48a3d5aee1a1c0114c4'
+
+    def test_148(self):
+        KEY = 'fffffffffffffffffffffffffffffffffffff800000000000000000000000000'
+        PLAINTEXT = '00000000000000000000000000000000'
+        CIPHERTEXT = 'ca352df025c65c7b0bf306fbee0f36ba'
+
+    def test_149(self):
+        KEY = 'fffffffffffffffffffffffffffffffffffffc00000000000000000000000000'
+        PLAINTEXT = '00000000000000000000000000000000'
+        CIPHERTEXT = '238aca23fd3409f38af63378ed2f5473'
+
+    def test_150(self):
+        KEY = 'fffffffffffffffffffffffffffffffffffffe00000000000000000000000000'
+        PLAINTEXT = '00000000000000000000000000000000'
+        CIPHERTEXT = '59836a0e06a79691b36667d5380d8188'
+
+    def test_151(self):
+        KEY = 'ffffffffffffffffffffffffffffffffffffff00000000000000000000000000'
+        PLAINTEXT = '00000000000000000000000000000000'
+        CIPHERTEXT = '33905080f7acf1cdae0a91fc3e85aee4'
+
+    def test_152(self):
+        KEY = 'ffffffffffffffffffffffffffffffffffffff80000000000000000000000000'
+        PLAINTEXT = '00000000000000000000000000000000'
+        CIPHERTEXT = '72c9e4646dbc3d6320fc6689d93e8833'
+
+    def test_153(self):
+        KEY = 'ffffffffffffffffffffffffffffffffffffffc0000000000000000000000000'
+        PLAINTEXT = '00000000000000000000000000000000'
+        CIPHERTEXT = 'ba77413dea5925b7f5417ea47ff19f59'
+
+    def test_154(self):
+        KEY = 'ffffffffffffffffffffffffffffffffffffffe0000000000000000000000000'
+        PLAINTEXT = '00000000000000000000000000000000'
+        CIPHERTEXT = '6cae8129f843d86dc786a0fb1a184970'
+
+    def test_155(self):
+        KEY = 'fffffffffffffffffffffffffffffffffffffff0000000000000000000000000'
+        PLAINTEXT = '00000000000000000000000000000000'
+        CIPHERTEXT = 'fcfefb534100796eebbd990206754e19'
+
+    def test_156(self):
+        KEY = 'fffffffffffffffffffffffffffffffffffffff8000000000000000000000000'
+        PLAINTEXT = '00000000000000000000000000000000'
+        CIPHERTEXT = '8c791d5fdddf470da04f3e6dc4a5b5b5'
+
+    def test_157(self):
+        KEY = 'fffffffffffffffffffffffffffffffffffffffc000000000000000000000000'
+        PLAINTEXT = '00000000000000000000000000000000'
+        CIPHERTEXT = 'c93bbdc07a4611ae4bb266ea5034a387'
+
+    def test_158(self):
+        KEY = 'fffffffffffffffffffffffffffffffffffffffe000000000000000000000000'
+        PLAINTEXT = '00000000000000000000000000000000'
+        CIPHERTEXT = 'c102e38e489aa74762f3efc5bb23205a'
+
+    def test_159(self):
+        KEY = 'ffffffffffffffffffffffffffffffffffffffff000000000000000000000000'
+        PLAINTEXT = '00000000000000000000000000000000'
+        CIPHERTEXT = '93201481665cbafc1fcc220bc545fb3d'
+
+    def test_160(self):
+        KEY = 'ffffffffffffffffffffffffffffffffffffffff800000000000000000000000'
+        PLAINTEXT = '00000000000000000000000000000000'
+        CIPHERTEXT = '4960757ec6ce68cf195e454cfd0f32ca'
+
+    def test_161(self):
+        KEY = 'ffffffffffffffffffffffffffffffffffffffffc00000000000000000000000'
+        PLAINTEXT = '00000000000000000000000000000000'
+        CIPHERTEXT = 'feec7ce6a6cbd07c043416737f1bbb33'
+
+    def test_162(self):
+        KEY = 'ffffffffffffffffffffffffffffffffffffffffe00000000000000000000000'
+        PLAINTEXT = '00000000000000000000000000000000'
+        CIPHERTEXT = '11c5413904487a805d70a8edd9c35527'
+
+    def test_163(self):
+        KEY = 'fffffffffffffffffffffffffffffffffffffffff00000000000000000000000'
+        PLAINTEXT = '00000000000000000000000000000000'
+        CIPHERTEXT = '347846b2b2e36f1f0324c86f7f1b98e2'
+
+    def test_164(self):
+        KEY = 'fffffffffffffffffffffffffffffffffffffffff80000000000000000000000'
+        PLAINTEXT = '00000000000000000000000000000000'
+        CIPHERTEXT = '332eee1a0cbd19ca2d69b426894044f0'
+
+    def test_165(self):
+        KEY = 'fffffffffffffffffffffffffffffffffffffffffc0000000000000000000000'
+        PLAINTEXT = '00000000000000000000000000000000'
+        CIPHERTEXT = '866b5b3977ba6efa5128efbda9ff03cd'
+
+    def test_166(self):
+        KEY = 'fffffffffffffffffffffffffffffffffffffffffe0000000000000000000000'
+        PLAINTEXT = '00000000000000000000000000000000'
+        CIPHERTEXT = 'cc1445ee94c0f08cdee5c344ecd1e233'
+
+    def test_167(self):
+        KEY = 'ffffffffffffffffffffffffffffffffffffffffff0000000000000000000000'
+        PLAINTEXT = '00000000000000000000000000000000'
+        CIPHERTEXT = 'be288319029363c2622feba4b05dfdfe'
+
+    def test_168(self):
+        KEY = 'ffffffffffffffffffffffffffffffffffffffffff8000000000000000000000'
+        PLAINTEXT = '00000000000000000000000000000000'
+        CIPHERTEXT = 'cfd1875523f3cd21c395651e6ee15e56'
+
+    def test_169(self):
+        KEY = 'ffffffffffffffffffffffffffffffffffffffffffc000000000000000000000'
+        PLAINTEXT = '00000000000000000000000000000000'
+        CIPHERTEXT = 'cb5a408657837c53bf16f9d8465dce19'
+
+    def test_170(self):
+        KEY = 'ffffffffffffffffffffffffffffffffffffffffffe000000000000000000000'
+        PLAINTEXT = '00000000000000000000000000000000'
+        CIPHERTEXT = 'ca0bf42cb107f55ccff2fc09ee08ca15'
+
+    def test_171(self):
+        KEY = 'fffffffffffffffffffffffffffffffffffffffffff000000000000000000000'
+        PLAINTEXT = '00000000000000000000000000000000'
+        CIPHERTEXT = 'fdd9bbb4a7dc2e4a23536a5880a2db67'
+
+    def test_172(self):
+        KEY = 'fffffffffffffffffffffffffffffffffffffffffff800000000000000000000'
+        PLAINTEXT = '00000000000000000000000000000000'
+        CIPHERTEXT = 'ede447b362c484993dec9442a3b46aef'
+
+    def test_173(self):
+        KEY = 'fffffffffffffffffffffffffffffffffffffffffffc00000000000000000000'
+        PLAINTEXT = '00000000000000000000000000000000'
+        CIPHERTEXT = '10dffb05904bff7c4781df780ad26837'
+
+    def test_174(self):
+        KEY = 'fffffffffffffffffffffffffffffffffffffffffffe00000000000000000000'
+        PLAINTEXT = '00000000000000000000000000000000'
+        CIPHERTEXT = 'c33bc13e8de88ac25232aa7496398783'
+
+    def test_175(self):
+        KEY = 'ffffffffffffffffffffffffffffffffffffffffffff00000000000000000000'
+        PLAINTEXT = '00000000000000000000000000000000'
+        CIPHERTEXT = 'ca359c70803a3b2a3d542e8781dea975'
+
+    def test_176(self):
+        KEY = 'ffffffffffffffffffffffffffffffffffffffffffff80000000000000000000'
+        PLAINTEXT = '00000000000000000000000000000000'
+        CIPHERTEXT = 'bcc65b526f88d05b89ce8a52021fdb06'
+
+    def test_177(self):
+        KEY = 'ffffffffffffffffffffffffffffffffffffffffffffc0000000000000000000'
+        PLAINTEXT = '00000000000000000000000000000000'
+        CIPHERTEXT = 'db91a38855c8c4643851fbfb358b0109'
+
+    def test_178(self):
+        KEY = 'ffffffffffffffffffffffffffffffffffffffffffffe0000000000000000000'
+        PLAINTEXT = '00000000000000000000000000000000'
+        CIPHERTEXT = 'ca6e8893a114ae8e27d5ab03a5499610'
+
+    def test_179(self):
+        KEY = 'fffffffffffffffffffffffffffffffffffffffffffff0000000000000000000'
+        PLAINTEXT = '00000000000000000000000000000000'
+        CIPHERTEXT = '6629d2b8df97da728cdd8b1e7f945077'
+
+    def test_180(self):
+        KEY = 'fffffffffffffffffffffffffffffffffffffffffffff8000000000000000000'
+        PLAINTEXT = '00000000000000000000000000000000'
+        CIPHERTEXT = '4570a5a18cfc0dd582f1d88d5c9a1720'
+
+    def test_181(self):
+        KEY = 'fffffffffffffffffffffffffffffffffffffffffffffc000000000000000000'
+        PLAINTEXT = '00000000000000000000000000000000'
+        CIPHERTEXT = '72bc65aa8e89562e3f274d45af1cd10b'
+
+    def test_182(self):
+        KEY = 'fffffffffffffffffffffffffffffffffffffffffffffe000000000000000000'
+        PLAINTEXT = '00000000000000000000000000000000'
+        CIPHERTEXT = '98551da1a6503276ae1c77625f9ea615'
+
+    def test_183(self):
+        KEY = 'ffffffffffffffffffffffffffffffffffffffffffffff000000000000000000'
+        PLAINTEXT = '00000000000000000000000000000000'
+        CIPHERTEXT = '0ddfe51ced7e3f4ae927daa3fe452cee'
+
+    def test_184(self):
+        KEY = 'ffffffffffffffffffffffffffffffffffffffffffffff800000000000000000'
+        PLAINTEXT = '00000000000000000000000000000000'
+        CIPHERTEXT = 'db826251e4ce384b80218b0e1da1dd4c'
+
+    def test_185(self):
+        KEY = 'ffffffffffffffffffffffffffffffffffffffffffffffc00000000000000000'
+        PLAINTEXT = '00000000000000000000000000000000'
+        CIPHERTEXT = '2cacf728b88abbad7011ed0e64a1680c'
+
+    def test_186(self):
+        KEY = 'ffffffffffffffffffffffffffffffffffffffffffffffe00000000000000000'
+        PLAINTEXT = '00000000000000000000000000000000'
+        CIPHERTEXT = '330d8ee7c5677e099ac74c9994ee4cfb'
+
+    def test_187(self):
+        KEY = 'fffffffffffffffffffffffffffffffffffffffffffffff00000000000000000'
+        PLAINTEXT = '00000000000000000000000000000000'
+        CIPHERTEXT = 'edf61ae362e882ddc0167474a7a77f3a'
+
+    def test_188(self):
+        KEY = 'fffffffffffffffffffffffffffffffffffffffffffffff80000000000000000'
+        PLAINTEXT = '00000000000000000000000000000000'
+        CIPHERTEXT = '6168b00ba7859e0970ecfd757efecf7c'
+
+    def test_189(self):
+        KEY = 'fffffffffffffffffffffffffffffffffffffffffffffffc0000000000000000'
+        PLAINTEXT = '00000000000000000000000000000000'
+        CIPHERTEXT = 'd1415447866230d28bb1ea18a4cdfd02'
+
+    def test_190(self):
+        KEY = 'fffffffffffffffffffffffffffffffffffffffffffffffe0000000000000000'
+        PLAINTEXT = '00000000000000000000000000000000'
+        CIPHERTEXT = '516183392f7a8763afec68a060264141'
+
+    def test_191(self):
+        KEY = 'ffffffffffffffffffffffffffffffffffffffffffffffff0000000000000000'
+        PLAINTEXT = '00000000000000000000000000000000'
+        CIPHERTEXT = '77565c8d73cfd4130b4aa14d8911710f'
+
+    def test_192(self):
+        KEY = 'ffffffffffffffffffffffffffffffffffffffffffffffff8000000000000000'
+        PLAINTEXT = '00000000000000000000000000000000'
+        CIPHERTEXT = '37232a4ed21ccc27c19c9610078cabac'
+
+    def test_193(self):
+        KEY = 'ffffffffffffffffffffffffffffffffffffffffffffffffc000000000000000'
+        PLAINTEXT = '00000000000000000000000000000000'
+        CIPHERTEXT = '804f32ea71828c7d329077e712231666'
+
+    def test_194(self):
+        KEY = 'ffffffffffffffffffffffffffffffffffffffffffffffffe000000000000000'
+        PLAINTEXT = '00000000000000000000000000000000'
+        CIPHERTEXT = 'd64424f23cb97215e9c2c6f28d29eab7'
+
+    def test_195(self):
+        KEY = 'fffffffffffffffffffffffffffffffffffffffffffffffff000000000000000'
+        PLAINTEXT = '00000000000000000000000000000000'
+        CIPHERTEXT = '023e82b533f68c75c238cebdb2ee89a2'
+
+    def test_196(self):
+        KEY = 'fffffffffffffffffffffffffffffffffffffffffffffffff800000000000000'
+        PLAINTEXT = '00000000000000000000000000000000'
+        CIPHERTEXT = '193a3d24157a51f1ee0893f6777417e7'
+
+    def test_197(self):
+        KEY = 'fffffffffffffffffffffffffffffffffffffffffffffffffc00000000000000'
+        PLAINTEXT = '00000000000000000000000000000000'
+        CIPHERTEXT = '84ecacfcd400084d078612b1945f2ef5'
+
+    def test_198(self):
+        KEY = 'fffffffffffffffffffffffffffffffffffffffffffffffffe00000000000000'
+        PLAINTEXT = '00000000000000000000000000000000'
+        CIPHERTEXT = '1dcd8bb173259eb33a5242b0de31a455'
+
+    def test_199(self):
+        KEY = 'ffffffffffffffffffffffffffffffffffffffffffffffffff00000000000000'
+        PLAINTEXT = '00000000000000000000000000000000'
+        CIPHERTEXT = '35e9eddbc375e792c19992c19165012b'
+
+    def test_200(self):
+        KEY = 'ffffffffffffffffffffffffffffffffffffffffffffffffff80000000000000'
+        PLAINTEXT = '00000000000000000000000000000000'
+        CIPHERTEXT = '8a772231c01dfdd7c98e4cfddcc0807a'
+
+    def test_201(self):
+        KEY = 'ffffffffffffffffffffffffffffffffffffffffffffffffffc0000000000000'
+        PLAINTEXT = '00000000000000000000000000000000'
+        CIPHERTEXT = '6eda7ff6b8319180ff0d6e65629d01c3'
+
+    def test_202(self):
+        KEY = 'ffffffffffffffffffffffffffffffffffffffffffffffffffe0000000000000'
+        PLAINTEXT = '00000000000000000000000000000000'
+        CIPHERTEXT = 'c267ef0e2d01a993944dd397101413cb'
+
+    def test_203(self):
+        KEY = 'fffffffffffffffffffffffffffffffffffffffffffffffffff0000000000000'
+        PLAINTEXT = '00000000000000000000000000000000'
+        CIPHERTEXT = 'e9f80e9d845bcc0f62926af72eabca39'
+
+    def test_204(self):
+        KEY = 'fffffffffffffffffffffffffffffffffffffffffffffffffff8000000000000'
+        PLAINTEXT = '00000000000000000000000000000000'
+        CIPHERTEXT = '6702990727aa0878637b45dcd3a3b074'
+
+    def test_205(self):
+        KEY = 'fffffffffffffffffffffffffffffffffffffffffffffffffffc000000000000'
+        PLAINTEXT = '00000000000000000000000000000000'
+        CIPHERTEXT = '2e2e647d5360e09230a5d738ca33471e'
+
+    def test_206(self):
+        KEY = 'fffffffffffffffffffffffffffffffffffffffffffffffffffe000000000000'
+        PLAINTEXT = '00000000000000000000000000000000'
+        CIPHERTEXT = '1f56413c7add6f43d1d56e4f02190330'
+
+    def test_207(self):
+        KEY = 'ffffffffffffffffffffffffffffffffffffffffffffffffffff000000000000'
+        PLAINTEXT = '00000000000000000000000000000000'
+        CIPHERTEXT = '69cd0606e15af729d6bca143016d9842'
+
+    def test_208(self):
+        KEY = 'ffffffffffffffffffffffffffffffffffffffffffffffffffff800000000000'
+        PLAINTEXT = '00000000000000000000000000000000'
+        CIPHERTEXT = 'a085d7c1a500873a20099c4caa3c3f5b'
+
+    def test_209(self):
+        KEY = 'ffffffffffffffffffffffffffffffffffffffffffffffffffffc00000000000'
+        PLAINTEXT = '00000000000000000000000000000000'
+        CIPHERTEXT = '4fc0d230f8891415b87b83f95f2e09d1'
+
+    def test_210(self):
+        KEY = 'ffffffffffffffffffffffffffffffffffffffffffffffffffffe00000000000'
+        PLAINTEXT = '00000000000000000000000000000000'
+        CIPHERTEXT = '4327d08c523d8eba697a4336507d1f42'
+
+    def test_211(self):
+        KEY = 'fffffffffffffffffffffffffffffffffffffffffffffffffffff00000000000'
+        PLAINTEXT = '00000000000000000000000000000000'
+        CIPHERTEXT = '7a15aab82701efa5ae36ab1d6b76290f'
+
+    def test_212(self):
+        KEY = 'fffffffffffffffffffffffffffffffffffffffffffffffffffff80000000000'
+        PLAINTEXT = '00000000000000000000000000000000'
+        CIPHERTEXT = '5bf0051893a18bb30e139a58fed0fa54'
+
+    def test_213(self):
+        KEY = 'fffffffffffffffffffffffffffffffffffffffffffffffffffffc0000000000'
+        PLAINTEXT = '00000000000000000000000000000000'
+        CIPHERTEXT = '97e8adf65638fd9cdf3bc22c17fe4dbd'
+
+    def test_214(self):
+        KEY = 'fffffffffffffffffffffffffffffffffffffffffffffffffffffe0000000000'
+        PLAINTEXT = '00000000000000000000000000000000'
+        CIPHERTEXT = '1ee6ee326583a0586491c96418d1a35d'
+
+    def test_215(self):
+        KEY = 'ffffffffffffffffffffffffffffffffffffffffffffffffffffff0000000000'
+        PLAINTEXT = '00000000000000000000000000000000'
+        CIPHERTEXT = '26b549c2ec756f82ecc48008e529956b'
+
+    def test_216(self):
+        KEY = 'ffffffffffffffffffffffffffffffffffffffffffffffffffffff8000000000'
+        PLAINTEXT = '00000000000000000000000000000000'
+        CIPHERTEXT = '70377b6da669b072129e057cc28e9ca5'
+
+    def test_217(self):
+        KEY = 'ffffffffffffffffffffffffffffffffffffffffffffffffffffffc000000000'
+        PLAINTEXT = '00000000000000000000000000000000'
+        CIPHERTEXT = '9c94b8b0cb8bcc919072262b3fa05ad9'
+
+    def test_218(self):
+        KEY = 'ffffffffffffffffffffffffffffffffffffffffffffffffffffffe000000000'
+        PLAINTEXT = '00000000000000000000000000000000'
+        CIPHERTEXT = '2fbb83dfd0d7abcb05cd28cad2dfb523'
+
+    def test_219(self):
+        KEY = 'fffffffffffffffffffffffffffffffffffffffffffffffffffffff000000000'
+        PLAINTEXT = '00000000000000000000000000000000'
+        CIPHERTEXT = '96877803de77744bb970d0a91f4debae'
+
+    def test_220(self):
+        KEY = 'fffffffffffffffffffffffffffffffffffffffffffffffffffffff800000000'
+        PLAINTEXT = '00000000000000000000000000000000'
+        CIPHERTEXT = '7379f3370cf6e5ce12ae5969c8eea312'
+
+    def test_221(self):
+        KEY = 'fffffffffffffffffffffffffffffffffffffffffffffffffffffffc00000000'
+        PLAINTEXT = '00000000000000000000000000000000'
+        CIPHERTEXT = '02dc99fa3d4f98ce80985e7233889313'
+
+    def test_222(self):
+        KEY = 'fffffffffffffffffffffffffffffffffffffffffffffffffffffffe00000000'
+        PLAINTEXT = '00000000000000000000000000000000'
+        CIPHERTEXT = '1e38e759075ba5cab6457da51844295a'
+
+    def test_223(self):
+        KEY = 'ffffffffffffffffffffffffffffffffffffffffffffffffffffffff00000000'
+        PLAINTEXT = '00000000000000000000000000000000'
+        CIPHERTEXT = '70bed8dbf615868a1f9d9b05d3e7a267'
+
+    def test_224(self):
+        KEY = 'ffffffffffffffffffffffffffffffffffffffffffffffffffffffff80000000'
+        PLAINTEXT = '00000000000000000000000000000000'
+        CIPHERTEXT = '234b148b8cb1d8c32b287e896903d150'
+
+    def test_225(self):
+        KEY = 'ffffffffffffffffffffffffffffffffffffffffffffffffffffffffc0000000'
+        PLAINTEXT = '00000000000000000000000000000000'
+        CIPHERTEXT = '294b033df4da853f4be3e243f7e513f4'
+
+    def test_226(self):
+        KEY = 'ffffffffffffffffffffffffffffffffffffffffffffffffffffffffe0000000'
+        PLAINTEXT = '00000000000000000000000000000000'
+        CIPHERTEXT = '3f58c950f0367160adec45f2441e7411'
+
+    def test_227(self):
+        KEY = 'fffffffffffffffffffffffffffffffffffffffffffffffffffffffff0000000'
+        PLAINTEXT = '00000000000000000000000000000000'
+        CIPHERTEXT = '37f655536a704e5ace182d742a820cf4'
+
+    def test_228(self):
+        KEY = 'fffffffffffffffffffffffffffffffffffffffffffffffffffffffff8000000'
+        PLAINTEXT = '00000000000000000000000000000000'
+        CIPHERTEXT = 'ea7bd6bb63418731aeac790fe42d61e8'
+
+    def test_229(self):
+        KEY = 'fffffffffffffffffffffffffffffffffffffffffffffffffffffffffc000000'
+        PLAINTEXT = '00000000000000000000000000000000'
+        CIPHERTEXT = 'e74a4c999b4c064e48bb1e413f51e5ea'
+
+    def test_230(self):
+        KEY = 'fffffffffffffffffffffffffffffffffffffffffffffffffffffffffe000000'
+        PLAINTEXT = '00000000000000000000000000000000'
+        CIPHERTEXT = 'ba9ebefdb4ccf30f296cecb3bc1943e8'
+
+    def test_231(self):
+        KEY = 'ffffffffffffffffffffffffffffffffffffffffffffffffffffffffff000000'
+        PLAINTEXT = '00000000000000000000000000000000'
+        CIPHERTEXT = '3194367a4898c502c13bb7478640a72d'
+
+    def test_232(self):
+        KEY = 'ffffffffffffffffffffffffffffffffffffffffffffffffffffffffff800000'
+        PLAINTEXT = '00000000000000000000000000000000'
+        CIPHERTEXT = 'da797713263d6f33a5478a65ef60d412'
+
+    def test_233(self):
+        KEY = 'ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffc00000'
+        PLAINTEXT = '00000000000000000000000000000000'
+        CIPHERTEXT = 'd1ac39bb1ef86b9c1344f214679aa376'
+
+    def test_234(self):
+        KEY = 'ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffe00000'
+        PLAINTEXT = '00000000000000000000000000000000'
+        CIPHERTEXT = '2fdea9e650532be5bc0e7325337fd363'
+
+    def test_235(self):
+        KEY = 'fffffffffffffffffffffffffffffffffffffffffffffffffffffffffff00000'
+        PLAINTEXT = '00000000000000000000000000000000'
+        CIPHERTEXT = 'd3a204dbd9c2af158b6ca67a5156ce4a'
+
+    def test_236(self):
+        KEY = 'fffffffffffffffffffffffffffffffffffffffffffffffffffffffffff80000'
+        PLAINTEXT = '00000000000000000000000000000000'
+        CIPHERTEXT = '3a0a0e75a8da36735aee6684d965a778'
+
+    def test_237(self):
+        KEY = 'fffffffffffffffffffffffffffffffffffffffffffffffffffffffffffc0000'
+        PLAINTEXT = '00000000000000000000000000000000'
+        CIPHERTEXT = '52fc3e620492ea99641ea168da5b6d52'
+
+    def test_238(self):
+        KEY = 'fffffffffffffffffffffffffffffffffffffffffffffffffffffffffffe0000'
+        PLAINTEXT = '00000000000000000000000000000000'
+        CIPHERTEXT = 'd2e0c7f15b4772467d2cfc873000b2ca'
+
+    def test_239(self):
+        KEY = 'ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff0000'
+        PLAINTEXT = '00000000000000000000000000000000'
+        CIPHERTEXT = '563531135e0c4d70a38f8bdb190ba04e'
+
+    def test_240(self):
+        KEY = 'ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff8000'
+        PLAINTEXT = '00000000000000000000000000000000'
+        CIPHERTEXT = 'a8a39a0f5663f4c0fe5f2d3cafff421a'
+
+    def test_241(self):
+        KEY = 'ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffc000'
+        PLAINTEXT = '00000000000000000000000000000000'
+        CIPHERTEXT = 'd94b5e90db354c1e42f61fabe167b2c0'
+
+    def test_242(self):
+        KEY = 'ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffe000'
+        PLAINTEXT = '00000000000000000000000000000000'
+        CIPHERTEXT = '50e6d3c9b6698a7cd276f96b1473f35a'
+
+    def test_243(self):
+        KEY = 'fffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff000'
+        PLAINTEXT = '00000000000000000000000000000000'
+        CIPHERTEXT = '9338f08e0ebee96905d8f2e825208f43'
+
+    def test_244(self):
+        KEY = 'fffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff800'
+        PLAINTEXT = '00000000000000000000000000000000'
+        CIPHERTEXT = '8b378c86672aa54a3a266ba19d2580ca'
+
+    def test_245(self):
+        KEY = 'fffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffc00'
+        PLAINTEXT = '00000000000000000000000000000000'
+        CIPHERTEXT = 'cca7c3086f5f9511b31233da7cab9160'
+
+    def test_246(self):
+        KEY = 'fffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffe00'
+        PLAINTEXT = '00000000000000000000000000000000'
+        CIPHERTEXT = '5b40ff4ec9be536ba23035fa4f06064c'
+
+    def test_247(self):
+        KEY = 'ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff00'
+        PLAINTEXT = '00000000000000000000000000000000'
+        CIPHERTEXT = '60eb5af8416b257149372194e8b88749'
+
+    def test_248(self):
+        KEY = 'ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff80'
+        PLAINTEXT = '00000000000000000000000000000000'
+        CIPHERTEXT = '2f005a8aed8a361c92e440c15520cbd1'
+
+    def test_249(self):
+        KEY = 'ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffc0'
+        PLAINTEXT = '00000000000000000000000000000000'
+        CIPHERTEXT = '7b03627611678a997717578807a800e2'
+
+    def test_250(self):
+        KEY = 'ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffe0'
+        PLAINTEXT = '00000000000000000000000000000000'
+        CIPHERTEXT = 'cf78618f74f6f3696e0a4779b90b5a77'
+
+    def test_251(self):
+        KEY = 'fffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff0'
+        PLAINTEXT = '00000000000000000000000000000000'
+        CIPHERTEXT = '03720371a04962eaea0a852e69972858'
+
+    def test_252(self):
+        KEY = 'fffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff8'
+        PLAINTEXT = '00000000000000000000000000000000'
+        CIPHERTEXT = '1f8a8133aa8ccf70e2bd3285831ca6b7'
+
+    def test_253(self):
+        KEY = 'fffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffc'
+        PLAINTEXT = '00000000000000000000000000000000'
+        CIPHERTEXT = '27936bd27fb1468fc8b48bc483321725'
+
+    def test_254(self):
+        KEY = 'fffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffe'
+        PLAINTEXT = '00000000000000000000000000000000'
+        CIPHERTEXT = 'b07d4f3e2cd2ef2eb545980754dfea0f'
+
+    def test_255(self):
+        KEY = 'ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff'
+        PLAINTEXT = '00000000000000000000000000000000'
+        CIPHERTEXT = '4bf85f1b5d54adbc307b0a048389adcb'
+
+class TestECBVarTxt128e(unittest.TestCase):
+    def test_0(self):
+        KEY = '00000000000000000000000000000000'
+        PLAINTEXT = '80000000000000000000000000000000'
+        CIPHERTEXT = '3ad78e726c1ec02b7ebfe92b23d9ec34'
+
+    def test_1(self):
+        KEY = '00000000000000000000000000000000'
+        PLAINTEXT = 'c0000000000000000000000000000000'
+        CIPHERTEXT = 'aae5939c8efdf2f04e60b9fe7117b2c2'
+
+    def test_2(self):
+        KEY = '00000000000000000000000000000000'
+        PLAINTEXT = 'e0000000000000000000000000000000'
+        CIPHERTEXT = 'f031d4d74f5dcbf39daaf8ca3af6e527'
+
+    def test_3(self):
+        KEY = '00000000000000000000000000000000'
+        PLAINTEXT = 'f0000000000000000000000000000000'
+        CIPHERTEXT = '96d9fd5cc4f07441727df0f33e401a36'
+
+    def test_4(self):
+        KEY = '00000000000000000000000000000000'
+        PLAINTEXT = 'f8000000000000000000000000000000'
+        CIPHERTEXT = '30ccdb044646d7e1f3ccea3dca08b8c0'
+
+    def test_5(self):
+        KEY = '00000000000000000000000000000000'
+        PLAINTEXT = 'fc000000000000000000000000000000'
+        CIPHERTEXT = '16ae4ce5042a67ee8e177b7c587ecc82'
+
+    def test_6(self):
+        KEY = '00000000000000000000000000000000'
+        PLAINTEXT = 'fe000000000000000000000000000000'
+        CIPHERTEXT = 'b6da0bb11a23855d9c5cb1b4c6412e0a'
+
+    def test_7(self):
+        KEY = '00000000000000000000000000000000'
+        PLAINTEXT = 'ff000000000000000000000000000000'
+        CIPHERTEXT = 'db4f1aa530967d6732ce4715eb0ee24b'
+
+    def test_8(self):
+        KEY = '00000000000000000000000000000000'
+        PLAINTEXT = 'ff800000000000000000000000000000'
+        CIPHERTEXT = 'a81738252621dd180a34f3455b4baa2f'
+
+    def test_9(self):
+        KEY = '00000000000000000000000000000000'
+        PLAINTEXT = 'ffc00000000000000000000000000000'
+        CIPHERTEXT = '77e2b508db7fd89234caf7939ee5621a'
+
+    def test_10(self):
+        KEY = '00000000000000000000000000000000'
+        PLAINTEXT = 'ffe00000000000000000000000000000'
+        CIPHERTEXT = 'b8499c251f8442ee13f0933b688fcd19'
+
+    def test_11(self):
+        KEY = '00000000000000000000000000000000'
+        PLAINTEXT = 'fff00000000000000000000000000000'
+        CIPHERTEXT = '965135f8a81f25c9d630b17502f68e53'
+
+    def test_12(self):
+        KEY = '00000000000000000000000000000000'
+        PLAINTEXT = 'fff80000000000000000000000000000'
+        CIPHERTEXT = '8b87145a01ad1c6cede995ea3670454f'
+
+    def test_13(self):
+        KEY = '00000000000000000000000000000000'
+        PLAINTEXT = 'fffc0000000000000000000000000000'
+        CIPHERTEXT = '8eae3b10a0c8ca6d1d3b0fa61e56b0b2'
+
+    def test_14(self):
+        KEY = '00000000000000000000000000000000'
+        PLAINTEXT = 'fffe0000000000000000000000000000'
+        CIPHERTEXT = '64b4d629810fda6bafdf08f3b0d8d2c5'
+
+    def test_15(self):
+        KEY = '00000000000000000000000000000000'
+        PLAINTEXT = 'ffff0000000000000000000000000000'
+        CIPHERTEXT = 'd7e5dbd3324595f8fdc7d7c571da6c2a'
+
+    def test_16(self):
+        KEY = '00000000000000000000000000000000'
+        PLAINTEXT = 'ffff8000000000000000000000000000'
+        CIPHERTEXT = 'f3f72375264e167fca9de2c1527d9606'
+
+    def test_17(self):
+        KEY = '00000000000000000000000000000000'
+        PLAINTEXT = 'ffffc000000000000000000000000000'
+        CIPHERTEXT = '8ee79dd4f401ff9b7ea945d86666c13b'
+
+    def test_18(self):
+        KEY = '00000000000000000000000000000000'
+        PLAINTEXT = 'ffffe000000000000000000000000000'
+        CIPHERTEXT = 'dd35cea2799940b40db3f819cb94c08b'
+
+    def test_19(self):
+        KEY = '00000000000000000000000000000000'
+        PLAINTEXT = 'fffff000000000000000000000000000'
+        CIPHERTEXT = '6941cb6b3e08c2b7afa581ebdd607b87'
+
+    def test_20(self):
+        KEY = '00000000000000000000000000000000'
+        PLAINTEXT = 'fffff800000000000000000000000000'
+        CIPHERTEXT = '2c20f439f6bb097b29b8bd6d99aad799'
+
+    def test_21(self):
+        KEY = '00000000000000000000000000000000'
+        PLAINTEXT = 'fffffc00000000000000000000000000'
+        CIPHERTEXT = '625d01f058e565f77ae86378bd2c49b3'
+
+    def test_22(self):
+        KEY = '00000000000000000000000000000000'
+        PLAINTEXT = 'fffffe00000000000000000000000000'
+        CIPHERTEXT = 'c0b5fd98190ef45fbb4301438d095950'
+
+    def test_23(self):
+        KEY = '00000000000000000000000000000000'
+        PLAINTEXT = 'ffffff00000000000000000000000000'
+        CIPHERTEXT = '13001ff5d99806efd25da34f56be854b'
+
+    def test_24(self):
+        KEY = '00000000000000000000000000000000'
+        PLAINTEXT = 'ffffff80000000000000000000000000'
+        CIPHERTEXT = '3b594c60f5c8277a5113677f94208d82'
+
+    def test_25(self):
+        KEY = '00000000000000000000000000000000'
+        PLAINTEXT = 'ffffffc0000000000000000000000000'
+        CIPHERTEXT = 'e9c0fc1818e4aa46bd2e39d638f89e05'
+
+    def test_26(self):
+        KEY = '00000000000000000000000000000000'
+        PLAINTEXT = 'ffffffe0000000000000000000000000'
+        CIPHERTEXT = 'f8023ee9c3fdc45a019b4e985c7e1a54'
+
+    def test_27(self):
+        KEY = '00000000000000000000000000000000'
+        PLAINTEXT = 'fffffff0000000000000000000000000'
+        CIPHERTEXT = '35f40182ab4662f3023baec1ee796b57'
+
+    def test_28(self):
+        KEY = '00000000000000000000000000000000'
+        PLAINTEXT = 'fffffff8000000000000000000000000'
+        CIPHERTEXT = '3aebbad7303649b4194a6945c6cc3694'
+
+    def test_29(self):
+        KEY = '00000000000000000000000000000000'
+        PLAINTEXT = 'fffffffc000000000000000000000000'
+        CIPHERTEXT = 'a2124bea53ec2834279bed7f7eb0f938'
+
+    def test_30(self):
+        KEY = '00000000000000000000000000000000'
+        PLAINTEXT = 'fffffffe000000000000000000000000'
+        CIPHERTEXT = 'b9fb4399fa4facc7309e14ec98360b0a'
+
+    def test_31(self):
+        KEY = '00000000000000000000000000000000'
+        PLAINTEXT = 'ffffffff000000000000000000000000'
+        CIPHERTEXT = 'c26277437420c5d634f715aea81a9132'
+
+    def test_32(self):
+        KEY = '00000000000000000000000000000000'
+        PLAINTEXT = 'ffffffff800000000000000000000000'
+        CIPHERTEXT = '171a0e1b2dd424f0e089af2c4c10f32f'
+
+    def test_33(self):
+        KEY = '00000000000000000000000000000000'
+        PLAINTEXT = 'ffffffffc00000000000000000000000'
+        CIPHERTEXT = '7cadbe402d1b208fe735edce00aee7ce'
+
+    def test_34(self):
+        KEY = '00000000000000000000000000000000'
+        PLAINTEXT = 'ffffffffe00000000000000000000000'
+        CIPHERTEXT = '43b02ff929a1485af6f5c6d6558baa0f'
+
+    def test_35(self):
+        KEY = '00000000000000000000000000000000'
+        PLAINTEXT = 'fffffffff00000000000000000000000'
+        CIPHERTEXT = '092faacc9bf43508bf8fa8613ca75dea'
+
+    def test_36(self):
+        KEY = '00000000000000000000000000000000'
+        PLAINTEXT = 'fffffffff80000000000000000000000'
+        CIPHERTEXT = 'cb2bf8280f3f9742c7ed513fe802629c'
+
+    def test_37(self):
+        KEY = '00000000000000000000000000000000'
+        PLAINTEXT = 'fffffffffc0000000000000000000000'
+        CIPHERTEXT = '215a41ee442fa992a6e323986ded3f68'
+
+    def test_38(self):
+        KEY = '00000000000000000000000000000000'
+        PLAINTEXT = 'fffffffffe0000000000000000000000'
+        CIPHERTEXT = 'f21e99cf4f0f77cea836e11a2fe75fb1'
+
+    def test_39(self):
+        KEY = '00000000000000000000000000000000'
+        PLAINTEXT = 'ffffffffff0000000000000000000000'
+        CIPHERTEXT = '95e3a0ca9079e646331df8b4e70d2cd6'
+
+    def test_40(self):
+        KEY = '00000000000000000000000000000000'
+        PLAINTEXT = 'ffffffffff8000000000000000000000'
+        CIPHERTEXT = '4afe7f120ce7613f74fc12a01a828073'
+
+    def test_41(self):
+        KEY = '00000000000000000000000000000000'
+        PLAINTEXT = 'ffffffffffc000000000000000000000'
+        CIPHERTEXT = '827f000e75e2c8b9d479beed913fe678'
+
+    def test_42(self):
+        KEY = '00000000000000000000000000000000'
+        PLAINTEXT = 'ffffffffffe000000000000000000000'
+        CIPHERTEXT = '35830c8e7aaefe2d30310ef381cbf691'
+
+    def test_43(self):
+        KEY = '00000000000000000000000000000000'
+        PLAINTEXT = 'fffffffffff000000000000000000000'
+        CIPHERTEXT = '191aa0f2c8570144f38657ea4085ebe5'
+
+    def test_44(self):
+        KEY = '00000000000000000000000000000000'
+        PLAINTEXT = 'fffffffffff800000000000000000000'
+        CIPHERTEXT = '85062c2c909f15d9269b6c18ce99c4f0'
+
+    def test_45(self):
+        KEY = '00000000000000000000000000000000'
+        PLAINTEXT = 'fffffffffffc00000000000000000000'
+        CIPHERTEXT = '678034dc9e41b5a560ed239eeab1bc78'
+
+    def test_46(self):
+        KEY = '00000000000000000000000000000000'
+        PLAINTEXT = 'fffffffffffe00000000000000000000'
+        CIPHERTEXT = 'c2f93a4ce5ab6d5d56f1b93cf19911c1'
+
+    def test_47(self):
+        KEY = '00000000000000000000000000000000'
+        PLAINTEXT = 'ffffffffffff00000000000000000000'
+        CIPHERTEXT = '1c3112bcb0c1dcc749d799743691bf82'
+
+    def test_48(self):
+        KEY = '00000000000000000000000000000000'
+        PLAINTEXT = 'ffffffffffff80000000000000000000'
+        CIPHERTEXT = '00c55bd75c7f9c881989d3ec1911c0d4'
+
+    def test_49(self):
+        KEY = '00000000000000000000000000000000'
+        PLAINTEXT = 'ffffffffffffc0000000000000000000'
+        CIPHERTEXT = 'ea2e6b5ef182b7dff3629abd6a12045f'
+
+    def test_50(self):
+        KEY = '00000000000000000000000000000000'
+        PLAINTEXT = 'ffffffffffffe0000000000000000000'
+        CIPHERTEXT = '22322327e01780b17397f24087f8cc6f'
+
+    def test_51(self):
+        KEY = '00000000000000000000000000000000'
+        PLAINTEXT = 'fffffffffffff0000000000000000000'
+        CIPHERTEXT = 'c9cacb5cd11692c373b2411768149ee7'
+
+    def test_52(self):
+        KEY = '00000000000000000000000000000000'
+        PLAINTEXT = 'fffffffffffff8000000000000000000'
+        CIPHERTEXT = 'a18e3dbbca577860dab6b80da3139256'
+
+    def test_53(self):
+        KEY = '00000000000000000000000000000000'
+        PLAINTEXT = 'fffffffffffffc000000000000000000'
+        CIPHERTEXT = '79b61c37bf328ecca8d743265a3d425c'
+
+    def test_54(self):
+        KEY = '00000000000000000000000000000000'
+        PLAINTEXT = 'fffffffffffffe000000000000000000'
+        CIPHERTEXT = 'd2d99c6bcc1f06fda8e27e8ae3f1ccc7'
+
+    def test_55(self):
+        KEY = '00000000000000000000000000000000'
+        PLAINTEXT = 'ffffffffffffff000000000000000000'
+        CIPHERTEXT = '1bfd4b91c701fd6b61b7f997829d663b'
+
+    def test_56(self):
+        KEY = '00000000000000000000000000000000'
+        PLAINTEXT = 'ffffffffffffff800000000000000000'
+        CIPHERTEXT = '11005d52f25f16bdc9545a876a63490a'
+
+    def test_57(self):
+        KEY = '00000000000000000000000000000000'
+        PLAINTEXT = 'ffffffffffffffc00000000000000000'
+        CIPHERTEXT = '3a4d354f02bb5a5e47d39666867f246a'
+
+    def test_58(self):
+        KEY = '00000000000000000000000000000000'
+        PLAINTEXT = 'ffffffffffffffe00000000000000000'
+        CIPHERTEXT = 'd451b8d6e1e1a0ebb155fbbf6e7b7dc3'
+
+    def test_59(self):
+        KEY = '00000000000000000000000000000000'
+        PLAINTEXT = 'fffffffffffffff00000000000000000'
+        CIPHERTEXT = '6898d4f42fa7ba6a10ac05e87b9f2080'
+
+    def test_60(self):
+        KEY = '00000000000000000000000000000000'
+        PLAINTEXT = 'fffffffffffffff80000000000000000'
+        CIPHERTEXT = 'b611295e739ca7d9b50f8e4c0e754a3f'
+
+    def test_61(self):
+        KEY = '00000000000000000000000000000000'
+        PLAINTEXT = 'fffffffffffffffc0000000000000000'
+        CIPHERTEXT = '7d33fc7d8abe3ca1936759f8f5deaf20'
+
+    def test_62(self):
+        KEY = '00000000000000000000000000000000'
+        PLAINTEXT = 'fffffffffffffffe0000000000000000'
+        CIPHERTEXT = '3b5e0f566dc96c298f0c12637539b25c'
+
+    def test_63(self):
+        KEY = '00000000000000000000000000000000'
+        PLAINTEXT = 'ffffffffffffffff0000000000000000'
+        CIPHERTEXT = 'f807c3e7985fe0f5a50e2cdb25c5109e'
+
+    def test_64(self):
+        KEY = '00000000000000000000000000000000'
+        PLAINTEXT = 'ffffffffffffffff8000000000000000'
+        CIPHERTEXT = '41f992a856fb278b389a62f5d274d7e9'
+
+    def test_65(self):
+        KEY = '00000000000000000000000000000000'
+        PLAINTEXT = 'ffffffffffffffffc000000000000000'
+        CIPHERTEXT = '10d3ed7a6fe15ab4d91acbc7d0767ab1'
+
+    def test_66(self):
+        KEY = '00000000000000000000000000000000'
+        PLAINTEXT = 'ffffffffffffffffe000000000000000'
+        CIPHERTEXT = '21feecd45b2e675973ac33bf0c5424fc'
+
+    def test_67(self):
+        KEY = '00000000000000000000000000000000'
+        PLAINTEXT = 'fffffffffffffffff000000000000000'
+        CIPHERTEXT = '1480cb3955ba62d09eea668f7c708817'
+
+    def test_68(self):
+        KEY = '00000000000000000000000000000000'
+        PLAINTEXT = 'fffffffffffffffff800000000000000'
+        CIPHERTEXT = '66404033d6b72b609354d5496e7eb511'
+
+    def test_69(self):
+        KEY = '00000000000000000000000000000000'
+        PLAINTEXT = 'fffffffffffffffffc00000000000000'
+        CIPHERTEXT = '1c317a220a7d700da2b1e075b00266e1'
+
+    def test_70(self):
+        KEY = '00000000000000000000000000000000'
+        PLAINTEXT = 'fffffffffffffffffe00000000000000'
+        CIPHERTEXT = 'ab3b89542233f1271bf8fd0c0f403545'
+
+    def test_71(self):
+        KEY = '00000000000000000000000000000000'
+        PLAINTEXT = 'ffffffffffffffffff00000000000000'
+        CIPHERTEXT = 'd93eae966fac46dca927d6b114fa3f9e'
+
+    def test_72(self):
+        KEY = '00000000000000000000000000000000'
+        PLAINTEXT = 'ffffffffffffffffff80000000000000'
+        CIPHERTEXT = '1bdec521316503d9d5ee65df3ea94ddf'
+
+    def test_73(self):
+        KEY = '00000000000000000000000000000000'
+        PLAINTEXT = 'ffffffffffffffffffc0000000000000'
+        CIPHERTEXT = 'eef456431dea8b4acf83bdae3717f75f'
+
+    def test_74(self):
+        KEY = '00000000000000000000000000000000'
+        PLAINTEXT = 'ffffffffffffffffffe0000000000000'
+        CIPHERTEXT = '06f2519a2fafaa596bfef5cfa15c21b9'
+
+    def test_75(self):
+        KEY = '00000000000000000000000000000000'
+        PLAINTEXT = 'fffffffffffffffffff0000000000000'
+        CIPHERTEXT = '251a7eac7e2fe809e4aa8d0d7012531a'
+
+    def test_76(self):
+        KEY = '00000000000000000000000000000000'
+        PLAINTEXT = 'fffffffffffffffffff8000000000000'
+        CIPHERTEXT = '3bffc16e4c49b268a20f8d96a60b4058'
+
+    def test_77(self):
+        KEY = '00000000000000000000000000000000'
+        PLAINTEXT = 'fffffffffffffffffffc000000000000'
+        CIPHERTEXT = 'e886f9281999c5bb3b3e8862e2f7c988'
+
+    def test_78(self):
+        KEY = '00000000000000000000000000000000'
+        PLAINTEXT = 'fffffffffffffffffffe000000000000'
+        CIPHERTEXT = '563bf90d61beef39f48dd625fcef1361'
+
+    def test_79(self):
+        KEY = '00000000000000000000000000000000'
+        PLAINTEXT = 'ffffffffffffffffffff000000000000'
+        CIPHERTEXT = '4d37c850644563c69fd0acd9a049325b'
+
+    def test_80(self):
+        KEY = '00000000000000000000000000000000'
+        PLAINTEXT = 'ffffffffffffffffffff800000000000'
+        CIPHERTEXT = 'b87c921b91829ef3b13ca541ee1130a6'
+
+    def test_81(self):
+        KEY = '00000000000000000000000000000000'
+        PLAINTEXT = 'ffffffffffffffffffffc00000000000'
+        CIPHERTEXT = '2e65eb6b6ea383e109accce8326b0393'
+
+    def test_82(self):
+        KEY = '00000000000000000000000000000000'
+        PLAINTEXT = 'ffffffffffffffffffffe00000000000'
+        CIPHERTEXT = '9ca547f7439edc3e255c0f4d49aa8990'
+
+    def test_83(self):
+        KEY = '00000000000000000000000000000000'
+        PLAINTEXT = 'fffffffffffffffffffff00000000000'
+        CIPHERTEXT = 'a5e652614c9300f37816b1f9fd0c87f9'
+
+    def test_84(self):
+        KEY = '00000000000000000000000000000000'
+        PLAINTEXT = 'fffffffffffffffffffff80000000000'
+        CIPHERTEXT = '14954f0b4697776f44494fe458d814ed'
+
+    def test_85(self):
+        KEY = '00000000000000000000000000000000'
+        PLAINTEXT = 'fffffffffffffffffffffc0000000000'
+        CIPHERTEXT = '7c8d9ab6c2761723fe42f8bb506cbcf7'
+
+    def test_86(self):
+        KEY = '00000000000000000000000000000000'
+        PLAINTEXT = 'fffffffffffffffffffffe0000000000'
+        CIPHERTEXT = 'db7e1932679fdd99742aab04aa0d5a80'
+
+    def test_87(self):
+        KEY = '00000000000000000000000000000000'
+        PLAINTEXT = 'ffffffffffffffffffffff0000000000'
+        CIPHERTEXT = '4c6a1c83e568cd10f27c2d73ded19c28'
+
+    def test_88(self):
+        KEY = '00000000000000000000000000000000'
+        PLAINTEXT = 'ffffffffffffffffffffff8000000000'
+        CIPHERTEXT = '90ecbe6177e674c98de412413f7ac915'
+
+    def test_89(self):
+        KEY = '00000000000000000000000000000000'
+        PLAINTEXT = 'ffffffffffffffffffffffc000000000'
+        CIPHERTEXT = '90684a2ac55fe1ec2b8ebd5622520b73'
+
+    def test_90(self):
+        KEY = '00000000000000000000000000000000'
+        PLAINTEXT = 'ffffffffffffffffffffffe000000000'
+        CIPHERTEXT = '7472f9a7988607ca79707795991035e6'
+
+    def test_91(self):
+        KEY = '00000000000000000000000000000000'
+        PLAINTEXT = 'fffffffffffffffffffffff000000000'
+        CIPHERTEXT = '56aff089878bf3352f8df172a3ae47d8'
+
+    def test_92(self):
+        KEY = '00000000000000000000000000000000'
+        PLAINTEXT = 'fffffffffffffffffffffff800000000'
+        CIPHERTEXT = '65c0526cbe40161b8019a2a3171abd23'
+
+    def test_93(self):
+        KEY = '00000000000000000000000000000000'
+        PLAINTEXT = 'fffffffffffffffffffffffc00000000'
+        CIPHERTEXT = '377be0be33b4e3e310b4aabda173f84f'
+
+    def test_94(self):
+        KEY = '00000000000000000000000000000000'
+        PLAINTEXT = 'fffffffffffffffffffffffe00000000'
+        CIPHERTEXT = '9402e9aa6f69de6504da8d20c4fcaa2f'
+
+    def test_95(self):
+        KEY = '00000000000000000000000000000000'
+        PLAINTEXT = 'ffffffffffffffffffffffff00000000'
+        CIPHERTEXT = '123c1f4af313ad8c2ce648b2e71fb6e1'
+
+    def test_96(self):
+        KEY = '00000000000000000000000000000000'
+        PLAINTEXT = 'ffffffffffffffffffffffff80000000'
+        CIPHERTEXT = '1ffc626d30203dcdb0019fb80f726cf4'
+
+    def test_97(self):
+        KEY = '00000000000000000000000000000000'
+        PLAINTEXT = 'ffffffffffffffffffffffffc0000000'
+        CIPHERTEXT = '76da1fbe3a50728c50fd2e621b5ad885'
+
+    def test_98(self):
+        KEY = '00000000000000000000000000000000'
+        PLAINTEXT = 'ffffffffffffffffffffffffe0000000'
+        CIPHERTEXT = '082eb8be35f442fb52668e16a591d1d6'
+
+    def test_99(self):
+        KEY = '00000000000000000000000000000000'
+        PLAINTEXT = 'fffffffffffffffffffffffff0000000'
+        CIPHERTEXT = 'e656f9ecf5fe27ec3e4a73d00c282fb3'
+
+    def test_100(self):
+        KEY = '00000000000000000000000000000000'
+        PLAINTEXT = 'fffffffffffffffffffffffff8000000'
+        CIPHERTEXT = '2ca8209d63274cd9a29bb74bcd77683a'
+
+    def test_101(self):
+        KEY = '00000000000000000000000000000000'
+        PLAINTEXT = 'fffffffffffffffffffffffffc000000'
+        CIPHERTEXT = '79bf5dce14bb7dd73a8e3611de7ce026'
+
+    def test_102(self):
+        KEY = '00000000000000000000000000000000'
+        PLAINTEXT = 'fffffffffffffffffffffffffe000000'
+        CIPHERTEXT = '3c849939a5d29399f344c4a0eca8a576'
+
+    def test_103(self):
+        KEY = '00000000000000000000000000000000'
+        PLAINTEXT = 'ffffffffffffffffffffffffff000000'
+        CIPHERTEXT = 'ed3c0a94d59bece98835da7aa4f07ca2'
+
+    def test_104(self):
+        KEY = '00000000000000000000000000000000'
+        PLAINTEXT = 'ffffffffffffffffffffffffff800000'
+        CIPHERTEXT = '63919ed4ce10196438b6ad09d99cd795'
+
+    def test_105(self):
+        KEY = '00000000000000000000000000000000'
+        PLAINTEXT = 'ffffffffffffffffffffffffffc00000'
+        CIPHERTEXT = '7678f3a833f19fea95f3c6029e2bc610'
+
+    def test_106(self):
+        KEY = '00000000000000000000000000000000'
+        PLAINTEXT = 'ffffffffffffffffffffffffffe00000'
+        CIPHERTEXT = '3aa426831067d36b92be7c5f81c13c56'
+
+    def test_107(self):
+        KEY = '00000000000000000000000000000000'
+        PLAINTEXT = 'fffffffffffffffffffffffffff00000'
+        CIPHERTEXT = '9272e2d2cdd11050998c845077a30ea0'
+
+    def test_108(self):
+        KEY = '00000000000000000000000000000000'
+        PLAINTEXT = 'fffffffffffffffffffffffffff80000'
+        CIPHERTEXT = '088c4b53f5ec0ff814c19adae7f6246c'
+
+    def test_109(self):
+        KEY = '00000000000000000000000000000000'
+        PLAINTEXT = 'fffffffffffffffffffffffffffc0000'
+        CIPHERTEXT = '4010a5e401fdf0a0354ddbcc0d012b17'
+
+    def test_110(self):
+        KEY = '00000000000000000000000000000000'
+        PLAINTEXT = 'fffffffffffffffffffffffffffe0000'
+        CIPHERTEXT = 'a87a385736c0a6189bd6589bd8445a93'
+
+    def test_111(self):
+        KEY = '00000000000000000000000000000000'
+        PLAINTEXT = 'ffffffffffffffffffffffffffff0000'
+        CIPHERTEXT = '545f2b83d9616dccf60fa9830e9cd287'
+
+    def test_112(self):
+        KEY = '00000000000000000000000000000000'
+        PLAINTEXT = 'ffffffffffffffffffffffffffff8000'
+        CIPHERTEXT = '4b706f7f92406352394037a6d4f4688d'
+
+    def test_113(self):
+        KEY = '00000000000000000000000000000000'
+        PLAINTEXT = 'ffffffffffffffffffffffffffffc000'
+        CIPHERTEXT = 'b7972b3941c44b90afa7b264bfba7387'
+
+    def test_114(self):
+        KEY = '00000000000000000000000000000000'
+        PLAINTEXT = 'ffffffffffffffffffffffffffffe000'
+        CIPHERTEXT = '6f45732cf10881546f0fd23896d2bb60'
+
+    def test_115(self):
+        KEY = '00000000000000000000000000000000'
+        PLAINTEXT = 'fffffffffffffffffffffffffffff000'
+        CIPHERTEXT = '2e3579ca15af27f64b3c955a5bfc30ba'
+
+    def test_116(self):
+        KEY = '00000000000000000000000000000000'
+        PLAINTEXT = 'fffffffffffffffffffffffffffff800'
+        CIPHERTEXT = '34a2c5a91ae2aec99b7d1b5fa6780447'
+
+    def test_117(self):
+        KEY = '00000000000000000000000000000000'
+        PLAINTEXT = 'fffffffffffffffffffffffffffffc00'
+        CIPHERTEXT = 'a4d6616bd04f87335b0e53351227a9ee'
+
+    def test_118(self):
+        KEY = '00000000000000000000000000000000'
+        PLAINTEXT = 'fffffffffffffffffffffffffffffe00'
+        CIPHERTEXT = '7f692b03945867d16179a8cefc83ea3f'
+
+    def test_119(self):
+        KEY = '00000000000000000000000000000000'
+        PLAINTEXT = 'ffffffffffffffffffffffffffffff00'
+        CIPHERTEXT = '3bd141ee84a0e6414a26e7a4f281f8a2'
+
+    def test_120(self):
+        KEY = '00000000000000000000000000000000'
+        PLAINTEXT = 'ffffffffffffffffffffffffffffff80'
+        CIPHERTEXT = 'd1788f572d98b2b16ec5d5f3922b99bc'
+
+    def test_121(self):
+        KEY = '00000000000000000000000000000000'
+        PLAINTEXT = 'ffffffffffffffffffffffffffffffc0'
+        CIPHERTEXT = '0833ff6f61d98a57b288e8c3586b85a6'
+
+    def test_122(self):
+        KEY = '00000000000000000000000000000000'
+        PLAINTEXT = 'ffffffffffffffffffffffffffffffe0'
+        CIPHERTEXT = '8568261797de176bf0b43becc6285afb'
+
+    def test_123(self):
+        KEY = '00000000000000000000000000000000'
+        PLAINTEXT = 'fffffffffffffffffffffffffffffff0'
+        CIPHERTEXT = 'f9b0fda0c4a898f5b9e6f661c4ce4d07'
+
+    def test_124(self):
+        KEY = '00000000000000000000000000000000'
+        PLAINTEXT = 'fffffffffffffffffffffffffffffff8'
+        CIPHERTEXT = '8ade895913685c67c5269f8aae42983e'
+
+    def test_125(self):
+        KEY = '00000000000000000000000000000000'
+        PLAINTEXT = 'fffffffffffffffffffffffffffffffc'
+        CIPHERTEXT = '39bde67d5c8ed8a8b1c37eb8fa9f5ac0'
+
+    def test_126(self):
+        KEY = '00000000000000000000000000000000'
+        PLAINTEXT = 'fffffffffffffffffffffffffffffffe'
+        CIPHERTEXT = '5c005e72c1418c44f569f2ea33ba54f3'
+
+    def test_127(self):
+        KEY = '00000000000000000000000000000000'
+        PLAINTEXT = 'ffffffffffffffffffffffffffffffff'
+        CIPHERTEXT = '3f5b8cc9ea855a0afa7347d23e8d664e'
+
+class TestECBVarTxt192e(unittest.TestCase):
+    def test_0(self):
+        KEY = '000000000000000000000000000000000000000000000000'
+        PLAINTEXT = '80000000000000000000000000000000'
+        CIPHERTEXT = '6cd02513e8d4dc986b4afe087a60bd0c'
+
+    def test_1(self):
+        KEY = '000000000000000000000000000000000000000000000000'
+        PLAINTEXT = 'c0000000000000000000000000000000'
+        CIPHERTEXT = '2ce1f8b7e30627c1c4519eada44bc436'
+
+    def test_2(self):
+        KEY = '000000000000000000000000000000000000000000000000'
+        PLAINTEXT = 'e0000000000000000000000000000000'
+        CIPHERTEXT = '9946b5f87af446f5796c1fee63a2da24'
+
+    def test_3(self):
+        KEY = '000000000000000000000000000000000000000000000000'
+        PLAINTEXT = 'f0000000000000000000000000000000'
+        CIPHERTEXT = '2a560364ce529efc21788779568d5555'
+
+    def test_4(self):
+        KEY = '000000000000000000000000000000000000000000000000'
+        PLAINTEXT = 'f8000000000000000000000000000000'
+        CIPHERTEXT = '35c1471837af446153bce55d5ba72a0a'
+
+    def test_5(self):
+        KEY = '000000000000000000000000000000000000000000000000'
+        PLAINTEXT = 'fc000000000000000000000000000000'
+        CIPHERTEXT = 'ce60bc52386234f158f84341e534cd9e'
+
+    def test_6(self):
+        KEY = '000000000000000000000000000000000000000000000000'
+        PLAINTEXT = 'fe000000000000000000000000000000'
+        CIPHERTEXT = '8c7c27ff32bcf8dc2dc57c90c2903961'
+
+    def test_7(self):
+        KEY = '000000000000000000000000000000000000000000000000'
+        PLAINTEXT = 'ff000000000000000000000000000000'
+        CIPHERTEXT = '32bb6a7ec84499e166f936003d55a5bb'
+
+    def test_8(self):
+        KEY = '000000000000000000000000000000000000000000000000'
+        PLAINTEXT = 'ff800000000000000000000000000000'
+        CIPHERTEXT = 'a5c772e5c62631ef660ee1d5877f6d1b'
+
+    def test_9(self):
+        KEY = '000000000000000000000000000000000000000000000000'
+        PLAINTEXT = 'ffc00000000000000000000000000000'
+        CIPHERTEXT = '030d7e5b64f380a7e4ea5387b5cd7f49'
+
+    def test_10(self):
+        KEY = '000000000000000000000000000000000000000000000000'
+        PLAINTEXT = 'ffe00000000000000000000000000000'
+        CIPHERTEXT = '0dc9a2610037009b698f11bb7e86c83e'
+
+    def test_11(self):
+        KEY = '000000000000000000000000000000000000000000000000'
+        PLAINTEXT = 'fff00000000000000000000000000000'
+        CIPHERTEXT = '0046612c766d1840c226364f1fa7ed72'
+
+    def test_12(self):
+        KEY = '000000000000000000000000000000000000000000000000'
+        PLAINTEXT = 'fff80000000000000000000000000000'
+        CIPHERTEXT = '4880c7e08f27befe78590743c05e698b'
+
+    def test_13(self):
+        KEY = '000000000000000000000000000000000000000000000000'
+        PLAINTEXT = 'fffc0000000000000000000000000000'
+        CIPHERTEXT = '2520ce829a26577f0f4822c4ecc87401'
+
+    def test_14(self):
+        KEY = '000000000000000000000000000000000000000000000000'
+        PLAINTEXT = 'fffe0000000000000000000000000000'
+        CIPHERTEXT = '8765e8acc169758319cb46dc7bcf3dca'
+
+    def test_15(self):
+        KEY = '000000000000000000000000000000000000000000000000'
+        PLAINTEXT = 'ffff0000000000000000000000000000'
+        CIPHERTEXT = 'e98f4ba4f073df4baa116d011dc24a28'
+
+    def test_16(self):
+        KEY = '000000000000000000000000000000000000000000000000'
+        PLAINTEXT = 'ffff8000000000000000000000000000'
+        CIPHERTEXT = 'f378f68c5dbf59e211b3a659a7317d94'
+
+    def test_17(self):
+        KEY = '000000000000000000000000000000000000000000000000'
+        PLAINTEXT = 'ffffc000000000000000000000000000'
+        CIPHERTEXT = '283d3b069d8eb9fb432d74b96ca762b4'
+
+    def test_18(self):
+        KEY = '000000000000000000000000000000000000000000000000'
+        PLAINTEXT = 'ffffe000000000000000000000000000'
+        CIPHERTEXT = 'a7e1842e8a87861c221a500883245c51'
+
+    def test_19(self):
+        KEY = '000000000000000000000000000000000000000000000000'
+        PLAINTEXT = 'fffff000000000000000000000000000'
+        CIPHERTEXT = '77aa270471881be070fb52c7067ce732'
+
+    def test_20(self):
+        KEY = '000000000000000000000000000000000000000000000000'
+        PLAINTEXT = 'fffff800000000000000000000000000'
+        CIPHERTEXT = '01b0f476d484f43f1aeb6efa9361a8ac'
+
+    def test_21(self):
+        KEY = '000000000000000000000000000000000000000000000000'
+        PLAINTEXT = 'fffffc00000000000000000000000000'
+        CIPHERTEXT = '1c3a94f1c052c55c2d8359aff2163b4f'
+
+    def test_22(self):
+        KEY = '000000000000000000000000000000000000000000000000'
+        PLAINTEXT = 'fffffe00000000000000000000000000'
+        CIPHERTEXT = 'e8a067b604d5373d8b0f2e05a03b341b'
+
+    def test_23(self):
+        KEY = '000000000000000000000000000000000000000000000000'
+        PLAINTEXT = 'ffffff00000000000000000000000000'
+        CIPHERTEXT = 'a7876ec87f5a09bfea42c77da30fd50e'
+
+    def test_24(self):
+        KEY = '000000000000000000000000000000000000000000000000'
+        PLAINTEXT = 'ffffff80000000000000000000000000'
+        CIPHERTEXT = '0cf3e9d3a42be5b854ca65b13f35f48d'
+
+    def test_25(self):
+        KEY = '000000000000000000000000000000000000000000000000'
+        PLAINTEXT = 'ffffffc0000000000000000000000000'
+        CIPHERTEXT = '6c62f6bbcab7c3e821c9290f08892dda'
+
+    def test_26(self):
+        KEY = '000000000000000000000000000000000000000000000000'
+        PLAINTEXT = 'ffffffe0000000000000000000000000'
+        CIPHERTEXT = '7f5e05bd2068738196fee79ace7e3aec'
+
+    def test_27(self):
+        KEY = '000000000000000000000000000000000000000000000000'
+        PLAINTEXT = 'fffffff0000000000000000000000000'
+        CIPHERTEXT = '440e0d733255cda92fb46e842fe58054'
+
+    def test_28(self):
+        KEY = '000000000000000000000000000000000000000000000000'
+        PLAINTEXT = 'fffffff8000000000000000000000000'
+        CIPHERTEXT = 'aa5d5b1c4ea1b7a22e5583ac2e9ed8a7'
+
+    def test_29(self):
+        KEY = '000000000000000000000000000000000000000000000000'
+        PLAINTEXT = 'fffffffc000000000000000000000000'
+        CIPHERTEXT = '77e537e89e8491e8662aae3bc809421d'
+
+    def test_30(self):
+        KEY = '000000000000000000000000000000000000000000000000'
+        PLAINTEXT = 'fffffffe000000000000000000000000'
+        CIPHERTEXT = '997dd3e9f1598bfa73f75973f7e93b76'
+
+    def test_31(self):
+        KEY = '000000000000000000000000000000000000000000000000'
+        PLAINTEXT = 'ffffffff000000000000000000000000'
+        CIPHERTEXT = '1b38d4f7452afefcb7fc721244e4b72e'
+
+    def test_32(self):
+        KEY = '000000000000000000000000000000000000000000000000'
+        PLAINTEXT = 'ffffffff800000000000000000000000'
+        CIPHERTEXT = '0be2b18252e774dda30cdda02c6906e3'
+
+    def test_33(self):
+        KEY = '000000000000000000000000000000000000000000000000'
+        PLAINTEXT = 'ffffffffc00000000000000000000000'
+        CIPHERTEXT = 'd2695e59c20361d82652d7d58b6f11b2'
+
+    def test_34(self):
+        KEY = '000000000000000000000000000000000000000000000000'
+        PLAINTEXT = 'ffffffffe00000000000000000000000'
+        CIPHERTEXT = '902d88d13eae52089abd6143cfe394e9'
+
+    def test_35(self):
+        KEY = '000000000000000000000000000000000000000000000000'
+        PLAINTEXT = 'fffffffff00000000000000000000000'
+        CIPHERTEXT = 'd49bceb3b823fedd602c305345734bd2'
+
+    def test_36(self):
+        KEY = '000000000000000000000000000000000000000000000000'
+        PLAINTEXT = 'fffffffff80000000000000000000000'
+        CIPHERTEXT = '707b1dbb0ffa40ef7d95def421233fae'
+
+    def test_37(self):
+        KEY = '000000000000000000000000000000000000000000000000'
+        PLAINTEXT = 'fffffffffc0000000000000000000000'
+        CIPHERTEXT = '7ca0c1d93356d9eb8aa952084d75f913'
+
+    def test_38(self):
+        KEY = '000000000000000000000000000000000000000000000000'
+        PLAINTEXT = 'fffffffffe0000000000000000000000'
+        CIPHERTEXT = 'f2cbf9cb186e270dd7bdb0c28febc57d'
+
+    def test_39(self):
+        KEY = '000000000000000000000000000000000000000000000000'
+        PLAINTEXT = 'ffffffffff0000000000000000000000'
+        CIPHERTEXT = 'c94337c37c4e790ab45780bd9c3674a0'
+
+    def test_40(self):
+        KEY = '000000000000000000000000000000000000000000000000'
+        PLAINTEXT = 'ffffffffff8000000000000000000000'
+        CIPHERTEXT = '8e3558c135252fb9c9f367ed609467a1'
+
+    def test_41(self):
+        KEY = '000000000000000000000000000000000000000000000000'
+        PLAINTEXT = 'ffffffffffc000000000000000000000'
+        CIPHERTEXT = '1b72eeaee4899b443914e5b3a57fba92'
+
+    def test_42(self):
+        KEY = '000000000000000000000000000000000000000000000000'
+        PLAINTEXT = 'ffffffffffe000000000000000000000'
+        CIPHERTEXT = '011865f91bc56868d051e52c9efd59b7'
+
+    def test_43(self):
+        KEY = '000000000000000000000000000000000000000000000000'
+        PLAINTEXT = 'fffffffffff000000000000000000000'
+        CIPHERTEXT = 'e4771318ad7a63dd680f6e583b7747ea'
+
+    def test_44(self):
+        KEY = '000000000000000000000000000000000000000000000000'
+        PLAINTEXT = 'fffffffffff800000000000000000000'
+        CIPHERTEXT = '61e3d194088dc8d97e9e6db37457eac5'
+
+    def test_45(self):
+        KEY = '000000000000000000000000000000000000000000000000'
+        PLAINTEXT = 'fffffffffffc00000000000000000000'
+        CIPHERTEXT = '36ff1ec9ccfbc349e5d356d063693ad6'
+
+    def test_46(self):
+        KEY = '000000000000000000000000000000000000000000000000'
+        PLAINTEXT = 'fffffffffffe00000000000000000000'
+        CIPHERTEXT = '3cc9e9a9be8cc3f6fb2ea24088e9bb19'
+
+    def test_47(self):
+        KEY = '000000000000000000000000000000000000000000000000'
+        PLAINTEXT = 'ffffffffffff00000000000000000000'
+        CIPHERTEXT = '1ee5ab003dc8722e74905d9a8fe3d350'
+
+    def test_48(self):
+        KEY = '000000000000000000000000000000000000000000000000'
+        PLAINTEXT = 'ffffffffffff80000000000000000000'
+        CIPHERTEXT = '245339319584b0a412412869d6c2eada'
+
+    def test_49(self):
+        KEY = '000000000000000000000000000000000000000000000000'
+        PLAINTEXT = 'ffffffffffffc0000000000000000000'
+        CIPHERTEXT = '7bd496918115d14ed5380852716c8814'
+
+    def test_50(self):
+        KEY = '000000000000000000000000000000000000000000000000'
+        PLAINTEXT = 'ffffffffffffe0000000000000000000'
+        CIPHERTEXT = '273ab2f2b4a366a57d582a339313c8b1'
+
+    def test_51(self):
+        KEY = '000000000000000000000000000000000000000000000000'
+        PLAINTEXT = 'fffffffffffff0000000000000000000'
+        CIPHERTEXT = '113365a9ffbe3b0ca61e98507554168b'
+
+    def test_52(self):
+        KEY = '000000000000000000000000000000000000000000000000'
+        PLAINTEXT = 'fffffffffffff8000000000000000000'
+        CIPHERTEXT = 'afa99c997ac478a0dea4119c9e45f8b1'
+
+    def test_53(self):
+        KEY = '000000000000000000000000000000000000000000000000'
+        PLAINTEXT = 'fffffffffffffc000000000000000000'
+        CIPHERTEXT = '9216309a7842430b83ffb98638011512'
+
+    def test_54(self):
+        KEY = '000000000000000000000000000000000000000000000000'
+        PLAINTEXT = 'fffffffffffffe000000000000000000'
+        CIPHERTEXT = '62abc792288258492a7cb45145f4b759'
+
+    def test_55(self):
+        KEY = '000000000000000000000000000000000000000000000000'
+        PLAINTEXT = 'ffffffffffffff000000000000000000'
+        CIPHERTEXT = '534923c169d504d7519c15d30e756c50'
+
+    def test_56(self):
+        KEY = '000000000000000000000000000000000000000000000000'
+        PLAINTEXT = 'ffffffffffffff800000000000000000'
+        CIPHERTEXT = 'fa75e05bcdc7e00c273fa33f6ee441d2'
+
+    def test_57(self):
+        KEY = '000000000000000000000000000000000000000000000000'
+        PLAINTEXT = 'ffffffffffffffc00000000000000000'
+        CIPHERTEXT = '7d350fa6057080f1086a56b17ec240db'
+
+    def test_58(self):
+        KEY = '000000000000000000000000000000000000000000000000'
+        PLAINTEXT = 'ffffffffffffffe00000000000000000'
+        CIPHERTEXT = 'f34e4a6324ea4a5c39a661c8fe5ada8f'
+
+    def test_59(self):
+        KEY = '000000000000000000000000000000000000000000000000'
+        PLAINTEXT = 'fffffffffffffff00000000000000000'
+        CIPHERTEXT = '0882a16f44088d42447a29ac090ec17e'
+
+    def test_60(self):
+        KEY = '000000000000000000000000000000000000000000000000'
+        PLAINTEXT = 'fffffffffffffff80000000000000000'
+        CIPHERTEXT = '3a3c15bfc11a9537c130687004e136ee'
+
+    def test_61(self):
+        KEY = '000000000000000000000000000000000000000000000000'
+        PLAINTEXT = 'fffffffffffffffc0000000000000000'
+        CIPHERTEXT = '22c0a7678dc6d8cf5c8a6d5a9960767c'
+
+    def test_62(self):
+        KEY = '000000000000000000000000000000000000000000000000'
+        PLAINTEXT = 'fffffffffffffffe0000000000000000'
+        CIPHERTEXT = 'b46b09809d68b9a456432a79bdc2e38c'
+
+    def test_63(self):
+        KEY = '000000000000000000000000000000000000000000000000'
+        PLAINTEXT = 'ffffffffffffffff0000000000000000'
+        CIPHERTEXT = '93baaffb35fbe739c17c6ac22eecf18f'
+
+    def test_64(self):
+        KEY = '000000000000000000000000000000000000000000000000'
+        PLAINTEXT = 'ffffffffffffffff8000000000000000'
+        CIPHERTEXT = 'c8aa80a7850675bc007c46df06b49868'
+
+    def test_65(self):
+        KEY = '000000000000000000000000000000000000000000000000'
+        PLAINTEXT = 'ffffffffffffffffc000000000000000'
+        CIPHERTEXT = '12c6f3877af421a918a84b775858021d'
+
+    def test_66(self):
+        KEY = '000000000000000000000000000000000000000000000000'
+        PLAINTEXT = 'ffffffffffffffffe000000000000000'
+        CIPHERTEXT = '33f123282c5d633924f7d5ba3f3cab11'
+
+    def test_67(self):
+        KEY = '000000000000000000000000000000000000000000000000'
+        PLAINTEXT = 'fffffffffffffffff000000000000000'
+        CIPHERTEXT = 'a8f161002733e93ca4527d22c1a0c5bb'
+
+    def test_68(self):
+        KEY = '000000000000000000000000000000000000000000000000'
+        PLAINTEXT = 'fffffffffffffffff800000000000000'
+        CIPHERTEXT = 'b72f70ebf3e3fda23f508eec76b42c02'
+
+    def test_69(self):
+        KEY = '000000000000000000000000000000000000000000000000'
+        PLAINTEXT = 'fffffffffffffffffc00000000000000'
+        CIPHERTEXT = '6a9d965e6274143f25afdcfc88ffd77c'
+
+    def test_70(self):
+        KEY = '000000000000000000000000000000000000000000000000'
+        PLAINTEXT = 'fffffffffffffffffe00000000000000'
+        CIPHERTEXT = 'a0c74fd0b9361764ce91c5200b095357'
+
+    def test_71(self):
+        KEY = '000000000000000000000000000000000000000000000000'
+        PLAINTEXT = 'ffffffffffffffffff00000000000000'
+        CIPHERTEXT = '091d1fdc2bd2c346cd5046a8c6209146'
+
+    def test_72(self):
+        KEY = '000000000000000000000000000000000000000000000000'
+        PLAINTEXT = 'ffffffffffffffffff80000000000000'
+        CIPHERTEXT = 'e2a37580116cfb71856254496ab0aca8'
+
+    def test_73(self):
+        KEY = '000000000000000000000000000000000000000000000000'
+        PLAINTEXT = 'ffffffffffffffffffc0000000000000'
+        CIPHERTEXT = 'e0b3a00785917c7efc9adba322813571'
+
+    def test_74(self):
+        KEY = '000000000000000000000000000000000000000000000000'
+        PLAINTEXT = 'ffffffffffffffffffe0000000000000'
+        CIPHERTEXT = '733d41f4727b5ef0df4af4cf3cffa0cb'
+
+    def test_75(self):
+        KEY = '000000000000000000000000000000000000000000000000'
+        PLAINTEXT = 'fffffffffffffffffff0000000000000'
+        CIPHERTEXT = 'a99ebb030260826f981ad3e64490aa4f'
+
+    def test_76(self):
+        KEY = '000000000000000000000000000000000000000000000000'
+        PLAINTEXT = 'fffffffffffffffffff8000000000000'
+        CIPHERTEXT = '73f34c7d3eae5e80082c1647524308ee'
+
+    def test_77(self):
+        KEY = '000000000000000000000000000000000000000000000000'
+        PLAINTEXT = 'fffffffffffffffffffc000000000000'
+        CIPHERTEXT = '40ebd5ad082345b7a2097ccd3464da02'
+
+    def test_78(self):
+        KEY = '000000000000000000000000000000000000000000000000'
+        PLAINTEXT = 'fffffffffffffffffffe000000000000'
+        CIPHERTEXT = '7cc4ae9a424b2cec90c97153c2457ec5'
+
+    def test_79(self):
+        KEY = '000000000000000000000000000000000000000000000000'
+        PLAINTEXT = 'ffffffffffffffffffff000000000000'
+        CIPHERTEXT = '54d632d03aba0bd0f91877ebdd4d09cb'
+
+    def test_80(self):
+        KEY = '000000000000000000000000000000000000000000000000'
+        PLAINTEXT = 'ffffffffffffffffffff800000000000'
+        CIPHERTEXT = 'd3427be7e4d27cd54f5fe37b03cf0897'
+
+    def test_81(self):
+        KEY = '000000000000000000000000000000000000000000000000'
+        PLAINTEXT = 'ffffffffffffffffffffc00000000000'
+        CIPHERTEXT = 'b2099795e88cc158fd75ea133d7e7fbe'
+
+    def test_82(self):
+        KEY = '000000000000000000000000000000000000000000000000'
+        PLAINTEXT = 'ffffffffffffffffffffe00000000000'
+        CIPHERTEXT = 'a6cae46fb6fadfe7a2c302a34242817b'
+
+    def test_83(self):
+        KEY = '000000000000000000000000000000000000000000000000'
+        PLAINTEXT = 'fffffffffffffffffffff00000000000'
+        CIPHERTEXT = '026a7024d6a902e0b3ffccbaa910cc3f'
+
+    def test_84(self):
+        KEY = '000000000000000000000000000000000000000000000000'
+        PLAINTEXT = 'fffffffffffffffffffff80000000000'
+        CIPHERTEXT = '156f07767a85a4312321f63968338a01'
+
+    def test_85(self):
+        KEY = '000000000000000000000000000000000000000000000000'
+        PLAINTEXT = 'fffffffffffffffffffffc0000000000'
+        CIPHERTEXT = '15eec9ebf42b9ca76897d2cd6c5a12e2'
+
+    def test_86(self):
+        KEY = '000000000000000000000000000000000000000000000000'
+        PLAINTEXT = 'fffffffffffffffffffffe0000000000'
+        CIPHERTEXT = 'db0d3a6fdcc13f915e2b302ceeb70fd8'
+
+    def test_87(self):
+        KEY = '000000000000000000000000000000000000000000000000'
+        PLAINTEXT = 'ffffffffffffffffffffff0000000000'
+        CIPHERTEXT = '71dbf37e87a2e34d15b20e8f10e48924'
+
+    def test_88(self):
+        KEY = '000000000000000000000000000000000000000000000000'
+        PLAINTEXT = 'ffffffffffffffffffffff8000000000'
+        CIPHERTEXT = 'c745c451e96ff3c045e4367c833e3b54'
+
+    def test_89(self):
+        KEY = '000000000000000000000000000000000000000000000000'
+        PLAINTEXT = 'ffffffffffffffffffffffc000000000'
+        CIPHERTEXT = '340da09c2dd11c3b679d08ccd27dd595'
+
+    def test_90(self):
+        KEY = '000000000000000000000000000000000000000000000000'
+        PLAINTEXT = 'ffffffffffffffffffffffe000000000'
+        CIPHERTEXT = '8279f7c0c2a03ee660c6d392db025d18'
+
+    def test_91(self):
+        KEY = '000000000000000000000000000000000000000000000000'
+        PLAINTEXT = 'fffffffffffffffffffffff000000000'
+        CIPHERTEXT = 'a4b2c7d8eba531ff47c5041a55fbd1ec'
+
+    def test_92(self):
+        KEY = '000000000000000000000000000000000000000000000000'
+        PLAINTEXT = 'fffffffffffffffffffffff800000000'
+        CIPHERTEXT = '74569a2ca5a7bd5131ce8dc7cbfbf72f'
+
+    def test_93(self):
+        KEY = '000000000000000000000000000000000000000000000000'
+        PLAINTEXT = 'fffffffffffffffffffffffc00000000'
+        CIPHERTEXT = '3713da0c0219b63454035613b5a403dd'
+
+    def test_94(self):
+        KEY = '000000000000000000000000000000000000000000000000'
+        PLAINTEXT = 'fffffffffffffffffffffffe00000000'
+        CIPHERTEXT = '8827551ddcc9df23fa72a3de4e9f0b07'
+
+    def test_95(self):
+        KEY = '000000000000000000000000000000000000000000000000'
+        PLAINTEXT = 'ffffffffffffffffffffffff00000000'
+        CIPHERTEXT = '2e3febfd625bfcd0a2c06eb460da1732'
+
+    def test_96(self):
+        KEY = '000000000000000000000000000000000000000000000000'
+        PLAINTEXT = 'ffffffffffffffffffffffff80000000'
+        CIPHERTEXT = 'ee82e6ba488156f76496311da6941deb'
+
+    def test_97(self):
+        KEY = '000000000000000000000000000000000000000000000000'
+        PLAINTEXT = 'ffffffffffffffffffffffffc0000000'
+        CIPHERTEXT = '4770446f01d1f391256e85a1b30d89d3'
+
+    def test_98(self):
+        KEY = '000000000000000000000000000000000000000000000000'
+        PLAINTEXT = 'ffffffffffffffffffffffffe0000000'
+        CIPHERTEXT = 'af04b68f104f21ef2afb4767cf74143c'
+
+    def test_99(self):
+        KEY = '000000000000000000000000000000000000000000000000'
+        PLAINTEXT = 'fffffffffffffffffffffffff0000000'
+        CIPHERTEXT = 'cf3579a9ba38c8e43653173e14f3a4c6'
+
+    def test_100(self):
+        KEY = '000000000000000000000000000000000000000000000000'
+        PLAINTEXT = 'fffffffffffffffffffffffff8000000'
+        CIPHERTEXT = 'b3bba904f4953e09b54800af2f62e7d4'
+
+    def test_101(self):
+        KEY = '000000000000000000000000000000000000000000000000'
+        PLAINTEXT = 'fffffffffffffffffffffffffc000000'
+        CIPHERTEXT = 'fc4249656e14b29eb9c44829b4c59a46'
+
+    def test_102(self):
+        KEY = '000000000000000000000000000000000000000000000000'
+        PLAINTEXT = 'fffffffffffffffffffffffffe000000'
+        CIPHERTEXT = '9b31568febe81cfc2e65af1c86d1a308'
+
+    def test_103(self):
+        KEY = '000000000000000000000000000000000000000000000000'
+        PLAINTEXT = 'ffffffffffffffffffffffffff000000'
+        CIPHERTEXT = '9ca09c25f273a766db98a480ce8dfedc'
+
+    def test_104(self):
+        KEY = '000000000000000000000000000000000000000000000000'
+        PLAINTEXT = 'ffffffffffffffffffffffffff800000'
+        CIPHERTEXT = 'b909925786f34c3c92d971883c9fbedf'
+
+    def test_105(self):
+        KEY = '000000000000000000000000000000000000000000000000'
+        PLAINTEXT = 'ffffffffffffffffffffffffffc00000'
+        CIPHERTEXT = '82647f1332fe570a9d4d92b2ee771d3b'
+
+    def test_106(self):
+        KEY = '000000000000000000000000000000000000000000000000'
+        PLAINTEXT = 'ffffffffffffffffffffffffffe00000'
+        CIPHERTEXT = '3604a7e80832b3a99954bca6f5b9f501'
+
+    def test_107(self):
+        KEY = '000000000000000000000000000000000000000000000000'
+        PLAINTEXT = 'fffffffffffffffffffffffffff00000'
+        CIPHERTEXT = '884607b128c5de3ab39a529a1ef51bef'
+
+    def test_108(self):
+        KEY = '000000000000000000000000000000000000000000000000'
+        PLAINTEXT = 'fffffffffffffffffffffffffff80000'
+        CIPHERTEXT = '670cfa093d1dbdb2317041404102435e'
+
+    def test_109(self):
+        KEY = '000000000000000000000000000000000000000000000000'
+        PLAINTEXT = 'fffffffffffffffffffffffffffc0000'
+        CIPHERTEXT = '7a867195f3ce8769cbd336502fbb5130'
+
+    def test_110(self):
+        KEY = '000000000000000000000000000000000000000000000000'
+        PLAINTEXT = 'fffffffffffffffffffffffffffe0000'
+        CIPHERTEXT = '52efcf64c72b2f7ca5b3c836b1078c15'
+
+    def test_111(self):
+        KEY = '000000000000000000000000000000000000000000000000'
+        PLAINTEXT = 'ffffffffffffffffffffffffffff0000'
+        CIPHERTEXT = '4019250f6eefb2ac5ccbcae044e75c7e'
+
+    def test_112(self):
+        KEY = '000000000000000000000000000000000000000000000000'
+        PLAINTEXT = 'ffffffffffffffffffffffffffff8000'
+        CIPHERTEXT = '022c4f6f5a017d292785627667ddef24'
+
+    def test_113(self):
+        KEY = '000000000000000000000000000000000000000000000000'
+        PLAINTEXT = 'ffffffffffffffffffffffffffffc000'
+        CIPHERTEXT = 'e9c21078a2eb7e03250f71000fa9e3ed'
+
+    def test_114(self):
+        KEY = '000000000000000000000000000000000000000000000000'
+        PLAINTEXT = 'ffffffffffffffffffffffffffffe000'
+        CIPHERTEXT = 'a13eaeeb9cd391da4e2b09490b3e7fad'
+
+    def test_115(self):
+        KEY = '000000000000000000000000000000000000000000000000'
+        PLAINTEXT = 'fffffffffffffffffffffffffffff000'
+        CIPHERTEXT = 'c958a171dca1d4ed53e1af1d380803a9'
+
+    def test_116(self):
+        KEY = '000000000000000000000000000000000000000000000000'
+        PLAINTEXT = 'fffffffffffffffffffffffffffff800'
+        CIPHERTEXT = '21442e07a110667f2583eaeeee44dc8c'
+
+    def test_117(self):
+        KEY = '000000000000000000000000000000000000000000000000'
+        PLAINTEXT = 'fffffffffffffffffffffffffffffc00'
+        CIPHERTEXT = '59bbb353cf1dd867a6e33737af655e99'
+
+    def test_118(self):
+        KEY = '000000000000000000000000000000000000000000000000'
+        PLAINTEXT = 'fffffffffffffffffffffffffffffe00'
+        CIPHERTEXT = '43cd3b25375d0ce41087ff9fe2829639'
+
+    def test_119(self):
+        KEY = '000000000000000000000000000000000000000000000000'
+        PLAINTEXT = 'ffffffffffffffffffffffffffffff00'
+        CIPHERTEXT = '6b98b17e80d1118e3516bd768b285a84'
+
+    def test_120(self):
+        KEY = '000000000000000000000000000000000000000000000000'
+        PLAINTEXT = 'ffffffffffffffffffffffffffffff80'
+        CIPHERTEXT = 'ae47ed3676ca0c08deea02d95b81db58'
+
+    def test_121(self):
+        KEY = '000000000000000000000000000000000000000000000000'
+        PLAINTEXT = 'ffffffffffffffffffffffffffffffc0'
+        CIPHERTEXT = '34ec40dc20413795ed53628ea748720b'
+
+    def test_122(self):
+        KEY = '000000000000000000000000000000000000000000000000'
+        PLAINTEXT = 'ffffffffffffffffffffffffffffffe0'
+        CIPHERTEXT = '4dc68163f8e9835473253542c8a65d46'
+
+    def test_123(self):
+        KEY = '000000000000000000000000000000000000000000000000'
+        PLAINTEXT = 'fffffffffffffffffffffffffffffff0'
+        CIPHERTEXT = '2aabb999f43693175af65c6c612c46fb'
+
+    def test_124(self):
+        KEY = '000000000000000000000000000000000000000000000000'
+        PLAINTEXT = 'fffffffffffffffffffffffffffffff8'
+        CIPHERTEXT = 'e01f94499dac3547515c5b1d756f0f58'
+
+    def test_125(self):
+        KEY = '000000000000000000000000000000000000000000000000'
+        PLAINTEXT = 'fffffffffffffffffffffffffffffffc'
+        CIPHERTEXT = '9d12435a46480ce00ea349f71799df9a'
+
+    def test_126(self):
+        KEY = '000000000000000000000000000000000000000000000000'
+        PLAINTEXT = 'fffffffffffffffffffffffffffffffe'
+        CIPHERTEXT = 'cef41d16d266bdfe46938ad7884cc0cf'
+
+    def test_127(self):
+        KEY = '000000000000000000000000000000000000000000000000'
+        PLAINTEXT = 'ffffffffffffffffffffffffffffffff'
+        CIPHERTEXT = 'b13db4da1f718bc6904797c82bcf2d32'
+
+class TestECBVarTxt256e(unittest.TestCase):
+    def test_0(self):
+        KEY = '0000000000000000000000000000000000000000000000000000000000000000'
+        PLAINTEXT = '80000000000000000000000000000000'
+        CIPHERTEXT = 'ddc6bf790c15760d8d9aeb6f9a75fd4e'
+
+    def test_1(self):
+        KEY = '0000000000000000000000000000000000000000000000000000000000000000'
+        PLAINTEXT = 'c0000000000000000000000000000000'
+        CIPHERTEXT = '0a6bdc6d4c1e6280301fd8e97ddbe601'
+
+    def test_2(self):
+        KEY = '0000000000000000000000000000000000000000000000000000000000000000'
+        PLAINTEXT = 'e0000000000000000000000000000000'
+        CIPHERTEXT = '9b80eefb7ebe2d2b16247aa0efc72f5d'
+
+    def test_3(self):
+        KEY = '0000000000000000000000000000000000000000000000000000000000000000'
+        PLAINTEXT = 'f0000000000000000000000000000000'
+        CIPHERTEXT = '7f2c5ece07a98d8bee13c51177395ff7'
+
+    def test_4(self):
+        KEY = '0000000000000000000000000000000000000000000000000000000000000000'
+        PLAINTEXT = 'f8000000000000000000000000000000'
+        CIPHERTEXT = '7818d800dcf6f4be1e0e94f403d1e4c2'
+
+    def test_5(self):
+        KEY = '0000000000000000000000000000000000000000000000000000000000000000'
+        PLAINTEXT = 'fc000000000000000000000000000000'
+        CIPHERTEXT = 'e74cd1c92f0919c35a0324123d6177d3'
+
+    def test_6(self):
+        KEY = '0000000000000000000000000000000000000000000000000000000000000000'
+        PLAINTEXT = 'fe000000000000000000000000000000'
+        CIPHERTEXT = '8092a4dcf2da7e77e93bdd371dfed82e'
+
+    def test_7(self):
+        KEY = '0000000000000000000000000000000000000000000000000000000000000000'
+        PLAINTEXT = 'ff000000000000000000000000000000'
+        CIPHERTEXT = '49af6b372135acef10132e548f217b17'
+
+    def test_8(self):
+        KEY = '0000000000000000000000000000000000000000000000000000000000000000'
+        PLAINTEXT = 'ff800000000000000000000000000000'
+        CIPHERTEXT = '8bcd40f94ebb63b9f7909676e667f1e7'
+
+    def test_9(self):
+        KEY = '0000000000000000000000000000000000000000000000000000000000000000'
+        PLAINTEXT = 'ffc00000000000000000000000000000'
+        CIPHERTEXT = 'fe1cffb83f45dcfb38b29be438dbd3ab'
+
+    def test_10(self):
+        KEY = '0000000000000000000000000000000000000000000000000000000000000000'
+        PLAINTEXT = 'ffe00000000000000000000000000000'
+        CIPHERTEXT = '0dc58a8d886623705aec15cb1e70dc0e'
+
+    def test_11(self):
+        KEY = '0000000000000000000000000000000000000000000000000000000000000000'
+        PLAINTEXT = 'fff00000000000000000000000000000'
+        CIPHERTEXT = 'c218faa16056bd0774c3e8d79c35a5e4'
+
+    def test_12(self):
+        KEY = '0000000000000000000000000000000000000000000000000000000000000000'
+        PLAINTEXT = 'fff80000000000000000000000000000'
+        CIPHERTEXT = '047bba83f7aa841731504e012208fc9e'
+
+    def test_13(self):
+        KEY = '0000000000000000000000000000000000000000000000000000000000000000'
+        PLAINTEXT = 'fffc0000000000000000000000000000'
+        CIPHERTEXT = 'dc8f0e4915fd81ba70a331310882f6da'
+
+    def test_14(self):
+        KEY = '0000000000000000000000000000000000000000000000000000000000000000'
+        PLAINTEXT = 'fffe0000000000000000000000000000'
+        CIPHERTEXT = '1569859ea6b7206c30bf4fd0cbfac33c'
+
+    def test_15(self):
+        KEY = '0000000000000000000000000000000000000000000000000000000000000000'
+        PLAINTEXT = 'ffff0000000000000000000000000000'
+        CIPHERTEXT = '300ade92f88f48fa2df730ec16ef44cd'
+
+    def test_16(self):
+        KEY = '0000000000000000000000000000000000000000000000000000000000000000'
+        PLAINTEXT = 'ffff8000000000000000000000000000'
+        CIPHERTEXT = '1fe6cc3c05965dc08eb0590c95ac71d0'
+
+    def test_17(self):
+        KEY = '0000000000000000000000000000000000000000000000000000000000000000'
+        PLAINTEXT = 'ffffc000000000000000000000000000'
+        CIPHERTEXT = '59e858eaaa97fec38111275b6cf5abc0'
+
+    def test_18(self):
+        KEY = '0000000000000000000000000000000000000000000000000000000000000000'
+        PLAINTEXT = 'ffffe000000000000000000000000000'
+        CIPHERTEXT = '2239455e7afe3b0616100288cc5a723b'
+
+    def test_19(self):
+        KEY = '0000000000000000000000000000000000000000000000000000000000000000'
+        PLAINTEXT = 'fffff000000000000000000000000000'
+        CIPHERTEXT = '3ee500c5c8d63479717163e55c5c4522'
+
+    def test_20(self):
+        KEY = '0000000000000000000000000000000000000000000000000000000000000000'
+        PLAINTEXT = 'fffff800000000000000000000000000'
+        CIPHERTEXT = 'd5e38bf15f16d90e3e214041d774daa8'
+
+    def test_21(self):
+        KEY = '0000000000000000000000000000000000000000000000000000000000000000'
+        PLAINTEXT = 'fffffc00000000000000000000000000'
+        CIPHERTEXT = 'b1f4066e6f4f187dfe5f2ad1b17819d0'
+
+    def test_22(self):
+        KEY = '0000000000000000000000000000000000000000000000000000000000000000'
+        PLAINTEXT = 'fffffe00000000000000000000000000'
+        CIPHERTEXT = '6ef4cc4de49b11065d7af2909854794a'
+
+    def test_23(self):
+        KEY = '0000000000000000000000000000000000000000000000000000000000000000'
+        PLAINTEXT = 'ffffff00000000000000000000000000'
+        CIPHERTEXT = 'ac86bc606b6640c309e782f232bf367f'
+
+    def test_24(self):
+        KEY = '0000000000000000000000000000000000000000000000000000000000000000'
+        PLAINTEXT = 'ffffff80000000000000000000000000'
+        CIPHERTEXT = '36aff0ef7bf3280772cf4cac80a0d2b2'
+
+    def test_25(self):
+        KEY = '0000000000000000000000000000000000000000000000000000000000000000'
+        PLAINTEXT = 'ffffffc0000000000000000000000000'
+        CIPHERTEXT = '1f8eedea0f62a1406d58cfc3ecea72cf'
+
+    def test_26(self):
+        KEY = '0000000000000000000000000000000000000000000000000000000000000000'
+        PLAINTEXT = 'ffffffe0000000000000000000000000'
+        CIPHERTEXT = 'abf4154a3375a1d3e6b1d454438f95a6'
+
+    def test_27(self):
+        KEY = '0000000000000000000000000000000000000000000000000000000000000000'
+        PLAINTEXT = 'fffffff0000000000000000000000000'
+        CIPHERTEXT = '96f96e9d607f6615fc192061ee648b07'
+
+    def test_28(self):
+        KEY = '0000000000000000000000000000000000000000000000000000000000000000'
+        PLAINTEXT = 'fffffff8000000000000000000000000'
+        CIPHERTEXT = 'cf37cdaaa0d2d536c71857634c792064'
+
+    def test_29(self):
+        KEY = '0000000000000000000000000000000000000000000000000000000000000000'
+        PLAINTEXT = 'fffffffc000000000000000000000000'
+        CIPHERTEXT = 'fbd6640c80245c2b805373f130703127'
+
+    def test_30(self):
+        KEY = '0000000000000000000000000000000000000000000000000000000000000000'
+        PLAINTEXT = 'fffffffe000000000000000000000000'
+        CIPHERTEXT = '8d6a8afe55a6e481badae0d146f436db'
+
+    def test_31(self):
+        KEY = '0000000000000000000000000000000000000000000000000000000000000000'
+        PLAINTEXT = 'ffffffff000000000000000000000000'
+        CIPHERTEXT = '6a4981f2915e3e68af6c22385dd06756'
+
+    def test_32(self):
+        KEY = '0000000000000000000000000000000000000000000000000000000000000000'
+        PLAINTEXT = 'ffffffff800000000000000000000000'
+        CIPHERTEXT = '42a1136e5f8d8d21d3101998642d573b'
+
+    def test_33(self):
+        KEY = '0000000000000000000000000000000000000000000000000000000000000000'
+        PLAINTEXT = 'ffffffffc00000000000000000000000'
+        CIPHERTEXT = '9b471596dc69ae1586cee6158b0b0181'
+
+    def test_34(self):
+        KEY = '0000000000000000000000000000000000000000000000000000000000000000'
+        PLAINTEXT = 'ffffffffe00000000000000000000000'
+        CIPHERTEXT = '753665c4af1eff33aa8b628bf8741cfd'
+
+    def test_35(self):
+        KEY = '0000000000000000000000000000000000000000000000000000000000000000'
+        PLAINTEXT = 'fffffffff00000000000000000000000'
+        CIPHERTEXT = '9a682acf40be01f5b2a4193c9a82404d'
+
+    def test_36(self):
+        KEY = '0000000000000000000000000000000000000000000000000000000000000000'
+        PLAINTEXT = 'fffffffff80000000000000000000000'
+        CIPHERTEXT = '54fafe26e4287f17d1935f87eb9ade01'
+
+    def test_37(self):
+        KEY = '0000000000000000000000000000000000000000000000000000000000000000'
+        PLAINTEXT = 'fffffffffc0000000000000000000000'
+        CIPHERTEXT = '49d541b2e74cfe73e6a8e8225f7bd449'
+
+    def test_38(self):
+        KEY = '0000000000000000000000000000000000000000000000000000000000000000'
+        PLAINTEXT = 'fffffffffe0000000000000000000000'
+        CIPHERTEXT = '11a45530f624ff6f76a1b3826626ff7b'
+
+    def test_39(self):
+        KEY = '0000000000000000000000000000000000000000000000000000000000000000'
+        PLAINTEXT = 'ffffffffff0000000000000000000000'
+        CIPHERTEXT = 'f96b0c4a8bc6c86130289f60b43b8fba'
+
+    def test_40(self):
+        KEY = '0000000000000000000000000000000000000000000000000000000000000000'
+        PLAINTEXT = 'ffffffffff8000000000000000000000'
+        CIPHERTEXT = '48c7d0e80834ebdc35b6735f76b46c8b'
+
+    def test_41(self):
+        KEY = '0000000000000000000000000000000000000000000000000000000000000000'
+        PLAINTEXT = 'ffffffffffc000000000000000000000'
+        CIPHERTEXT = '2463531ab54d66955e73edc4cb8eaa45'
+
+    def test_42(self):
+        KEY = '0000000000000000000000000000000000000000000000000000000000000000'
+        PLAINTEXT = 'ffffffffffe000000000000000000000'
+        CIPHERTEXT = 'ac9bd8e2530469134b9d5b065d4f565b'
+
+    def test_43(self):
+        KEY = '0000000000000000000000000000000000000000000000000000000000000000'
+        PLAINTEXT = 'fffffffffff000000000000000000000'
+        CIPHERTEXT = '3f5f9106d0e52f973d4890e6f37e8a00'
+
+    def test_44(self):
+        KEY = '0000000000000000000000000000000000000000000000000000000000000000'
+        PLAINTEXT = 'fffffffffff800000000000000000000'
+        CIPHERTEXT = '20ebc86f1304d272e2e207e59db639f0'
+
+    def test_45(self):
+        KEY = '0000000000000000000000000000000000000000000000000000000000000000'
+        PLAINTEXT = 'fffffffffffc00000000000000000000'
+        CIPHERTEXT = 'e67ae6426bf9526c972cff072b52252c'
+
+    def test_46(self):
+        KEY = '0000000000000000000000000000000000000000000000000000000000000000'
+        PLAINTEXT = 'fffffffffffe00000000000000000000'
+        CIPHERTEXT = '1a518dddaf9efa0d002cc58d107edfc8'
+
+    def test_47(self):
+        KEY = '0000000000000000000000000000000000000000000000000000000000000000'
+        PLAINTEXT = 'ffffffffffff00000000000000000000'
+        CIPHERTEXT = 'ead731af4d3a2fe3b34bed047942a49f'
+
+    def test_48(self):
+        KEY = '0000000000000000000000000000000000000000000000000000000000000000'
+        PLAINTEXT = 'ffffffffffff80000000000000000000'
+        CIPHERTEXT = 'b1d4efe40242f83e93b6c8d7efb5eae9'
+
+    def test_49(self):
+        KEY = '0000000000000000000000000000000000000000000000000000000000000000'
+        PLAINTEXT = 'ffffffffffffc0000000000000000000'
+        CIPHERTEXT = 'cd2b1fec11fd906c5c7630099443610a'
+
+    def test_50(self):
+        KEY = '0000000000000000000000000000000000000000000000000000000000000000'
+        PLAINTEXT = 'ffffffffffffe0000000000000000000'
+        CIPHERTEXT = 'a1853fe47fe29289d153161d06387d21'
+
+    def test_51(self):
+        KEY = '0000000000000000000000000000000000000000000000000000000000000000'
+        PLAINTEXT = 'fffffffffffff0000000000000000000'
+        CIPHERTEXT = '4632154179a555c17ea604d0889fab14'
+
+    def test_52(self):
+        KEY = '0000000000000000000000000000000000000000000000000000000000000000'
+        PLAINTEXT = 'fffffffffffff8000000000000000000'
+        CIPHERTEXT = 'dd27cac6401a022e8f38f9f93e774417'
+
+    def test_53(self):
+        KEY = '0000000000000000000000000000000000000000000000000000000000000000'
+        PLAINTEXT = 'fffffffffffffc000000000000000000'
+        CIPHERTEXT = 'c090313eb98674f35f3123385fb95d4d'
+
+    def test_54(self):
+        KEY = '0000000000000000000000000000000000000000000000000000000000000000'
+        PLAINTEXT = 'fffffffffffffe000000000000000000'
+        CIPHERTEXT = 'cc3526262b92f02edce548f716b9f45c'
+
+    def test_55(self):
+        KEY = '0000000000000000000000000000000000000000000000000000000000000000'
+        PLAINTEXT = 'ffffffffffffff000000000000000000'
+        CIPHERTEXT = 'c0838d1a2b16a7c7f0dfcc433c399c33'
+
+    def test_56(self):
+        KEY = '0000000000000000000000000000000000000000000000000000000000000000'
+        PLAINTEXT = 'ffffffffffffff800000000000000000'
+        CIPHERTEXT = '0d9ac756eb297695eed4d382eb126d26'
+
+    def test_57(self):
+        KEY = '0000000000000000000000000000000000000000000000000000000000000000'
+        PLAINTEXT = 'ffffffffffffffc00000000000000000'
+        CIPHERTEXT = '56ede9dda3f6f141bff1757fa689c3e1'
+
+    def test_58(self):
+        KEY = '0000000000000000000000000000000000000000000000000000000000000000'
+        PLAINTEXT = 'ffffffffffffffe00000000000000000'
+        CIPHERTEXT = '768f520efe0f23e61d3ec8ad9ce91774'
+
+    def test_59(self):
+        KEY = '0000000000000000000000000000000000000000000000000000000000000000'
+        PLAINTEXT = 'fffffffffffffff00000000000000000'
+        CIPHERTEXT = 'b1144ddfa75755213390e7c596660490'
+
+    def test_60(self):
+        KEY = '0000000000000000000000000000000000000000000000000000000000000000'
+        PLAINTEXT = 'fffffffffffffff80000000000000000'
+        CIPHERTEXT = '1d7c0c4040b355b9d107a99325e3b050'
+
+    def test_61(self):
+        KEY = '0000000000000000000000000000000000000000000000000000000000000000'
+        PLAINTEXT = 'fffffffffffffffc0000000000000000'
+        CIPHERTEXT = 'd8e2bb1ae8ee3dcf5bf7d6c38da82a1a'
+
+    def test_62(self):
+        KEY = '0000000000000000000000000000000000000000000000000000000000000000'
+        PLAINTEXT = 'fffffffffffffffe0000000000000000'
+        CIPHERTEXT = 'faf82d178af25a9886a47e7f789b98d7'
+
+    def test_63(self):
+        KEY = '0000000000000000000000000000000000000000000000000000000000000000'
+        PLAINTEXT = 'ffffffffffffffff0000000000000000'
+        CIPHERTEXT = '9b58dbfd77fe5aca9cfc190cd1b82d19'
+
+    def test_64(self):
+        KEY = '0000000000000000000000000000000000000000000000000000000000000000'
+        PLAINTEXT = 'ffffffffffffffff8000000000000000'
+        CIPHERTEXT = '77f392089042e478ac16c0c86a0b5db5'
+
+    def test_65(self):
+        KEY = '0000000000000000000000000000000000000000000000000000000000000000'
+        PLAINTEXT = 'ffffffffffffffffc000000000000000'
+        CIPHERTEXT = '19f08e3420ee69b477ca1420281c4782'
+
+    def test_66(self):
+        KEY = '0000000000000000000000000000000000000000000000000000000000000000'
+        PLAINTEXT = 'ffffffffffffffffe000000000000000'
+        CIPHERTEXT = 'a1b19beee4e117139f74b3c53fdcb875'
+
+    def test_67(self):
+        KEY = '0000000000000000000000000000000000000000000000000000000000000000'
+        PLAINTEXT = 'fffffffffffffffff000000000000000'
+        CIPHERTEXT = 'a37a5869b218a9f3a0868d19aea0ad6a'
+
+    def test_68(self):
+        KEY = '0000000000000000000000000000000000000000000000000000000000000000'
+        PLAINTEXT = 'fffffffffffffffff800000000000000'
+        CIPHERTEXT = 'bc3594e865bcd0261b13202731f33580'
+
+    def test_69(self):
+        KEY = '0000000000000000000000000000000000000000000000000000000000000000'
+        PLAINTEXT = 'fffffffffffffffffc00000000000000'
+        CIPHERTEXT = '811441ce1d309eee7185e8c752c07557'
+
+    def test_70(self):
+        KEY = '0000000000000000000000000000000000000000000000000000000000000000'
+        PLAINTEXT = 'fffffffffffffffffe00000000000000'
+        CIPHERTEXT = '959971ce4134190563518e700b9874d1'
+
+    def test_71(self):
+        KEY = '0000000000000000000000000000000000000000000000000000000000000000'
+        PLAINTEXT = 'ffffffffffffffffff00000000000000'
+        CIPHERTEXT = '76b5614a042707c98e2132e2e805fe63'
+
+    def test_72(self):
+        KEY = '0000000000000000000000000000000000000000000000000000000000000000'
+        PLAINTEXT = 'ffffffffffffffffff80000000000000'
+        CIPHERTEXT = '7d9fa6a57530d0f036fec31c230b0cc6'
+
+    def test_73(self):
+        KEY = '0000000000000000000000000000000000000000000000000000000000000000'
+        PLAINTEXT = 'ffffffffffffffffffc0000000000000'
+        CIPHERTEXT = '964153a83bf6989a4ba80daa91c3e081'
+
+    def test_74(self):
+        KEY = '0000000000000000000000000000000000000000000000000000000000000000'
+        PLAINTEXT = 'ffffffffffffffffffe0000000000000'
+        CIPHERTEXT = 'a013014d4ce8054cf2591d06f6f2f176'
+
+    def test_75(self):
+        KEY = '0000000000000000000000000000000000000000000000000000000000000000'
+        PLAINTEXT = 'fffffffffffffffffff0000000000000'
+        CIPHERTEXT = 'd1c5f6399bf382502e385eee1474a869'
+
+    def test_76(self):
+        KEY = '0000000000000000000000000000000000000000000000000000000000000000'
+        PLAINTEXT = 'fffffffffffffffffff8000000000000'
+        CIPHERTEXT = '0007e20b8298ec354f0f5fe7470f36bd'
+
+    def test_77(self):
+        KEY = '0000000000000000000000000000000000000000000000000000000000000000'
+        PLAINTEXT = 'fffffffffffffffffffc000000000000'
+        CIPHERTEXT = 'b95ba05b332da61ef63a2b31fcad9879'
+
+    def test_78(self):
+        KEY = '0000000000000000000000000000000000000000000000000000000000000000'
+        PLAINTEXT = 'fffffffffffffffffffe000000000000'
+        CIPHERTEXT = '4620a49bd967491561669ab25dce45f4'
+
+    def test_79(self):
+        KEY = '0000000000000000000000000000000000000000000000000000000000000000'
+        PLAINTEXT = 'ffffffffffffffffffff000000000000'
+        CIPHERTEXT = '12e71214ae8e04f0bb63d7425c6f14d5'
+
+    def test_80(self):
+        KEY = '0000000000000000000000000000000000000000000000000000000000000000'
+        PLAINTEXT = 'ffffffffffffffffffff800000000000'
+        CIPHERTEXT = '4cc42fc1407b008fe350907c092e80ac'
+
+    def test_81(self):
+        KEY = '0000000000000000000000000000000000000000000000000000000000000000'
+        PLAINTEXT = 'ffffffffffffffffffffc00000000000'
+        CIPHERTEXT = '08b244ce7cbc8ee97fbba808cb146fda'
+
+    def test_82(self):
+        KEY = '0000000000000000000000000000000000000000000000000000000000000000'
+        PLAINTEXT = 'ffffffffffffffffffffe00000000000'
+        CIPHERTEXT = '39b333e8694f21546ad1edd9d87ed95b'
+
+    def test_83(self):
+        KEY = '0000000000000000000000000000000000000000000000000000000000000000'
+        PLAINTEXT = 'fffffffffffffffffffff00000000000'
+        CIPHERTEXT = '3b271f8ab2e6e4a20ba8090f43ba78f3'
+
+    def test_84(self):
+        KEY = '0000000000000000000000000000000000000000000000000000000000000000'
+        PLAINTEXT = 'fffffffffffffffffffff80000000000'
+        CIPHERTEXT = '9ad983f3bf651cd0393f0a73cccdea50'
+
+    def test_85(self):
+        KEY = '0000000000000000000000000000000000000000000000000000000000000000'
+        PLAINTEXT = 'fffffffffffffffffffffc0000000000'
+        CIPHERTEXT = '8f476cbff75c1f725ce18e4bbcd19b32'
+
+    def test_86(self):
+        KEY = '0000000000000000000000000000000000000000000000000000000000000000'
+        PLAINTEXT = 'fffffffffffffffffffffe0000000000'
+        CIPHERTEXT = '905b6267f1d6ab5320835a133f096f2a'
+
+    def test_87(self):
+        KEY = '0000000000000000000000000000000000000000000000000000000000000000'
+        PLAINTEXT = 'ffffffffffffffffffffff0000000000'
+        CIPHERTEXT = '145b60d6d0193c23f4221848a892d61a'
+
+    def test_88(self):
+        KEY = '0000000000000000000000000000000000000000000000000000000000000000'
+        PLAINTEXT = 'ffffffffffffffffffffff8000000000'
+        CIPHERTEXT = '55cfb3fb6d75cad0445bbc8dafa25b0f'
+
+    def test_89(self):
+        KEY = '0000000000000000000000000000000000000000000000000000000000000000'
+        PLAINTEXT = 'ffffffffffffffffffffffc000000000'
+        CIPHERTEXT = '7b8e7098e357ef71237d46d8b075b0f5'
+
+    def test_90(self):
+        KEY = '0000000000000000000000000000000000000000000000000000000000000000'
+        PLAINTEXT = 'ffffffffffffffffffffffe000000000'
+        CIPHERTEXT = '2bf27229901eb40f2df9d8398d1505ae'
+
+    def test_91(self):
+        KEY = '0000000000000000000000000000000000000000000000000000000000000000'
+        PLAINTEXT = 'fffffffffffffffffffffff000000000'
+        CIPHERTEXT = '83a63402a77f9ad5c1e931a931ecd706'
+
+    def test_92(self):
+        KEY = '0000000000000000000000000000000000000000000000000000000000000000'
+        PLAINTEXT = 'fffffffffffffffffffffff800000000'
+        CIPHERTEXT = '6f8ba6521152d31f2bada1843e26b973'
+
+    def test_93(self):
+        KEY = '0000000000000000000000000000000000000000000000000000000000000000'
+        PLAINTEXT = 'fffffffffffffffffffffffc00000000'
+        CIPHERTEXT = 'e5c3b8e30fd2d8e6239b17b44bd23bbd'
+
+    def test_94(self):
+        KEY = '0000000000000000000000000000000000000000000000000000000000000000'
+        PLAINTEXT = 'fffffffffffffffffffffffe00000000'
+        CIPHERTEXT = '1ac1f7102c59933e8b2ddc3f14e94baa'
+
+    def test_95(self):
+        KEY = '0000000000000000000000000000000000000000000000000000000000000000'
+        PLAINTEXT = 'ffffffffffffffffffffffff00000000'
+        CIPHERTEXT = '21d9ba49f276b45f11af8fc71a088e3d'
+
+    def test_96(self):
+        KEY = '0000000000000000000000000000000000000000000000000000000000000000'
+        PLAINTEXT = 'ffffffffffffffffffffffff80000000'
+        CIPHERTEXT = '649f1cddc3792b4638635a392bc9bade'
+
+    def test_97(self):
+        KEY = '0000000000000000000000000000000000000000000000000000000000000000'
+        PLAINTEXT = 'ffffffffffffffffffffffffc0000000'
+        CIPHERTEXT = 'e2775e4b59c1bc2e31a2078c11b5a08c'
+
+    def test_98(self):
+        KEY = '0000000000000000000000000000000000000000000000000000000000000000'
+        PLAINTEXT = 'ffffffffffffffffffffffffe0000000'
+        CIPHERTEXT = '2be1fae5048a25582a679ca10905eb80'
+
+    def test_99(self):
+        KEY = '0000000000000000000000000000000000000000000000000000000000000000'
+        PLAINTEXT = 'fffffffffffffffffffffffff0000000'
+        CIPHERTEXT = 'da86f292c6f41ea34fb2068df75ecc29'
+
+    def test_100(self):
+        KEY = '0000000000000000000000000000000000000000000000000000000000000000'
+        PLAINTEXT = 'fffffffffffffffffffffffff8000000'
+        CIPHERTEXT = '220df19f85d69b1b562fa69a3c5beca5'
+
+    def test_101(self):
+        KEY = '0000000000000000000000000000000000000000000000000000000000000000'
+        PLAINTEXT = 'fffffffffffffffffffffffffc000000'
+        CIPHERTEXT = '1f11d5d0355e0b556ccdb6c7f5083b4d'
+
+    def test_102(self):
+        KEY = '0000000000000000000000000000000000000000000000000000000000000000'
+        PLAINTEXT = 'fffffffffffffffffffffffffe000000'
+        CIPHERTEXT = '62526b78be79cb384633c91f83b4151b'
+
+    def test_103(self):
+        KEY = '0000000000000000000000000000000000000000000000000000000000000000'
+        PLAINTEXT = 'ffffffffffffffffffffffffff000000'
+        CIPHERTEXT = '90ddbcb950843592dd47bbef00fdc876'
+
+    def test_104(self):
+        KEY = '0000000000000000000000000000000000000000000000000000000000000000'
+        PLAINTEXT = 'ffffffffffffffffffffffffff800000'
+        CIPHERTEXT = '2fd0e41c5b8402277354a7391d2618e2'
+
+    def test_105(self):
+        KEY = '0000000000000000000000000000000000000000000000000000000000000000'
+        PLAINTEXT = 'ffffffffffffffffffffffffffc00000'
+        CIPHERTEXT = '3cdf13e72dee4c581bafec70b85f9660'
+
+    def test_106(self):
+        KEY = '0000000000000000000000000000000000000000000000000000000000000000'
+        PLAINTEXT = 'ffffffffffffffffffffffffffe00000'
+        CIPHERTEXT = 'afa2ffc137577092e2b654fa199d2c43'
+
+    def test_107(self):
+        KEY = '0000000000000000000000000000000000000000000000000000000000000000'
+        PLAINTEXT = 'fffffffffffffffffffffffffff00000'
+        CIPHERTEXT = '8d683ee63e60d208e343ce48dbc44cac'
+
+    def test_108(self):
+        KEY = '0000000000000000000000000000000000000000000000000000000000000000'
+        PLAINTEXT = 'fffffffffffffffffffffffffff80000'
+        CIPHERTEXT = '705a4ef8ba2133729c20185c3d3a4763'
+
+    def test_109(self):
+        KEY = '0000000000000000000000000000000000000000000000000000000000000000'
+        PLAINTEXT = 'fffffffffffffffffffffffffffc0000'
+        CIPHERTEXT = '0861a861c3db4e94194211b77ed761b9'
+
+    def test_110(self):
+        KEY = '0000000000000000000000000000000000000000000000000000000000000000'
+        PLAINTEXT = 'fffffffffffffffffffffffffffe0000'
+        CIPHERTEXT = '4b00c27e8b26da7eab9d3a88dec8b031'
+
+    def test_111(self):
+        KEY = '0000000000000000000000000000000000000000000000000000000000000000'
+        PLAINTEXT = 'ffffffffffffffffffffffffffff0000'
+        CIPHERTEXT = '5f397bf03084820cc8810d52e5b666e9'
+
+    def test_112(self):
+        KEY = '0000000000000000000000000000000000000000000000000000000000000000'
+        PLAINTEXT = 'ffffffffffffffffffffffffffff8000'
+        CIPHERTEXT = '63fafabb72c07bfbd3ddc9b1203104b8'
+
+    def test_113(self):
+        KEY = '0000000000000000000000000000000000000000000000000000000000000000'
+        PLAINTEXT = 'ffffffffffffffffffffffffffffc000'
+        CIPHERTEXT = '683e2140585b18452dd4ffbb93c95df9'
+
+    def test_114(self):
+        KEY = '0000000000000000000000000000000000000000000000000000000000000000'
+        PLAINTEXT = 'ffffffffffffffffffffffffffffe000'
+        CIPHERTEXT = '286894e48e537f8763b56707d7d155c8'
+
+    def test_115(self):
+        KEY = '0000000000000000000000000000000000000000000000000000000000000000'
+        PLAINTEXT = 'fffffffffffffffffffffffffffff000'
+        CIPHERTEXT = 'a423deabc173dcf7e2c4c53e77d37cd1'
+
+    def test_116(self):
+        KEY = '0000000000000000000000000000000000000000000000000000000000000000'
+        PLAINTEXT = 'fffffffffffffffffffffffffffff800'
+        CIPHERTEXT = 'eb8168313e1cfdfdb5e986d5429cf172'
+
+    def test_117(self):
+        KEY = '0000000000000000000000000000000000000000000000000000000000000000'
+        PLAINTEXT = 'fffffffffffffffffffffffffffffc00'
+        CIPHERTEXT = '27127daafc9accd2fb334ec3eba52323'
+
+    def test_118(self):
+        KEY = '0000000000000000000000000000000000000000000000000000000000000000'
+        PLAINTEXT = 'fffffffffffffffffffffffffffffe00'
+        CIPHERTEXT = 'ee0715b96f72e3f7a22a5064fc592f4c'
+
+    def test_119(self):
+        KEY = '0000000000000000000000000000000000000000000000000000000000000000'
+        PLAINTEXT = 'ffffffffffffffffffffffffffffff00'
+        CIPHERTEXT = '29ee526770f2a11dcfa989d1ce88830f'
+
+    def test_120(self):
+        KEY = '0000000000000000000000000000000000000000000000000000000000000000'
+        PLAINTEXT = 'ffffffffffffffffffffffffffffff80'
+        CIPHERTEXT = '0493370e054b09871130fe49af730a5a'
+
+    def test_121(self):
+        KEY = '0000000000000000000000000000000000000000000000000000000000000000'
+        PLAINTEXT = 'ffffffffffffffffffffffffffffffc0'
+        CIPHERTEXT = '9b7b940f6c509f9e44a4ee140448ee46'
+
+    def test_122(self):
+        KEY = '0000000000000000000000000000000000000000000000000000000000000000'
+        PLAINTEXT = 'ffffffffffffffffffffffffffffffe0'
+        CIPHERTEXT = '2915be4a1ecfdcbe3e023811a12bb6c7'
+
+    def test_123(self):
+        KEY = '0000000000000000000000000000000000000000000000000000000000000000'
+        PLAINTEXT = 'fffffffffffffffffffffffffffffff0'
+        CIPHERTEXT = '7240e524bc51d8c4d440b1be55d1062c'
+
+    def test_124(self):
+        KEY = '0000000000000000000000000000000000000000000000000000000000000000'
+        PLAINTEXT = 'fffffffffffffffffffffffffffffff8'
+        CIPHERTEXT = 'da63039d38cb4612b2dc36ba26684b93'
+
+    def test_125(self):
+        KEY = '0000000000000000000000000000000000000000000000000000000000000000'
+        PLAINTEXT = 'fffffffffffffffffffffffffffffffc'
+        CIPHERTEXT = '0f59cb5a4b522e2ac56c1a64f558ad9a'
+
+    def test_126(self):
+        KEY = '0000000000000000000000000000000000000000000000000000000000000000'
+        PLAINTEXT = 'fffffffffffffffffffffffffffffffe'
+        CIPHERTEXT = '7bfe9d876c6d63c1d035da8fe21c409d'
+
+    def test_127(self):
+        KEY = '0000000000000000000000000000000000000000000000000000000000000000'
+        PLAINTEXT = 'ffffffffffffffffffffffffffffffff'
+        CIPHERTEXT = 'acdace8078a32b1a182bfa4987ca1347'
+
+if __name__ == '__main__':
+    unittest.main()

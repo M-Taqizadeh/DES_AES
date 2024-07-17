@@ -1,5 +1,0 @@
-DES is fully tested and operational
-AES : 
-    learn how does mix_columns work
-    implement mix_columns
-    

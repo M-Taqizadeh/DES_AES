@@ -19,7 +19,7 @@ S_BOX = [
     ['8c', 'a1', '89', '0d', 'bf', 'e6', '42', '68', '41', '99', '2d', '0f', 'b0', '54', 'bb', '16']
 ]
 
-rcon = np.array(['01', '02', '04', '08', '10', '20', '40', '80', '1B', '36'])
+rcon = np.array(['01000000', '02000000', '04000000', '08000000', '10000000', '20000000', '40000000', '80000000', '1b000000', '36000000'])
 
 def is_binary_str(variable):
     return set(variable).issubset({'0', '1'}) and isinstance(variable, str)
@@ -57,18 +57,20 @@ def XOR_binary_str(str1, str2):
 def sub_bytes_element(element):
         assert is_hex_str(element)
         assert len(element) == 2
-        return S_BOX[element[0]][element[1]]
+        x = int(element[0], 16 )
+        y = int(element[1], 16 )
+        return S_BOX[x][y]
     
 def rot_word(word):
     assert is_hex_str(word)
-    assert len(word) == 8
+    assert len(str(word)) == 8
     return word[2:] + word[:2]
 
 def sub_word(word):
     assert is_hex_str(word)
     assert len(word) == 8
     word = [word[2*i:2*i+2] for i in range(4)]
-    return np.vectorize(sub_bytes_element)(word)
+    return ''.join(np.vectorize(sub_bytes_element)(word))
 
 def bi_str_2_hex_str(variable, number_of_digits = None):
     if number_of_digits == None:
@@ -86,11 +88,11 @@ def XOR_hex_str(str1, str2):
     out = bi_str_2_hex_str(out_bi)
     return out
     
-class state():
-    mix_columns_matrix = ((2, 3, 1, 1),
-                          (1, 2, 3, 1),
-                          (1, 1, 2, 3),
-                          (3, 1, 1, 2))
+class State():
+    mix_columns_matrix = (('02', '03', '01', '01'),
+                          ('01', '02', '03', '01'),
+                          ('01', '01', '02', '03'),
+                          ('03', '01', '01', '02'))
     def __init__(self, plaintext, key):
         assert is_hex_str(plaintext)
         assert len(plaintext) == 32
@@ -100,66 +102,86 @@ class state():
         self.key = key
         self.key_size = len(key)
         self.state = self.plaintext_to_state(plaintext)
-        self.generate_round_keys
+        self.generate_round_keys()
 
     def plaintext_to_state(self, plaintext):
         assert is_hex_str(plaintext)
         assert len(plaintext) == 32
         plaintext = [plaintext[2*i:2*i+2] for i in range(16)]
-        self.state = np.array(list(plaintext)).reshape((4,4)).transpose()
+        return np.array(list(plaintext)).reshape((4,4)).transpose()
 
     def generate_round_keys(self):
-        N = len(self.key) / 2 / 4                   #length of key in 32 bit (4 bytes) words
+        N = int(len(self.key) / 2 / 4)              #length of key in 32 bit (4 bytes) words
         K = [self.key[8*i:8*i+8] for i in range(N)] #initial key broken into 32 bit (4 bytes) words
-        R = len(self.key) / 8 + 7                   #number of rounds required
-        W = np.empty(4 * R)
+        R = int(len(self.key) / 8 + 7)              #number of rounds required
+        # W = np.empty(4 * R, dtype=str)
+        W = [''] * (4 * R)
         for i in range(4 * R):
             if i < N:
+                assert isinstance(rot_word(K[i]), str)
                 W[i] = K[i]
+                assert isinstance(rot_word(W[i]), str)
+                
             elif (i % N) == 0:
-                W[i] = XOR_hex_str(XOR_hex_str(W[i-N], sub_word(rot_word(W[i-1]))), rcon[i / N])
-            elif N > 6 and i % N == 4:
+                W[i] = XOR_hex_str(rcon[int(i / N - 1)], XOR_hex_str(W[i-N], sub_word(rot_word(W[i-1]))))
+            elif N > 6 and (i % N) == 4:
                 W[i] = XOR_hex_str(W[i - N], sub_word(W[i - 1]))
             else:
                 W[i] = XOR_hex_str(W[i - N], W[i - 1])
-        self.roudn_keys = np.array([W[i][0,1], W[i][2,3], W[i][4,5], W[i][6,7]] for i in range(4 * R)).reshape((R,4,4)).transpose((0,2,1))
+        self.round_keys = np.array([[W[i][0:2], W[i][2:4], W[i][4:6], W[i][6:8]] for i in range(4 * R)]).reshape((R,4,4)).transpose((0,2,1))
 
     def sub_bytes(self):
-        return np.vectorize(self.sub_bytes_element)(self.state)
+        self.state = np.vectorize(sub_bytes_element)(self.state)
     
     def shift_rows(self):
-        state[0] = np.roll(state[0], -0)
-        state[1] = np.roll(state[1], -1)
-        state[2] = np.roll(state[2], -2)
-        state[3] = np.roll(state[3], -3)
+        self.state[0] = np.roll(self.state[0], -0)
+        self.state[1] = np.roll(self.state[1], -1)
+        self.state[2] = np.roll(self.state[2], -2)
+        self.state[3] = np.roll(self.state[3], -3)
 
-    def mix_columns_mul(self, bite, coe):
-        assert coe in (1, 2, 3)
-        if is_hex_str(bite):
-            bite = hex_str_2_bi_str(bite)
-        assert is_binary_str(bite)
-        assert len(bite) == 8
-        if coe == 1:
-            return bi_str_2_hex_str(bite)
-        elif coe == 2:
-            last_bit = bite[0]
-            bite = bite[1:] + '0'
-            bite = hex_str_2_bi_str(bite)
-            if(last_bit):
-                bite = XOR_hex_str(bite, '1b')
-            return bite
-        elif coe == 3:
-            return XOR_binary_str(bite, self.mix_columns_mul(bite, 2))
-        
-    # MARK: TEST MIX_COLUMN
+    def mix_columns_mul(self, coe, hex_bite):
+        assert coe in ('01', '02', '03')
+        bi_bite = hex_str_2_bi_str(hex_bite)
+        assert len(hex_bite) == 2
+        assert len(bi_bite) == 8
+        if coe == '01':
+            return hex_bite
+        elif coe == '02':
+            last_bit = bi_bite[0]
+            bi_bite = bi_bite[1:] + '0'
+            hex_bite = bi_str_2_hex_str(bi_bite)
+            if(last_bit == '1'):
+                hex_bite = XOR_hex_str(hex_bite, '1b')
+            return hex_bite
+        elif coe == '03':
+            return XOR_hex_str(hex_bite, self.mix_columns_mul('02', hex_bite))        
     def mix_columns(self):
         new_state = np.array([['00'] * 4] * 4)
-        for row in new_state:
-            for column in new_state:
+        for column in range(4):
+            for row in range(4):
                 for i in range(4):
-                    partial_new_state = self.mix_columns_mul(self.state[i][column], self.mix_columns_matrix[row][i])
-                    new_state[row][column] = XOR_binary_str(new_state[row][column], partial_new_state)
+                    partial_new_state = self.mix_columns_mul(self.mix_columns_matrix[row][i], self.state[i][column])
+                    new_state[row][column] = XOR_hex_str(new_state[row][column], partial_new_state)
         self.state = new_state
     
     def add_round_key(self, subkey):
-        return np.vectorize(XOR_hex_str)(self.state, subkey)
+        for i in range(4):
+            for j in range(4):
+                self.state[i][j] = XOR_hex_str(self.state[i][j], subkey[i][j])
+    def encrypt(self):
+        R = int(len(self.key) / 8 + 7)
+        self.add_round_key(self.round_keys[0])
+        for i in range(R - 2):
+            round_index = i + 1
+            self.sub_bytes()
+            self.shift_rows()
+            self.mix_columns()
+            self.add_round_key(self.round_keys[round_index])
+        self.sub_bytes()
+        self.shift_rows()
+        self.add_round_key(self.round_keys[R - 1])
+        
+        self.last_ciphertext = ''.join(self.state.transpose().flatten())
+        assert is_hex_str(self.last_ciphertext)
+        assert len(self.last_ciphertext) == 32
+        return self.last_ciphertext
