@@ -19,6 +19,25 @@ S_BOX = [
     ['8c', 'a1', '89', '0d', 'bf', 'e6', '42', '68', '41', '99', '2d', '0f', 'b0', '54', 'bb', '16']
 ]
 
+INV_S_BOX = [
+    ['52', '09', '6a', 'd5', '30', '36', 'a5', '38', 'bf', '40', 'a3', '9e', '81', 'f3', 'd7', 'fb'],
+    ['7c', 'e3', '39', '82', '9b', '2f', 'ff', '87', '34', '8e', '43', '44', 'c4', 'de', 'e9', 'cb'],
+    ['54', '7b', '94', '32', 'a6', 'c2', '23', '3d', 'ee', '4c', '95', '0b', '42', 'fa', 'c3', '4e'],
+    ['08', '2e', 'a1', '66', '28', 'd9', '24', 'b2', '76', '5b', 'a2', '49', '6d', '8b', 'd1', '25'],
+    ['72', 'f8', 'f6', '64', '86', '68', '98', '16', 'd4', 'a4', '5c', 'cc', '5d', '65', 'b6', '92'],
+    ['6c', '70', '48', '50', 'fd', 'ed', 'b9', 'da', '5e', '15', '46', '57', 'a7', '8d', '9d', '84'],
+    ['90', 'd8', 'ab', '00', '8c', 'bc', 'd3', '0a', 'f7', 'e4', '58', '05', 'b8', 'b3', '45', '06'],
+    ['d0', '2c', '1e', '8f', 'ca', '3f', '0f', '02', 'c1', 'af', 'bd', '03', '01', '13', '8a', '6b'],
+    ['3a', '91', '11', '41', '4f', '67', 'dc', 'ea', '97', 'f2', 'cf', 'ce', 'f0', 'b4', 'e6', '73'],
+    ['96', 'ac', '74', '22', 'e7', 'ad', '35', '85', 'e2', 'f9', '37', 'e8', '1c', '75', 'df', '6e'],
+    ['47', 'f1', '1a', '71', '1d', '29', 'c5', '89', '6f', 'b7', '62', '0e', 'aa', '18', 'be', '1b'],
+    ['fc', '56', '3e', '4b', 'c6', 'd2', '79', '20', '9a', 'db', 'c0', 'fe', '78', 'cd', '5a', 'f4'],
+    ['1f', 'dd', 'a8', '33', '88', '07', 'c7', '31', 'b1', '12', '10', '59', '27', '80', 'ec', '5f'],
+    ['60', '51', '7f', 'a9', '19', 'b5', '4a', '0d', '2d', 'e5', '7a', '9f', '93', 'c9', '9c', 'ef'],
+    ['a0', 'e0', '3b', '4d', 'ae', '2a', 'f5', 'b0', 'c8', 'eb', 'bb', '3c', '83', '53', '99', '61'],
+    ['17', '2b', '04', '7e', 'ba', '77', 'd6', '26', 'e1', '69', '14', '63', '55', '21', '0c', '7d']
+]
+
 rcon = np.array(['01000000', '02000000', '04000000', '08000000', '10000000', '20000000', '40000000', '80000000', '1b000000', '36000000'])
 
 def is_binary_str(variable):
@@ -60,7 +79,14 @@ def sub_bytes_element(element):
         x = int(element[0], 16 )
         y = int(element[1], 16 )
         return S_BOX[x][y]
-    
+
+def inv_sub_bytes_element(element):
+        assert is_hex_str(element)
+        assert len(element) == 2
+        x = int(element[0], 16 )
+        y = int(element[1], 16 )
+        return INV_S_BOX[x][y]
+
 def rot_word(word):
     assert is_hex_str(word)
     assert len(str(word)) == 8
@@ -93,6 +119,10 @@ class State():
                           ('01', '02', '03', '01'),
                           ('01', '01', '02', '03'),
                           ('03', '01', '01', '02'))
+    inv_mix_columns_matrix = (('0e', '0b', '0d', '09'),
+                              ('09', '0e', '0b', '0d'),
+                              ('0d', '09', '0e', '0b'),
+                              ('0b', '0d', '09', '0e'))
     def __init__(self, plaintext, key):
         assert is_hex_str(plaintext)
         assert len(plaintext) == 32
@@ -133,14 +163,23 @@ class State():
     def sub_bytes(self):
         self.state = np.vectorize(sub_bytes_element)(self.state)
     
+    def inv_sub_bytes(self):
+        self.state = np.vectorize(inv_sub_bytes_element)(self.state)
+    
     def shift_rows(self):
         self.state[0] = np.roll(self.state[0], -0)
         self.state[1] = np.roll(self.state[1], -1)
         self.state[2] = np.roll(self.state[2], -2)
         self.state[3] = np.roll(self.state[3], -3)
+    
+    def inv_shift_rows(self):
+        self.state[0] = np.roll(self.state[0], 0)
+        self.state[1] = np.roll(self.state[1], 1)
+        self.state[2] = np.roll(self.state[2], 2)
+        self.state[3] = np.roll(self.state[3], 3)
 
     def mix_columns_mul(self, coe, hex_bite):
-        assert coe in ('01', '02', '03')
+        assert coe in ('01', '02', '03', '0e', '0b', '0d', '09')
         bi_bite = hex_str_2_bi_str(hex_bite)
         assert len(hex_bite) == 2
         assert len(bi_bite) == 8
@@ -154,7 +193,16 @@ class State():
                 hex_bite = XOR_hex_str(hex_bite, '1b')
             return hex_bite
         elif coe == '03':
-            return XOR_hex_str(hex_bite, self.mix_columns_mul('02', hex_bite))        
+            return XOR_hex_str(hex_bite, self.mix_columns_mul('02', hex_bite))
+        elif coe == '09':
+            return XOR_hex_str(hex_bite, self.mix_columns_mul('02', self.mix_columns_mul('02', self.mix_columns_mul('02', hex_bite))))
+        elif coe == '0b':
+            return XOR_hex_str(hex_bite, self.mix_columns_mul('02', XOR_hex_str(hex_bite, self.mix_columns_mul('02', self.mix_columns_mul('02', hex_bite)))))
+        elif coe == '0d':
+            return XOR_hex_str(hex_bite, self.mix_columns_mul('02', self.mix_columns_mul('02', XOR_hex_str(hex_bite, self.mix_columns_mul('02', hex_bite)))))
+        elif coe == '0e':
+            return self.mix_columns_mul('02', XOR_hex_str(hex_bite, self.mix_columns_mul('02', XOR_hex_str(hex_bite, self.mix_columns_mul('02', hex_bite)))))
+
     def mix_columns(self):
         new_state = np.array([['00'] * 4] * 4)
         for column in range(4):
@@ -164,6 +212,15 @@ class State():
                     new_state[row][column] = XOR_hex_str(new_state[row][column], partial_new_state)
         self.state = new_state
     
+    def inv_mix_columns(self):
+        new_state = np.array([['00'] * 4] * 4)
+        for column in range(4):
+            for row in range(4):
+                for i in range(4):
+                    partial_new_state = self.mix_columns_mul(self.inv_mix_columns_matrix[row][i], self.state[i][column])
+                    new_state[row][column] = XOR_hex_str(new_state[row][column], partial_new_state)
+        self.state = new_state
+
     def add_round_key(self, subkey):
         for i in range(4):
             for j in range(4):
@@ -185,3 +242,22 @@ class State():
         assert is_hex_str(self.last_ciphertext)
         assert len(self.last_ciphertext) == 32
         return self.last_ciphertext
+
+    def decrypt(self):
+        R = int(len(self.key) / 8 + 7)
+        self.add_round_key(self.round_keys[R - 1])
+        for i in range(R - 2):
+            round_index = i + 1
+            self.inv_shift_rows()
+            self.inv_sub_bytes()
+            self.add_round_key(self.round_keys[R - 1 - round_index])
+            self.inv_mix_columns()
+            
+        self.inv_shift_rows()
+        self.inv_sub_bytes()
+        self.add_round_key(self.round_keys[0])
+        
+        self.last_deciphertext = ''.join(self.state.transpose().flatten())
+        assert is_hex_str(self.last_deciphertext)
+        assert len(self.last_deciphertext) == 32
+        return self.last_deciphertext
