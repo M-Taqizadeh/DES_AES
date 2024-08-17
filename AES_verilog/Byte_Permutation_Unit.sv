@@ -3,16 +3,15 @@ module Byte_Permutation_Unit(
     input wire rst,
     input wire rst_synch,
     input wire shift_left,
+    input wire [3:0] inner_state_counter,
     input wire [7:0] in_byte,
     output reg [7:0] out_byte
 );
     wire c0, c1, c2;
     wire [1:0] c3;
     Byte_Permutation_Unit_Controller BPUC (
-        .clk(clk),
-        .rst(rst),
-        .rst_synch(rst_synch),
         .shift_left(shift_left),
+        .inner_state_counter(inner_state_counter),
         .c0(c0),
         .c1(c1),
         .c2(c2),

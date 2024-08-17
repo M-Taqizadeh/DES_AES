@@ -7,9 +7,9 @@ module Mix_Column (
     output reg [7:0] d_out0,
     output reg [7:0] d_out1,
     output reg [7:0] d_out2,
-    output reg [7:0] d_out3,
+    output reg [7:0] d_out3
 );
-    wire [7:0] d_in_times2
+    wire [7:0] d_in_times2;
     wire [7:0] d_in_times3;
     wire [7:0] d_in_times4;
     wire [7:0] d_in_times5;
@@ -31,17 +31,17 @@ module Mix_Column (
     assign d_in_times6 = d_in_times3[7] ? d_in_times3 << 1 : (d_in_times3 << 1) ^ 8'h1b;
     assign d_in_times7 = d_in_times6 ^ d_in;
     assign d_in_times8 = d_in_times4[7] ? d_in_times4 << 1 : (d_in_times4 << 1) ^ 8'h1b;
-    assign d_in_times9 = d_in_times_8 ^ d_in;
+    assign d_in_times9 = d_in_times8 ^ d_in;
     assign d_in_times10 = d_in_times5[7] ? d_in_times5 << 1 : (d_in_times5 << 1) ^ 8'h1b;
-    assign d_in_times11 = d_in_times_10 ^ d_in;
+    assign d_in_times11 = d_in_times10 ^ d_in;
     assign d_in_times12 = d_in_times6[7] ? d_in_times6 << 1 : (d_in_times6 << 1) ^ 8'h1b;
-    assign d_in_times13 = d_in_times_12 ^ d_in;
+    assign d_in_times13 = d_in_times12 ^ d_in;
     assign d_in_times14 = d_in_times7[7] ? d_in_times7 << 1 : (d_in_times7 << 1) ^ 8'h1b;
 
-    assign r0_in = (encrypt ? d_in : d_in_times9) ^ (en & d_out1)
-    assign r1_in = (encrypt ? d_in : d_in_times13) ^ (en & d_out2)
-    assign r2_in = (encrypt ? d_in_times3 : d_in_times11) ^ (en & d_out3)
-    assign r3_in = (encrypt ? d_in_times2 : d_in_times14) ^ (en & d_out0)
+    assign r0_in = (encrypt ? d_in : d_in_times9) ^ ({8{~en}} & d_out1);
+    assign r1_in = (encrypt ? d_in : d_in_times13) ^ ({8{~en}} & d_out2);
+    assign r2_in = (encrypt ? d_in_times3 : d_in_times11) ^ ({8{~en}} & d_out3);
+    assign r3_in = (encrypt ? d_in_times2 : d_in_times14) ^ ({8{~en}} & d_out0);
     always @(posedge clk or posedge rst) begin
         if(rst)begin
             d_out0 <= 8'b0;
